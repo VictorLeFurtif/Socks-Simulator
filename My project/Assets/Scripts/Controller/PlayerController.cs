@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -44,6 +45,6 @@ public class PlayerController : MonoBehaviour
 
     public void Attack()
     {
-
+        EventManager.attackInput?.Invoke();
     }
 }

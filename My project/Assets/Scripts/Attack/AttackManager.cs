@@ -6,8 +6,13 @@ public class AttackManager : MonoBehaviour
     private Vector3 startRaycast;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Animator animator;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void OnEnable()
+    {
+        EventManager.attackInput += DetectPlayer;
+    }
+
     void Start()
     {
         radius = spriteRenderer.bounds.extents.x + 0.2f;
@@ -16,23 +21,23 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DetectPlayer();
     }
 
     private void DetectPlayer()
     {
+        Debug.Log("here");
         startRaycast = new Vector3(transform.position.x - radius, transform.position.y, transform.position.z);
 
         RaycastHit2D hit = Physics2D.Raycast(startRaycast, Vector2.left, 2f);
 
         if (hit.collider != null && hit.collider.gameObject.CompareTag("Player") && hit.collider.gameObject != gameObject)
-            return;
+            StartAttack();
 
-        
     }
 
     private void StartAttack()
     {
-
+        animator.SetTrigger("isAttacking");
+        //TODO hurt animation and counter
     }
 }
