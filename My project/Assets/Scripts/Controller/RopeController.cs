@@ -13,10 +13,9 @@ namespace Controller
         [Header("Enemy")]
         [SerializeField]
         private RopeController enemy;
-        
-        [Header("Point")] 
-        public Transform Ass { get; private set; }
-        public Transform Head { get; private set; }
+
+        [Header("Point")] public Transform Ass;
+        public Transform Head;
 
         [Header("Value")] [SerializeField] private float minDistanceToGrab;
         
@@ -40,7 +39,7 @@ namespace Controller
             }
         }
 
-        [SerializeField] private int stunValueToTakeOut;
+        [SerializeField] private float stunValueToTakeOut;
 
         [Header("Key")]
 
@@ -51,7 +50,7 @@ namespace Controller
 
          private KoState currentKoState;
 
-         private PlayerPlacement currentPlayerPlacement;
+         [SerializeField] private PlayerPlacement currentPlayerPlacement;
 
          private PlayerState currentPlayerState;
 
