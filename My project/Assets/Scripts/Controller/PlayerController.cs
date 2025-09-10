@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -7,12 +8,22 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 moveDirection = new Vector2();
     private float radius;
+    private bool isStunt;
+    private InputSystem_Actions inputSystem;
 
     [SerializeField] private int speed = 100;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private ForceMode2D forceType;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private GameObject[] markers;
+    [SerializeField] private float jumpPower = 3f;
+    [SerializeField] private float durationJump = 1f;
 
+    private void OnEnable()
+    {
+        EventManager.UpdateStunAction += UpdateStun;
+
+    }
     private void Start()
     {
         radius = spriteRenderer.bounds.extents.x;
@@ -21,6 +32,13 @@ public class PlayerController : MonoBehaviour
     {
         CheckBorderCollision();
         rb.AddForce(moveDirection * speed, forceType);
+    }
+
+    private void UpdateStun(PlayerController pControler)
+    {
+        pControler.isStunt = !pControler.isStunt;
+        if(pControler.isStunt)
+            StunBackward(pControler);
     }
 
     private void CheckBorderCollision()
@@ -33,6 +51,8 @@ public class PlayerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext ctx)
     {
+        if (isStunt)
+            return;
         if (ctx.started)
         {
             moveDirection = ctx.ReadValue<Vector2>();
@@ -45,6 +65,20 @@ public class PlayerController : MonoBehaviour
 
     public void Attack()
     {
+        if (isStunt)
+            return;
         EventManager.attackInput?.Invoke();
+    }
+
+    private void StunBackward(PlayerController pControler)
+    {
+        if(transform.position.x < 0f)
+        {
+            pControler.transform.DOJump(new Vector2(markers[0].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
+        }
+        else
+        {
+            pControler.transform.DOJump(new Vector2(markers[1].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
+        }
     }
 }
