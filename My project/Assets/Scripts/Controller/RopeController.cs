@@ -20,17 +20,6 @@ namespace Controller
 
         [Header("Value")] [SerializeField] private float minDistanceToGrab;
         
-        [SerializeField] private float temporaryLife;
-
-        public float TemporaryLife
-        {
-            get => temporaryLife;
-            private set
-            {
-                temporaryLife = value;
-                
-            }
-        }
 
         [SerializeField] private float maxStunValue;
         
@@ -45,6 +34,8 @@ namespace Controller
                 if (stunValue <= 0)
                 {
                     CurrentKoState = KoState.NotKo;
+                    enemy.lineRenderer.enabled = false;
+                    CheckForFlagsVisuals();
                 }
             }
         }
@@ -60,6 +51,8 @@ namespace Controller
 
          private KoState currentKoState;
 
+         private PlayerPlacement currentPlayerPlacement;
+
          public KoState CurrentKoState
          {
              get => currentKoState;
@@ -72,10 +65,19 @@ namespace Controller
          }
 
          [Header("Visuals")] 
-         [SerializeField] private LineRenderer lineRenderer;
+         public LineRenderer lineRenderer; //for the moment
+
+         [SerializeField] private GameObject leftFlag;
+         [SerializeField] private GameObject rightFlag;
          #endregion
 
          #region Unity Methods
+
+         private void Start()
+         {
+             leftFlag.SetActive(false);
+             rightFlag.SetActive(false);
+         }
 
          private void Update()
          {
@@ -99,17 +101,27 @@ namespace Controller
         
         public void DragRope()
         {
-            if (Input.GetKeyDown(dragKey) && !dragging && CurrentKoState == KoState.NotKo && CanGrab(enemy.transform))
+            //Set active true a game object if left or right player then 
+            if (Input.GetKeyDown(dragKey) && !dragging && CurrentKoState == KoState.NotKo && CanGrab(enemy.transform)) //first time
             {
                 dragging = true;
                 StunValue = maxStunValue;
+                lineRenderer.enabled = true;
+
+                CheckForFlagsVisuals();
             }
-            //DrawLineRenderer After ??
-            //Calcul to check for life ??
+            
+            
             
             
         }
 
+        private void CheckForFlagsVisuals()
+        {
+            if (currentPlayerPlacement == PlayerPlacement.Left) rightFlag.SetActive(true);
+            else leftFlag.SetActive(true);
+        }
+        
         private bool CanGrab(Transform enemy)
         {
             return Mathf.Abs(enemy.position.x - transform.position.x) < minDistanceToGrab;
@@ -127,7 +139,7 @@ namespace Controller
         // a variable
         public void TryReleaseRope()
         {
-            if (Input.GetKeyDown(releaseKey) && currentKoState == KoState.Ko && TemporaryLife > 0)
+            if (Input.GetKeyDown(releaseKey) && currentKoState == KoState.Ko ) //TODO if dead link to enum
             {
                 StunValue -= stunValueToTakeOut;
             }
