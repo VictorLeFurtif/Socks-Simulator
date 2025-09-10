@@ -53,6 +53,14 @@ namespace Controller
 
          private PlayerPlacement currentPlayerPlacement;
 
+         private PlayerState currentPlayerState;
+
+         public PlayerState CurrentPlayerState
+         {
+             get => currentPlayerState;
+             private set { currentPlayerState = value; }
+         }
+
          public KoState CurrentKoState
          {
              get => currentKoState;
@@ -98,7 +106,7 @@ namespace Controller
 
         private bool dragging = false;
 
-        
+        [SerializeField] private float epsilon;
         public void DragRope()
         {
             //Set active true a game object if left or right player then 
@@ -110,12 +118,23 @@ namespace Controller
 
                 CheckForFlagsVisuals();
             }
+
+            bool won = false;
             
-            
-            
-            
+            if (currentPlayerPlacement == PlayerPlacement.Left) won = IsPlayerCloseToFlag(epsilon, leftFlag.transform);
+            if (currentPlayerPlacement == PlayerPlacement.Right) won = IsPlayerCloseToFlag(epsilon, rightFlag.transform);
+
+            if (won) //you killed your opponent
+            {
+                enemy.CurrentPlayerState = PlayerState.Dead;
+            }
         }
 
+        private bool IsPlayerCloseToFlag(float epsilon, Transform flag)
+        {
+            return Mathf.Abs(transform.position.x - leftFlag.transform.position.x) < epsilon;
+        }
+        
         private void CheckForFlagsVisuals()
         {
             if (currentPlayerPlacement == PlayerPlacement.Left) rightFlag.SetActive(true);
