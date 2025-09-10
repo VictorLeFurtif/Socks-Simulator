@@ -1,8 +1,10 @@
 using System;
-using System.Timers;
 using Enum;
 using Interface;
+using Unity.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI; // ⚡ Nouveau Input System
 
 namespace Controller
 {
@@ -11,16 +13,25 @@ namespace Controller
         #region Fields
 
         [Header("Enemy")]
-        [SerializeField]
+        [SerializeField, Tooltip("Reference to the opponent player")]
         private RopeController enemy;
 
-        [Header("Point")] public Transform Ass;
+        [Header("Anchor Points")]
+        [Tooltip("Bottom anchor point for rope attachment")]
+        public Transform Ass;
+        [Tooltip("Top anchor point for rope attachment")]
         public Transform Head;
 
-        [Header("Value")] [SerializeField] private float minDistanceToGrab;
-        
+        [Header("Grab Settings")]
+        [SerializeField, Range(0.1f, 5f), Tooltip("Minimum distance required to grab enemy")]
+        private float minDistanceToGrab = 1.5f;
 
-        [SerializeField] private float maxStunValue;
+        [Header("Stun System")]
+        [SerializeField, Range(1f, 10f), Tooltip("Maximum stun duration when grabbed")]
+        private float maxStunValue = 5f;
+        
+        [SerializeField, Range(0.1f, 2f), Tooltip("Stun value reduced per button press")]
+        private float stunValueToTakeOut = 0.2f;
         
         private float stunValue;
 
@@ -29,101 +40,150 @@ namespace Controller
             get => stunValue;
             private set
             {
-                stunValue = value;
+                stunValue = Mathf.Clamp(value, 0f, maxStunValue);
+
+                if (stunSlider != null)
+                {
+                    stunSlider.maxValue = maxStunValue;
+                    stunSlider.minValue = 0f;
+                    stunSlider.value = (currentKoState == KoState.Ko) ? stunValue : 0f;
+                }
+
+                Debug.Log($"[{name}] StunValue -> {stunValue:F2}");
+
                 if (stunValue <= 0)
                 {
                     CurrentKoState = KoState.NotKo;
-                    enemy.lineRenderer.enabled = false;
-                    CheckForFlagsVisuals();
+                    if (enemy != null) enemy.lineRenderer.enabled = false;
+                    dragging = false;
+                    HideAllFlags();
                 }
             }
         }
 
-        [SerializeField] private float stunValueToTakeOut;
 
-        [Header("Key")]
-
-         [SerializeField] private KeyCode releaseKey;
-         [SerializeField] private KeyCode dragKey;
+        [Header("Input Keys (New Input System)")]
+        [SerializeField, Tooltip("Key to spam for breaking free when stunned")]
+        private Key releaseKey = Key.Space;
+        [SerializeField, Tooltip("Key to initiate rope drag")]
+        private Key dragKey = Key.E;
          
-         [Header("State Machine")]
+        [Header("State Machine")]
+        [SerializeField] private KoState currentKoState = KoState.NotKo;
 
-         private KoState currentKoState;
+        [SerializeField, Tooltip("Left or Right player position")]
+        private PlayerPlacement currentPlayerPlacement = PlayerPlacement.Left;
 
-         [SerializeField] private PlayerPlacement currentPlayerPlacement;
+        private PlayerState currentPlayerState = PlayerState.Idle;
 
-         private PlayerState currentPlayerState;
+        public PlayerState CurrentPlayerState
+        {
+            get => currentPlayerState;
+            private set { currentPlayerState = value; }
+        }
 
-         public PlayerState CurrentPlayerState
-         {
-             get => currentPlayerState;
-             private set { currentPlayerState = value; }
-         }
+        public KoState CurrentKoState
+        {
+            get => currentKoState;
+            private set
+            {
+                currentKoState = value;
+                Debug.Log($"[{name}] KO STATE -> {currentKoState}");
+            }
+        }
 
-         public KoState CurrentKoState
-         {
-             get => currentKoState;
-             private set
-             {
-                 //Here we need to make sure that The input are or blocked or release 
-                 currentKoState = value;
-                 
-             }
-         }
+        [Header("Visual Components")]
+        [SerializeField, Tooltip("Line renderer for rope visualization")]
+        public LineRenderer lineRenderer;
 
-         [Header("Visuals")] 
-         public LineRenderer lineRenderer; //for the moment
+        [SerializeField, Tooltip("Flag shown when left player can win")]
+        private GameObject leftFlag;
+        [SerializeField, Tooltip("Flag shown when right player can win")]
+        private GameObject rightFlag;
 
-         [SerializeField] private GameObject leftFlag;
-         [SerializeField] private GameObject rightFlag;
-         #endregion
+        [Header("Win Condition")]
+        [SerializeField, Range(0.1f, 2f), Tooltip("Distance threshold to flag for winning")]
+        private float epsilon = 0.5f;
 
-         #region Unity Methods
-
-         private void Start()
-         {
-             leftFlag.SetActive(false);
-             rightFlag.SetActive(false);
-         }
-
-         private void Update()
-         {
-             TimerStun();
-         }
-
-         private void LateUpdate()
-         {
-             DrawLineRenderer(enemy.Ass);
-         }
-
-         #endregion
-
-        #region RopeController Methods For Attacker
-        
-        //need to assign the maximum value at the begging or this will be called in Update to divide the logic
-        //TODO : no idea for the moment
-
+        [Header("Runtime State")]
+        [SerializeField, ReadOnly]
         private bool dragging = false;
 
-        [SerializeField] private float epsilon;
+        [Header("UI Components")]
+        [SerializeField, Tooltip("Slider representing stun value")]
+        private Slider stunSlider;
+
+        
+        #endregion
+
+        #region Unity Methods
+
+        private void Start()
+        {
+            HideAllFlags();
+        }
+
+        private void Update()
+        {
+            TimerStun();
+
+            if (Keyboard.current[Key.Y].wasPressedThisFrame && currentPlayerPlacement == PlayerPlacement.Right)
+            {
+                currentKoState = KoState.Ko;
+                StunValue = maxStunValue;
+            }
+            
+            if (CurrentKoState == KoState.NotKo)
+            {
+                DragRope();
+            }
+            else
+            {
+                TryReleaseRope();
+            }
+            
+        }
+
+        private void LateUpdate()
+        {
+            DrawLineRenderer(enemy?.Ass);
+        }
+
+        #endregion
+
+        #region RopeController Methods For Attacker
+
         public void DragRope()
         {
-            //Set active true a game object if left or right player then 
-            if (Input.GetKeyDown(dragKey) && !dragging && CurrentKoState == KoState.NotKo && CanGrab(enemy.transform)) //first time
+            if (Keyboard.current[dragKey].wasPressedThisFrame && !dragging && CurrentKoState == KoState.NotKo && CanGrab(enemy.transform))
             {
-                dragging = true;
-                StunValue = maxStunValue;
-                lineRenderer.enabled = true;
-
-                CheckForFlagsVisuals();
+                StartDragging();
             }
-
+            
+            if (dragging)
+            {
+                CheckWinCondition();
+            }
+        }
+        
+        private void StartDragging()
+        {
+            dragging = true;
+            lineRenderer.enabled = true;
+            CheckForFlagsVisuals();
+            
+        }
+        
+        private void CheckWinCondition()
+        {
             bool won = false;
             
-            if (currentPlayerPlacement == PlayerPlacement.Left) won = IsPlayerCloseToFlag(epsilon, leftFlag.transform);
-            if (currentPlayerPlacement == PlayerPlacement.Right) won = IsPlayerCloseToFlag(epsilon, rightFlag.transform);
+            if (currentPlayerPlacement == PlayerPlacement.Left) 
+                won = IsPlayerCloseToFlag(epsilon, leftFlag.transform);
+            if (currentPlayerPlacement == PlayerPlacement.Right) 
+                won = IsPlayerCloseToFlag(epsilon, rightFlag.transform);
 
-            if (won) //you killed your opponent
+            if (won)
             {
                 enemy.CurrentPlayerState = PlayerState.Dead;
             }
@@ -131,33 +191,38 @@ namespace Controller
 
         private bool IsPlayerCloseToFlag(float epsilon, Transform flag)
         {
-            return Mathf.Abs(transform.position.x - flag.transform.position.x) < epsilon;
+            if (flag == null) return false;
+            return Mathf.Abs(transform.position.x - flag.position.x) < epsilon;
         }
         
         private void CheckForFlagsVisuals()
         {
-            if (currentPlayerPlacement == PlayerPlacement.Left) rightFlag.SetActive(true);
-            else leftFlag.SetActive(true);
+            HideAllFlags();
+            if (currentPlayerPlacement == PlayerPlacement.Left) 
+                leftFlag.SetActive(true);
+            else 
+                rightFlag.SetActive(true);
         }
         
-        private bool CanGrab(Transform enemy)
+        private void HideAllFlags()
         {
-            return Mathf.Abs(enemy.position.x - transform.position.x) < minDistanceToGrab;
+            if (leftFlag != null) leftFlag.SetActive(false);
+            if (rightFlag != null) rightFlag.SetActive(false);
+        }
+        
+        private bool CanGrab(Transform enemyTransform)
+        {
+            if (enemyTransform == null) return false;
+            return Mathf.Abs(enemyTransform.position.x - transform.position.x) < minDistanceToGrab;
         }
         
         #endregion
 
         #region RopeController Methods For Defenseur
         
-        // Here you spam it to release yourself when you re KO
-        //Please god have mercy sooo we need to spam to get the stunValue to 0
-        // Then were good because we will make a Get Setter when we Update this value
-        //A void will be call to change the state condition in setter if stun value
-        // <= 0 so not KO can play and the Enemy release rope easier if also if enemy is 
-        // a variable
         public void TryReleaseRope()
         {
-            if (Input.GetKeyDown(releaseKey) && currentKoState == KoState.Ko ) //TODO if dead link to enum
+            if (Keyboard.current[releaseKey].wasPressedThisFrame && currentKoState == KoState.Ko)
             {
                 StunValue -= stunValueToTakeOut;
             }
@@ -177,16 +242,22 @@ namespace Controller
 
         private void DrawLineRenderer(Transform enemyPosition)
         {
-            if (!dragging) return;
-            lineRenderer.SetPosition(0,Head.position);
-            lineRenderer.SetPosition(1,enemyPosition.position);
+            if (!dragging || enemyPosition == null) 
+            {
+                lineRenderer.enabled = false;
+                return;
+            }
+            
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(0, Head.position);
+            lineRenderer.SetPosition(1, enemyPosition.position);
         }
 
         #endregion
 
         #region Debug
 
-#if UNITY_EDITOR //for the final build here for Debug so all good no worry
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             if (enemy != null)
@@ -207,7 +278,7 @@ namespace Controller
                 Gizmos.DrawWireCube(rightFlag.transform.position, new Vector3(epsilon * 2, 1f, 1f));
             }
 
-            if (dragging && enemy != null)
+            if (dragging && enemy != null && enemy.Ass != null)
             {
                 Gizmos.color = Color.magenta;
                 Gizmos.DrawLine(Head.position, enemy.Ass.position);
@@ -229,6 +300,5 @@ namespace Controller
 #endif
 
         #endregion
-        
     }
 }
