@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 
 public enum ePlayerNum
 {
-    Player,
-    Player1
+    Player = 1,
+    Player1 = 0
 }
 public class PlayerController : MonoBehaviour
 {
@@ -29,7 +29,10 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         EventManager.UpdateStunAction += UpdateStun;
+
         inputSystem = new InputSystem_Actions();
+
+        //TODO trouver un moyens de faire plus propre c moche
         switch (playerNum)
         {
             case ePlayerNum.Player:
@@ -63,8 +66,10 @@ public class PlayerController : MonoBehaviour
     private void UpdateStun(PlayerController pControler)
     {
         pControler.isStunt = true;
-        if (pControler.isStunt)
-            StunBackward(pControler);
+        int lNumPlayer = 0; 
+        if (transform.position.x > 0f)
+            lNumPlayer =1;
+        StunBackward(pControler, lNumPlayer);
     }
 
     private void CheckBorderCollision()
@@ -79,7 +84,6 @@ public class PlayerController : MonoBehaviour
     {
         //if (isStunt)
         //return;
-        Debug.Log(isStunt);
         moveDirection = ctx.ReadValue<Vector2>();
         moveDirection = new Vector2(moveDirection.x, 0f);
     }
@@ -98,15 +102,8 @@ public class PlayerController : MonoBehaviour
         attackManager.PerformCounter();
     }
 
-    private void StunBackward(PlayerController pControler)
+    private void StunBackward(PlayerController pControler, int pDirection)
     {
-        if (transform.position.x <= 0f)
-        {
-            pControler.transform.DOJump(new Vector2(markers[0].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
-        }
-        else
-        {
-            pControler.transform.DOJump(new Vector2(markers[1].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
-        }
+        pControler.transform.DOJump(new Vector2(markers[pDirection].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
     }
 }

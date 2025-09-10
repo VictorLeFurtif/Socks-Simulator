@@ -38,12 +38,11 @@ public class AttackManager : MonoBehaviour
         isAttacking = true;
         animator.SetTrigger("IsAttacking");
 
-        //TODO hurt animation and counter
+        //TODO hurt animation
     }
 
     public void OnAttackEnd()
     {
-        Debug.Log("dealDamage");
         if (!wasCountered)
             EventManager.UpdateStunAction?.Invoke(enemy);
 
@@ -68,7 +67,6 @@ public class AttackManager : MonoBehaviour
         {
             ennemyAttack.InterruptAttack();
 
-            isAttacking = true;
             wasCountered = true;
             canCounter = false;
             animator.SetTrigger("IsCounter");
@@ -83,7 +81,6 @@ public class AttackManager : MonoBehaviour
             canCounter = false;
             wasCountered = true;
 
-            StopAllCoroutines();
             animator.ResetTrigger("IsAttacking");
         }
     }
