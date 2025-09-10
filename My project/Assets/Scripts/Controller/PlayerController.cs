@@ -4,6 +4,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum ePlayerNum
+{
+    player1,
+    player2
+}
 public class PlayerController : MonoBehaviour
 {
     private Vector2 moveDirection = new Vector2();
@@ -18,10 +23,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject[] markers;
     [SerializeField] private float jumpPower = 3f;
     [SerializeField] private float durationJump = 1f;
+    [SerializeField] private ePlayerNum player;
 
     private void OnEnable()
     {
         EventManager.UpdateStunAction += UpdateStun;
+        inputSystem = new InputSystem_Actions();
+        switch (player)
+        {
+            case ePlayerNum.player1:
+                Debug.Log("player1");
+                inputSystem.Player.Enable();
+                inputSystem.Player.Move.performed += Move;
+                inputSystem.Player.Move.canceled += ctx => moveDirection = Vector2.zero;
+                inputSystem.Player.Attack.performed += Attack;
+                break;
+            case ePlayerNum.player2:
+                Debug.Log("player2");
+                inputSystem.Player1.Enable();
+                inputSystem.Player1.Move.performed += Move;
+                inputSystem.Player1.Move.canceled += ctx => moveDirection = Vector2.zero;
+                inputSystem.Player1.Attack.performed += Attack;
+                break;
+        }
 
     }
     private void Start()
@@ -37,7 +61,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateStun(PlayerController pControler)
     {
         pControler.isStunt = !pControler.isStunt;
-        if(pControler.isStunt)
+        if (pControler.isStunt)
             StunBackward(pControler);
     }
 
@@ -53,17 +77,11 @@ public class PlayerController : MonoBehaviour
     {
         if (isStunt)
             return;
-        if (ctx.started)
-        {
-            moveDirection = ctx.ReadValue<Vector2>();
-            moveDirection = new Vector2(moveDirection.x, 0f);
-        }
-
-        if (ctx.canceled)
-            moveDirection = Vector2.zero;
+        moveDirection = ctx.ReadValue<Vector2>();
+        moveDirection = new Vector2(moveDirection.x, 0f);
     }
 
-    public void Attack()
+    public void Attack(InputAction.CallbackContext ctx)
     {
         if (isStunt)
             return;
@@ -72,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
     private void StunBackward(PlayerController pControler)
     {
-        if(transform.position.x < 0f)
+        if (transform.position.x < 0f)
         {
             pControler.transform.DOJump(new Vector2(markers[0].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
         }
