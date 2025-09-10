@@ -1,34 +1,24 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
-    private float radius;
-    private Vector3 startRaycast;
+    public bool isAttacking;
     private bool isInArea = false;
     public bool canCounter;
+    private bool wasCountered;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerController enemy;
-    [SerializeField] private PlayerController player;
     [SerializeField] private AttackManager ennemyAttack;
-
-    private void OnEnable()
-    {
-        EventManager.attackInput += DetectPlayer;
-    }
-
-    void Start()
-    {
-        radius = spriteRenderer.bounds.extents.x + 0.2f;
-    }
+    [SerializeField] private float attackCooldown = 0.5f;
 
     public void DetectPlayer()
     {
-      if(isInArea)
-        StartAttack();
-
+        if (isInArea && !isAttacking && !ennemyAttack.isAttacking)
+            StartAttack();
     }
 
     private void OnTriggerEnter2D(Collider2D pCollider)
@@ -45,29 +35,63 @@ public class AttackManager : MonoBehaviour
 
     private void StartAttack()
     {
+        isAttacking = true;
         animator.SetTrigger("IsAttacking");
+
         //TODO hurt animation and counter
     }
 
     public void OnAttackEnd()
     {
         Debug.Log("dealDamage");
-        if(canCounter)
-            return;
-        EventManager.UpdateStunAction?.Invoke(enemy);
+        if (!wasCountered)
+            EventManager.UpdateStunAction?.Invoke(enemy);
+
+        StartCoroutine(ResetAttackState());
     }
 
-    public void SetCounterPossible() => canCounter = !canCounter ;
+    private IEnumerator ResetAttackState()
+    {
+        yield return new WaitForSeconds(attackCooldown);
+
+        isAttacking = false;
+        canCounter = false;
+        wasCountered = false;
+
+    }
+
+    public void SetCounterPossible() => canCounter = !canCounter;
 
     public void PerformCounter()
     {
-        if (ennemyAttack.canCounter)
+        if (ennemyAttack.canCounter && !wasCountered)
         {
-            Debug.Log("countering");
+            ennemyAttack.InterruptAttack();
 
+            isAttacking = true;
+            wasCountered = true;
+            canCounter = false;
             animator.SetTrigger("IsCounter");
-            ennemyAttack.SetCounterPossible();
         }
+    }
+
+    public void InterruptAttack()
+    {
+        if (isAttacking)
+        {
+            isAttacking = false;
+            canCounter = false;
+            wasCountered = true;
+
+            StopAllCoroutines();
+            animator.ResetTrigger("IsAttacking");
+        }
+    }
+
+
+    public void OnCounterEnd()
+    {
+        StartCoroutine(ResetAttackState());
     }
 
 }

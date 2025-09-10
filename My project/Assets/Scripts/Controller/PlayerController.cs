@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 
 public enum ePlayerNum
 {
-    player1,
-    player2
+    Player,
+    Player1
 }
 public class PlayerController : MonoBehaviour
 {
@@ -32,16 +32,14 @@ public class PlayerController : MonoBehaviour
         inputSystem = new InputSystem_Actions();
         switch (playerNum)
         {
-            case ePlayerNum.player1:
-                Debug.Log("player1");
+            case ePlayerNum.Player:
                 inputSystem.Player.Enable();
                 inputSystem.Player.Move.performed += Move;
                 inputSystem.Player.Move.canceled += ctx => moveDirection = Vector2.zero;
                 inputSystem.Player.Attack.performed += Attack;
                 inputSystem.Player.Counter.performed += Counter;
                 break;
-            case ePlayerNum.player2:
-                Debug.Log("player2");
+            case ePlayerNum.Player1:
                 inputSystem.Player1.Enable();
                 inputSystem.Player1.Move.performed += Move;
                 inputSystem.Player1.Move.canceled += ctx => moveDirection = Vector2.zero;
@@ -49,6 +47,7 @@ public class PlayerController : MonoBehaviour
                 inputSystem.Player1.Counter.performed += Counter;
                 break;
         }
+
 
     }
     private void Start()
@@ -78,8 +77,8 @@ public class PlayerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext ctx)
     {
-        if (isStunt)
-            return;
+        //if (isStunt)
+        //return;
         Debug.Log(isStunt);
         moveDirection = ctx.ReadValue<Vector2>();
         moveDirection = new Vector2(moveDirection.x, 0f);
@@ -87,15 +86,15 @@ public class PlayerController : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext ctx)
     {
-        if (isStunt)
-            return;
+        //if (isStunt)
+        ///return;
         attackManager.DetectPlayer();
     }
 
     private void Counter(InputAction.CallbackContext ctx)
     {
-        if(isStunt)
-            return;
+        //if(isStunt)
+        //return;
         attackManager.PerformCounter();
     }
 
