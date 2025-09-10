@@ -131,7 +131,7 @@ namespace Controller
 
         private bool IsPlayerCloseToFlag(float epsilon, Transform flag)
         {
-            return Mathf.Abs(transform.position.x - leftFlag.transform.position.x) < epsilon;
+            return Mathf.Abs(transform.position.x - flag.transform.position.x) < epsilon;
         }
         
         private void CheckForFlagsVisuals()
@@ -173,7 +173,6 @@ namespace Controller
 
         #endregion
 
-
         #region Line Renderer Handler
 
         private void DrawLineRenderer(Transform enemyPosition)
@@ -182,6 +181,52 @@ namespace Controller
             lineRenderer.SetPosition(0,Head.position);
             lineRenderer.SetPosition(1,enemyPosition.position);
         }
+
+        #endregion
+
+        #region Debug
+
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            if (enemy != null)
+            {
+                Gizmos.color = CanGrab(enemy.transform) ? Color.green : Color.red;
+                Gizmos.DrawWireSphere(transform.position, minDistanceToGrab);
+            }
+
+            if (leftFlag != null)
+            {
+                Gizmos.color = Color.blue;
+                Gizmos.DrawWireCube(leftFlag.transform.position, new Vector3(epsilon * 2, 1f, 1f));
+            }
+
+            if (rightFlag != null)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawWireCube(rightFlag.transform.position, new Vector3(epsilon * 2, 1f, 1f));
+            }
+
+            if (dragging && enemy != null)
+            {
+                Gizmos.color = Color.magenta;
+                Gizmos.DrawLine(Head.position, enemy.Ass.position);
+            }
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.white;
+            if (Head != null)
+            {
+                Gizmos.DrawWireSphere(Head.position, 0.1f);
+            }
+            if (Ass != null)
+            {
+                Gizmos.DrawWireSphere(Ass.position, 0.1f);
+            }
+        }
+#endif
 
         #endregion
         
