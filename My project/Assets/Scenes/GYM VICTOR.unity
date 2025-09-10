@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 438908136}
   - component: {fileID: 438908135}
   - component: {fileID: 438908134}
+  - component: {fileID: 438908140}
   m_Layer: 0
   m_Name: NMY
   m_TagString: Untagged
@@ -535,6 +536,20 @@ Transform:
   - {fileID: 1169331930}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &438908140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438908133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974b4420226c9354a844d2f7c8a205c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Temporaire.TempPlayerMovement
+  moveSpeed: 2
+  playerInput: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +701,7 @@ GameObject:
   - component: {fileID: 613222762}
   - component: {fileID: 613222761}
   - component: {fileID: 613222766}
+  - component: {fileID: 613222767}
   m_Layer: 0
   m_Name: P1
   m_TagString: Untagged
@@ -967,6 +983,20 @@ MonoBehaviour:
   leftFlag: {fileID: 433934169}
   rightFlag: {fileID: 1832928887}
   epsilon: 1
+--- !u!114 &613222767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613222760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974b4420226c9354a844d2f7c8a205c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Temporaire.TempPlayerMovement
+  moveSpeed: 2
+  playerInput: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

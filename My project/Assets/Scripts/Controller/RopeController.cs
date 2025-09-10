@@ -186,7 +186,7 @@ namespace Controller
 
         #region Debug
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR //for the final build here for Debug so all good no worry
         private void OnDrawGizmos()
         {
             if (enemy != null)
