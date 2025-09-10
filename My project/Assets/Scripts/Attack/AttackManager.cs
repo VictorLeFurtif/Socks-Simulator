@@ -6,11 +6,13 @@ public class AttackManager : MonoBehaviour
     private float radius;
     private Vector3 startRaycast;
     private bool isInArea = false;
+    public bool canCounter;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerController enemy;
     [SerializeField] private PlayerController player;
+    [SerializeField] private AttackManager ennemyAttack;
 
     private void OnEnable()
     {
@@ -49,9 +51,23 @@ public class AttackManager : MonoBehaviour
 
     public void OnAttackEnd()
     {
-        //TODO envoyer un signal pour stunt
         Debug.Log("dealDamage");
+        if(canCounter)
+            return;
         EventManager.UpdateStunAction?.Invoke(enemy);
+    }
+
+    public void SetCounterPossible() => canCounter = !canCounter ;
+
+    public void PerformCounter()
+    {
+        if (ennemyAttack.canCounter)
+        {
+            Debug.Log("countering");
+
+            animator.SetTrigger("IsCounter");
+            ennemyAttack.SetCounterPossible();
+        }
     }
 
 }

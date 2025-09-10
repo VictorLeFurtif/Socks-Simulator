@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
                 inputSystem.Player.Move.performed += Move;
                 inputSystem.Player.Move.canceled += ctx => moveDirection = Vector2.zero;
                 inputSystem.Player.Attack.performed += Attack;
+                inputSystem.Player.Counter.performed += Counter;
                 break;
             case ePlayerNum.player2:
                 Debug.Log("player2");
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
                 inputSystem.Player1.Move.performed += Move;
                 inputSystem.Player1.Move.canceled += ctx => moveDirection = Vector2.zero;
                 inputSystem.Player1.Attack.performed += Attack;
+                inputSystem.Player1.Counter.performed += Counter;
                 break;
         }
 
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateStun(PlayerController pControler)
     {
-        pControler.isStunt = !pControler.isStunt;
+        pControler.isStunt = true;
         if (pControler.isStunt)
             StunBackward(pControler);
     }
@@ -78,6 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isStunt)
             return;
+        Debug.Log(isStunt);
         moveDirection = ctx.ReadValue<Vector2>();
         moveDirection = new Vector2(moveDirection.x, 0f);
     }
@@ -89,9 +92,16 @@ public class PlayerController : MonoBehaviour
         attackManager.DetectPlayer();
     }
 
+    private void Counter(InputAction.CallbackContext ctx)
+    {
+        if(isStunt)
+            return;
+        attackManager.PerformCounter();
+    }
+
     private void StunBackward(PlayerController pControler)
     {
-        if (transform.position.x < 0f)
+        if (transform.position.x <= 0f)
         {
             pControler.transform.DOJump(new Vector2(markers[0].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
         }

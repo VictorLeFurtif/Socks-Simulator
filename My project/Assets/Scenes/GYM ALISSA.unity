@@ -482,10 +482,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b66fe885335684e8deabb12c32d533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackManager
+  canCounter: 0
   spriteRenderer: {fileID: 531788696}
   animator: {fileID: 531788698}
   enemy: {fileID: 1454752088}
   player: {fileID: 531788699}
+  ennemyAttack: {fileID: 1454752089}
 --- !u!61 &531788701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -882,10 +884,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b66fe885335684e8deabb12c32d533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackManager
+  canCounter: 0
   spriteRenderer: {fileID: 1454752084}
   animator: {fileID: 1454752090}
   enemy: {fileID: 531788699}
   player: {fileID: 1454752088}
+  ennemyAttack: {fileID: 531788700}
 --- !u!95 &1454752090
 Animator:
   serializedVersion: 7
