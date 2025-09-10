@@ -1,13 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
     private float radius;
     private Vector3 startRaycast;
+    private bool isInArea = false;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerController enemy;
+    [SerializeField] private PlayerController player;
 
     private void OnEnable()
     {
@@ -19,15 +22,23 @@ public class AttackManager : MonoBehaviour
         radius = spriteRenderer.bounds.extents.x + 0.2f;
     }
 
-    private void DetectPlayer()
+    public void DetectPlayer()
     {
-        startRaycast = new Vector3(transform.position.x - radius, transform.position.y, transform.position.z);
+      if(isInArea)
+        StartAttack();
 
-        RaycastHit2D hit = Physics2D.Raycast(startRaycast, Vector2.left, 2f);
+    }
 
-        if (hit.collider != null && hit.collider.gameObject.CompareTag("Player") && hit.collider.gameObject != gameObject)
-            StartAttack();
+    private void OnTriggerEnter2D(Collider2D pCollider)
+    {
+        if (pCollider.gameObject.CompareTag("Player") && !isInArea)
+            isInArea = true;
+    }
 
+    private void OnTriggerExit2D(Collider2D pCollider)
+    {
+        if (pCollider.gameObject.CompareTag("Player"))
+            isInArea = false;
     }
 
     private void StartAttack()

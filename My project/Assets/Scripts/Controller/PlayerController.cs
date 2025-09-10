@@ -21,15 +21,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ForceMode2D forceType;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private GameObject[] markers;
-    [SerializeField] private float jumpPower = 3f;
+    [SerializeField] private float jumpPower = 5f;
     [SerializeField] private float durationJump = 1f;
-    [SerializeField] private ePlayerNum player;
+    [SerializeField] private AttackManager attackManager;
+    public ePlayerNum playerNum;
 
     private void OnEnable()
     {
         EventManager.UpdateStunAction += UpdateStun;
         inputSystem = new InputSystem_Actions();
-        switch (player)
+        switch (playerNum)
         {
             case ePlayerNum.player1:
                 Debug.Log("player1");
@@ -85,7 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isStunt)
             return;
-        EventManager.attackInput?.Invoke();
+        attackManager.DetectPlayer();
     }
 
     private void StunBackward(PlayerController pControler)
