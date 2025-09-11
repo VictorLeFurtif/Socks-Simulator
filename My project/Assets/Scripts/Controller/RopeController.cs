@@ -4,7 +4,7 @@ using Interface;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI; // ⚡ Nouveau Input System
+using UnityEngine.UI; 
 
 namespace Controller
 {
@@ -54,6 +54,7 @@ namespace Controller
                 if (stunValue <= 0)
                 {
                     CurrentKoState = KoState.NotKo;
+                    pc.isStunt = false;
                     if (enemy != null) enemy.lineRenderer.enabled = false;
                     dragging = false;
                     HideAllFlags();
@@ -85,10 +86,13 @@ namespace Controller
         public KoState CurrentKoState
         {
             get => currentKoState;
-            private set
+            set
             {
                 currentKoState = value;
-                Debug.Log($"[{name}] KO STATE -> {currentKoState}");
+                if (value == KoState.Ko)
+                {
+                    StunValue = maxStunValue;
+                }
             }
         }
 
@@ -113,7 +117,8 @@ namespace Controller
         [SerializeField, Tooltip("Slider representing stun value")]
         private Slider stunSlider;
 
-        
+        [Header("Player Controller")] [SerializeField]
+        private PlayerController pc;
         #endregion
 
         #region Unity Methods
@@ -126,12 +131,6 @@ namespace Controller
         private void Update()
         {
             TimerStun();
-
-            if (Keyboard.current[Key.Y].wasPressedThisFrame && currentPlayerPlacement == PlayerPlacement.Right)
-            {
-                currentKoState = KoState.Ko;
-                StunValue = maxStunValue;
-            }
             
             if (CurrentKoState == KoState.NotKo)
             {

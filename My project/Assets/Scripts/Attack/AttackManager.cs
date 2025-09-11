@@ -1,4 +1,6 @@
 using System.Collections;
+using Controller;
+using Enum;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,11 +20,15 @@ public class AttackManager : MonoBehaviour
     [SerializeField] private float attackCooldown = 0.5f;
     [SerializeField] private Slider playerSlider;
     [SerializeField] private float looseSlider = 2f;
+    [SerializeField] private RopeController rp;
 
     public void DetectPlayer()
     {
+        Debug.Log($"bool : isInArea = {isInArea}, isAttacking = {isAttacking}, enemy is attacking = {ennemyAttack.isAttacking}");
         if (isInArea && !isAttacking && !ennemyAttack.isAttacking)
+        {
             StartAttack();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D pCollider)
@@ -40,6 +46,7 @@ public class AttackManager : MonoBehaviour
     private void StartAttack()
     {
         isAttacking = true;
+        Debug.Log("Attacking");
         animator.SetTrigger("IsAttacking");
 
         //TODO hurt animation
@@ -106,6 +113,7 @@ public class AttackManager : MonoBehaviour
         {
             playerSlider.value = 0;
             playerController.isStunt = true;
+            rp.CurrentKoState = KoState.Ko;
         }
 
     }
