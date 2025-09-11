@@ -175,7 +175,7 @@ Transform:
   m_GameObject: {fileID: 133641560}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.25, y: -0.14568, z: 0}
+  m_LocalPosition: {x: -7.25, y: 4.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -408,7 +408,7 @@ Transform:
   m_GameObject: {fileID: 299137688}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 4.98, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -518,7 +518,7 @@ Transform:
   m_GameObject: {fileID: 834381966}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.27, y: -3.9403, z: 0}
+  m_LocalPosition: {x: 7.27, y: -1.08, z: 0}
   m_LocalScale: {x: 18.006838, y: 1.932, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -684,7 +684,7 @@ Transform:
   m_GameObject: {fileID: 1130720032}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.25, y: -0.14568, z: 0}
+  m_LocalPosition: {x: -7.25, y: 4.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -827,7 +827,7 @@ Transform:
   m_GameObject: {fileID: 1481619560}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.25, y: -0.14568, z: 0}
+  m_LocalPosition: {x: -7.25, y: 1.9200001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -991,6 +991,8 @@ MonoBehaviour:
   durationJump: 1
   attackManager: {fileID: 1747572029}
   playerNum: 1
+  ennemy: {fileID: 1935864695}
+  distancePush: 2
 --- !u!114 &1747572031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1007,8 +1009,9 @@ MonoBehaviour:
   Ass: {fileID: 1232100659}
   Head: {fileID: 60980344}
   minDistanceToGrab: 2
-  maxStunValue: 4.88
+  maxStunValue: 10
   stunValueToTakeOut: 0.3
+  flagDistance: 1.87
   releaseKey: 56
   dragKey: 84
   currentKoState: 1
@@ -1020,6 +1023,7 @@ MonoBehaviour:
   dragging: 0
   stunSlider: {fileID: 6066064537157541622}
   pc: {fileID: 1747572030}
+  attackManager: {fileID: 1747572029}
 --- !u!120 &1747572032
 LineRenderer:
   serializedVersion: 2
@@ -1252,6 +1256,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1935864695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8723019058609988545, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+  m_PrefabInstance: {fileID: 4936011553098359917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2008717269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,7 +2287,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
   m_PrefabInstance: {fileID: 4936011553098359917}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1935864695}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57651bdd5134d7847b61b3a8ab14695c, type: 3}
@@ -2549,6 +2558,10 @@ PrefabInstance:
       value: -0.0050303936
       objectReference: {fileID: 0}
     - target: {fileID: 2934980116777928790, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: ennemy
+      value: 
+      objectReference: {fileID: 1747572025}
+    - target: {fileID: 2934980116777928790, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: playerNum
       value: 0
       objectReference: {fileID: 0}
@@ -2560,6 +2573,14 @@ PrefabInstance:
       propertyPath: 'markers.Array.data[1]'
       value: 
       objectReference: {fileID: 1115144835}
+    - target: {fileID: 2938798854383453031, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938798854383453031, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.18253899
+      objectReference: {fileID: 0}
     - target: {fileID: 4633832220740660274, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.864248
@@ -2640,6 +2661,18 @@ PrefabInstance:
       propertyPath: stunSlider
       value: 
       objectReference: {fileID: 4363924705371382922}
+    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: flagDistance
+      value: 1.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: maxStunValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: attackManager
+      value: 
+      objectReference: {fileID: 8361313266364614248}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3441,7 +3474,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7981356175789211043, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
   m_PrefabInstance: {fileID: 4936011553098359917}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1935864695}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0b66fe885335684e8deabb12c32d533, type: 3}
@@ -3452,7 +3485,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2934980116777928790, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
   m_PrefabInstance: {fileID: 4936011553098359917}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1935864695}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c83a91f8e519d4459c09e82b0b5b60e, type: 3}

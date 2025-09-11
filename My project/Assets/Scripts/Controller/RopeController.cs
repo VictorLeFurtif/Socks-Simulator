@@ -33,6 +33,9 @@ namespace Controller
         [SerializeField, Range(0.1f, 2f), Tooltip("Stun value reduced per button press")]
         private float stunValueToTakeOut = 0.2f;
         
+        [SerializeField, Range(0.1f, 5f), Tooltip("Distance from ko player and the flag")]
+        private float flagDistance;
+        
         private float stunValue;
 
         public float StunValue
@@ -48,16 +51,17 @@ namespace Controller
                     stunSlider.minValue = 0f;
                     stunSlider.value = (currentKoState == KoState.Ko) ? stunValue : 0f;
                 }
-
-                Debug.Log($"[{name}] StunValue -> {stunValue:F2}");
+                
 
                 if (stunValue <= 0)
                 {
                     CurrentKoState = KoState.NotKo;
                     pc.isStunt = false;
-                    if (enemy != null) enemy.lineRenderer.enabled = false;
-                    dragging = false;
+                    enemy.dragging = false;
+                    lineRenderer.enabled = false;
                     HideAllFlags();
+                    attackManager.ResetSlider();
+                    stunSlider.value = stunSlider.maxValue;
                 }
             }
         }
@@ -110,15 +114,17 @@ namespace Controller
         private float epsilon = 0.5f;
 
         [Header("Runtime State")]
-        [SerializeField, ReadOnly]
+        [SerializeField]
         private bool dragging = false;
-
+        
         [Header("UI Components")]
         [SerializeField, Tooltip("Slider representing stun value")]
         private Slider stunSlider;
 
-        [Header("Player Controller")] [SerializeField]
+        [Header("Player Controller & Attack Manager")] [SerializeField]
         private PlayerController pc;
+
+        [SerializeField] private AttackManager attackManager;
         #endregion
 
         #region Unity Methods
@@ -130,6 +136,11 @@ namespace Controller
 
         private void Update()
         {
+            if (currentPlayerPlacement == PlayerPlacement.Left)
+            {
+                Debug.Log(dragging);  
+            }
+            
             TimerStun();
             
             if (CurrentKoState == KoState.NotKo)
@@ -185,6 +196,7 @@ namespace Controller
             if (won)
             {
                 enemy.CurrentPlayerState = PlayerState.Dead;
+                Debug.Log($"{enemy} Lose");
             }
         }
 
@@ -197,10 +209,18 @@ namespace Controller
         private void CheckForFlagsVisuals()
         {
             HideAllFlags();
-            if (currentPlayerPlacement == PlayerPlacement.Left) 
+            
+            if (currentPlayerPlacement == PlayerPlacement.Left)
+            {
                 leftFlag.SetActive(true);
-            else 
+                leftFlag.transform.position = new Vector2(enemy.transform.position.x - flagDistance, enemy.transform.position.y);
+            }
+            else
+            {
                 rightFlag.SetActive(true);
+                rightFlag.transform.position = new Vector2(enemy.transform.position.x + flagDistance,enemy.transform.position.y);
+            }
+                
         }
         
         private void HideAllFlags()

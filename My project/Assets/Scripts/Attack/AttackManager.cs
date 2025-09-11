@@ -115,7 +115,11 @@ public class AttackManager : MonoBehaviour
             playerController.isStunt = true;
             rp.CurrentKoState = KoState.Ko;
         }
+    }
 
+    public void ResetSlider()
+    {
+        playerSlider.value = playerSlider.maxValue;
     }
 
 }
