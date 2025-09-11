@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Enum;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace Controller
@@ -26,7 +27,6 @@ namespace Controller
 
         private void OnEnable()
         {
-
             inputSystem = new InputSystem_Actions();
 
             //TODO trouver un moyens de faire plus propre c moche
@@ -36,6 +36,8 @@ namespace Controller
                     inputSystem.Player.Enable();
                     inputSystem.Player.Move.performed += Move;
                     inputSystem.Player.Move.canceled += ctx => moveDirection = Vector2.zero;
+                    //inputSystem.Player.Look.performed += GetMousePosX;
+                    //inputSystem.Player.Look.canceled += ctx => moveDirection = Vector2.zero;
                     inputSystem.Player.Attack.performed += Attack;
                     inputSystem.Player.Counter.performed += Counter;
                     break;
@@ -43,6 +45,8 @@ namespace Controller
                     inputSystem.Player1.Enable();
                     inputSystem.Player1.Move.performed += Move;
                     inputSystem.Player1.Move.canceled += ctx => moveDirection = Vector2.zero;
+                    //inputSystem.Player1.Look.performed += GetMousePosY;
+                    //inputSystem.Player1.Look.canceled += ctx => moveDirection = Vector2.zero;
                     inputSystem.Player1.Attack.performed += Attack;
                     inputSystem.Player1.Counter.performed += Counter;
                     break;
@@ -57,13 +61,28 @@ namespace Controller
         {
             CheckBorderCollision();
             rb.AddForce(moveDirection * speed, forceType);
+            //rb.linearVelocity = new Vector2(moveDirection.x * speed, rb.linearVelocity.y);
+        }
+
+        private void GetMousePosX(InputAction.CallbackContext context)
+        {
+            Vector2 lTemp = context.ReadValue<Vector2>();
+            if (lTemp.x > 1f || lTemp.x < -1f)
+                moveDirection = new Vector2(lTemp.x, 0f);
+        }
+        
+        private void GetMousePosY(InputAction.CallbackContext context)
+        {
+            Vector2 lTemp = context.ReadValue<Vector2>();
+            if(lTemp.y > 1f || lTemp.y < -1f)
+                moveDirection = new Vector2(lTemp.y, 0f);
         }
 
         public void UpdateStun()
         {
-            int lNumPlayer = 0; 
+            int lNumPlayer = 0;
             if (transform.position.x > 0f)
-                lNumPlayer =1;
+                lNumPlayer = 1;
             StunBackward(lNumPlayer);
         }
 
@@ -85,9 +104,8 @@ namespace Controller
         public void Attack(InputAction.CallbackContext ctx)
         {
             if (isStunt)
-            {
                 return;
-            }
+
             attackManager.DetectPlayer();
         }
 
@@ -98,9 +116,9 @@ namespace Controller
             attackManager.PerformCounter();
         }
 
-        private void StunBackward( int pDirection)
+        private void StunBackward(int pDirection)
         {
-            Vector2 lDir = (transform.position.x - ennemy.transform.position.x > 0) ? Vector2.right : Vector2.left; 
+            Vector2 lDir = (transform.position.x - ennemy.transform.position.x > 0) ? Vector2.right : Vector2.left;
 
             transform.DOMove(new Vector2(transform.position.x + lDir.x * distancePush, transform.position.y), 1f);
         }
