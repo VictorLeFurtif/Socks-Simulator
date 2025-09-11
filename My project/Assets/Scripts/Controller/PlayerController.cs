@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 moveDirection = new Vector2();
     private float radius;
-    private bool isStunt;
+    public bool isStunt;
     private InputSystem_Actions inputSystem;
 
     [SerializeField] private int speed = 100;
@@ -50,9 +50,8 @@ public class PlayerController : MonoBehaviour
                 inputSystem.Player1.Counter.performed += Counter;
                 break;
         }
-
-
     }
+
     private void Start()
     {
         radius = spriteRenderer.bounds.extents.x;
@@ -65,7 +64,6 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateStun(PlayerController pControler)
     {
-        pControler.isStunt = true;
         int lNumPlayer = 0; 
         if (transform.position.x > 0f)
             lNumPlayer =1;
@@ -74,7 +72,6 @@ public class PlayerController : MonoBehaviour
 
     private void CheckBorderCollision()
     {
-
         float camWidth = Camera.main.orthographicSize * Camera.main.aspect;
         Vector3 posToCam = new Vector3(Mathf.Clamp(transform.position.x, -camWidth + radius, camWidth - radius), transform.position.y, transform.position.z);
         transform.position = posToCam;
@@ -82,23 +79,23 @@ public class PlayerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext ctx)
     {
-        //if (isStunt)
-        //return;
+        if (isStunt)
+            return;
         moveDirection = ctx.ReadValue<Vector2>();
         moveDirection = new Vector2(moveDirection.x, 0f);
     }
 
     public void Attack(InputAction.CallbackContext ctx)
     {
-        //if (isStunt)
-        ///return;
+        if (isStunt)
+            return;
         attackManager.DetectPlayer();
     }
 
     private void Counter(InputAction.CallbackContext ctx)
     {
-        //if(isStunt)
-        //return;
+        if (isStunt)
+            return;
         attackManager.PerformCounter();
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackManager : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class AttackManager : MonoBehaviour
 
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator animator;
-    [SerializeField] private PlayerController enemy;
+    //[SerializeField] private PlayerController enemy;
+    [SerializeField] private PlayerController playerController;
     [SerializeField] private AttackManager ennemyAttack;
     [SerializeField] private float attackCooldown = 0.5f;
+    [SerializeField] private Slider playerSlider;
+    [SerializeField] private float looseSlider = 2f;
 
     public void DetectPlayer()
     {
@@ -44,7 +48,7 @@ public class AttackManager : MonoBehaviour
     public void OnAttackEnd()
     {
         if (!wasCountered)
-            EventManager.UpdateStunAction?.Invoke(enemy);
+            ennemyAttack.UpdateSlider();
 
         StartCoroutine(ResetAttackState());
     }
@@ -88,7 +92,22 @@ public class AttackManager : MonoBehaviour
 
     public void OnCounterEnd()
     {
+        ennemyAttack.UpdateSlider();
         StartCoroutine(ResetAttackState());
+    }
+
+    private void UpdateSlider()
+    {
+        EventManager.UpdateStunAction?.Invoke(playerController);
+
+        if (playerSlider.value - looseSlider > 0)
+            playerSlider.value -= looseSlider;
+        else
+        {
+            playerSlider.value = 0;
+            playerController.isStunt = true;
+        }
+
     }
 
 }
