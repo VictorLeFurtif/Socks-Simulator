@@ -1,46 +1,113 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackManager : MonoBehaviour
 {
-    private float radius;
-    private Vector3 startRaycast;
+    public bool isAttacking;
+    private bool isInArea = false;
+    public bool canCounter;
+    private bool wasCountered;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator animator;
-    [SerializeField] private PlayerController enemy;
+    //[SerializeField] private PlayerController enemy;
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private AttackManager ennemyAttack;
+    [SerializeField] private float attackCooldown = 0.5f;
+    [SerializeField] private Slider playerSlider;
+    [SerializeField] private float looseSlider = 2f;
 
-    private void OnEnable()
+    public void DetectPlayer()
     {
-        EventManager.attackInput += DetectPlayer;
-    }
-
-    void Start()
-    {
-        radius = spriteRenderer.bounds.extents.x + 0.2f;
-    }
-
-    private void DetectPlayer()
-    {
-        startRaycast = new Vector3(transform.position.x - radius, transform.position.y, transform.position.z);
-
-        RaycastHit2D hit = Physics2D.Raycast(startRaycast, Vector2.left, 2f);
-
-        if (hit.collider != null && hit.collider.gameObject.CompareTag("Player") && hit.collider.gameObject != gameObject)
+        if (isInArea && !isAttacking && !ennemyAttack.isAttacking)
             StartAttack();
+    }
 
+    private void OnTriggerEnter2D(Collider2D pCollider)
+    {
+        if (pCollider.gameObject.CompareTag("Player") && !isInArea)
+            isInArea = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D pCollider)
+    {
+        if (pCollider.gameObject.CompareTag("Player"))
+            isInArea = false;
     }
 
     private void StartAttack()
     {
+        isAttacking = true;
         animator.SetTrigger("IsAttacking");
-        //TODO hurt animation and counter
+
+        //TODO hurt animation
     }
 
     public void OnAttackEnd()
     {
-        //TODO envoyer un signal pour stunt
-        Debug.Log("dealDamage");
-        EventManager.UpdateStunAction?.Invoke(enemy);
+        if (!wasCountered)
+            ennemyAttack.UpdateSlider();
+
+        StartCoroutine(ResetAttackState());
+    }
+
+    private IEnumerator ResetAttackState()
+    {
+        yield return new WaitForSeconds(attackCooldown);
+
+        isAttacking = false;
+        canCounter = false;
+        wasCountered = false;
+
+    }
+
+    public void SetCounterPossible() => canCounter = !canCounter;
+
+    public void PerformCounter()
+    {
+        if (ennemyAttack.canCounter && !wasCountered)
+        {
+            ennemyAttack.InterruptAttack();
+
+            wasCountered = true;
+            canCounter = false;
+            animator.SetTrigger("IsCounter");
+        }
+    }
+
+    public void InterruptAttack()
+    {
+        if (isAttacking)
+        {
+            isAttacking = false;
+            canCounter = false;
+            wasCountered = true;
+
+            animator.ResetTrigger("IsAttacking");
+        }
+    }
+
+
+    public void OnCounterEnd()
+    {
+        ennemyAttack.UpdateSlider();
+        StartCoroutine(ResetAttackState());
+    }
+
+    private void UpdateSlider()
+    {
+        EventManager.UpdateStunAction?.Invoke(playerController);
+
+        if (playerSlider.value - looseSlider > 0)
+            playerSlider.value -= looseSlider;
+        else
+        {
+            playerSlider.value = 0;
+            playerController.isStunt = true;
+        }
+
     }
 
 }

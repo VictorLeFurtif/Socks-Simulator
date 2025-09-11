@@ -4,11 +4,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum ePlayerNum
+{
+    Player = 1,
+    Player1 = 0
+}
 public class PlayerController : MonoBehaviour
 {
     private Vector2 moveDirection = new Vector2();
     private float radius;
-    private bool isStunt;
+    public bool isStunt;
     private InputSystem_Actions inputSystem;
 
     [SerializeField] private int speed = 100;
@@ -16,14 +21,37 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ForceMode2D forceType;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private GameObject[] markers;
-    [SerializeField] private float jumpPower = 3f;
+    [SerializeField] private float jumpPower = 5f;
     [SerializeField] private float durationJump = 1f;
+    [SerializeField] private AttackManager attackManager;
+    public ePlayerNum playerNum;
 
     private void OnEnable()
     {
         EventManager.UpdateStunAction += UpdateStun;
 
+        inputSystem = new InputSystem_Actions();
+
+        //TODO trouver un moyens de faire plus propre c moche
+        switch (playerNum)
+        {
+            case ePlayerNum.Player:
+                inputSystem.Player.Enable();
+                inputSystem.Player.Move.performed += Move;
+                inputSystem.Player.Move.canceled += ctx => moveDirection = Vector2.zero;
+                inputSystem.Player.Attack.performed += Attack;
+                inputSystem.Player.Counter.performed += Counter;
+                break;
+            case ePlayerNum.Player1:
+                inputSystem.Player1.Enable();
+                inputSystem.Player1.Move.performed += Move;
+                inputSystem.Player1.Move.canceled += ctx => moveDirection = Vector2.zero;
+                inputSystem.Player1.Attack.performed += Attack;
+                inputSystem.Player1.Counter.performed += Counter;
+                break;
+        }
     }
+
     private void Start()
     {
         radius = spriteRenderer.bounds.extents.x;
@@ -36,14 +64,14 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateStun(PlayerController pControler)
     {
-        pControler.isStunt = !pControler.isStunt;
-        if(pControler.isStunt)
-            StunBackward(pControler);
+        int lNumPlayer = 0; 
+        if (transform.position.x > 0f)
+            lNumPlayer =1;
+        StunBackward(pControler, lNumPlayer);
     }
 
     private void CheckBorderCollision()
     {
-
         float camWidth = Camera.main.orthographicSize * Camera.main.aspect;
         Vector3 posToCam = new Vector3(Mathf.Clamp(transform.position.x, -camWidth + radius, camWidth - radius), transform.position.y, transform.position.z);
         transform.position = posToCam;
@@ -53,32 +81,26 @@ public class PlayerController : MonoBehaviour
     {
         if (isStunt)
             return;
-        if (ctx.started)
-        {
-            moveDirection = ctx.ReadValue<Vector2>();
-            moveDirection = new Vector2(moveDirection.x, 0f);
-        }
-
-        if (ctx.canceled)
-            moveDirection = Vector2.zero;
+        moveDirection = ctx.ReadValue<Vector2>();
+        moveDirection = new Vector2(moveDirection.x, 0f);
     }
 
-    public void Attack()
+    public void Attack(InputAction.CallbackContext ctx)
     {
         if (isStunt)
             return;
-        EventManager.attackInput?.Invoke();
+        attackManager.DetectPlayer();
     }
 
-    private void StunBackward(PlayerController pControler)
+    private void Counter(InputAction.CallbackContext ctx)
     {
-        if(transform.position.x < 0f)
-        {
-            pControler.transform.DOJump(new Vector2(markers[0].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
-        }
-        else
-        {
-            pControler.transform.DOJump(new Vector2(markers[1].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
-        }
+        if (isStunt)
+            return;
+        attackManager.PerformCounter();
+    }
+
+    private void StunBackward(PlayerController pControler, int pDirection)
+    {
+        pControler.transform.DOJump(new Vector2(markers[pDirection].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
     }
 }
