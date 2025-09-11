@@ -171,7 +171,7 @@ namespace Controller
 
             Debug.Log(CanGrab(enemy.transform));
 
-            if (Keyboard.current[dragKey].wasPressedThisFrame && !dragging && CurrentKoState == KoState.NotKo && CanGrab(enemy.transform))
+            if (Keyboard.current[dragKey].wasPressedThisFrame && !dragging && enemy.CurrentKoState == KoState.Ko && CanGrab(enemy.transform))
             {
                 StartDragging();
             }
