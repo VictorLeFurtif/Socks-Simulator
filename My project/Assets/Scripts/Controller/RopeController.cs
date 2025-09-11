@@ -77,7 +77,7 @@ namespace Controller
         [SerializeField] public KoState currentKoState = KoState.NotKo;
 
         [SerializeField, Tooltip("Left or Right player position")]
-        private PlayerPlacement currentPlayerPlacement = PlayerPlacement.Left;
+        public PlayerPlacement currentPlayerPlacement = PlayerPlacement.Left;
 
         private PlayerState currentPlayerState = PlayerState.Idle;
 
@@ -126,6 +126,8 @@ namespace Controller
         private PlayerController pc;
 
         [SerializeField] private AttackManager attackManager;
+
+        [SerializeField] private float tensionStrength;
         #endregion
 
         #region Unity Methods
@@ -137,12 +139,6 @@ namespace Controller
 
         private void Update()
         {
-
-            if (currentPlayerPlacement == PlayerPlacement.Left)
-            {
-                //Debug.Log(dragging);  
-            }
-
             TimerStun();
 
             if (CurrentKoState == KoState.NotKo)
@@ -153,7 +149,8 @@ namespace Controller
             {
                 TryReleaseRope();
             }
-
+            
+            RopeTension();
         }
 
         private void LateUpdate()
@@ -166,6 +163,21 @@ namespace Controller
 
         #region RopeController Methods For Attacker
 
+        private void RopeTension()
+        {
+            if (dragging && pc.rb.linearVelocity.x != 0) 
+            {
+                if (currentPlayerPlacement == PlayerPlacement.Left)
+                {
+                    pc.rb.AddForce(-tensionStrength * Vector2.left, ForceMode2D.Force);   
+                }
+                else
+                {
+                    pc.rb.AddForce(-tensionStrength * Vector2.right, ForceMode2D.Force);  
+                }
+            }
+        }
+        
         public void DragRope()
         {
 
@@ -280,6 +292,7 @@ namespace Controller
 
         #endregion
 
+        
         #region Debug
 
 #if UNITY_EDITOR
@@ -326,4 +339,6 @@ namespace Controller
 
         #endregion
     }
+
+    
 }

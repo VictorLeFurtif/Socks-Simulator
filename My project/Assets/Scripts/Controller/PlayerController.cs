@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using Enum;
 using UnityEngine;
@@ -14,7 +15,7 @@ namespace Controller
         private InputSystem_Actions inputSystem;
 
         [SerializeField] private int speed = 100;
-        [SerializeField] private Rigidbody2D rb;
+        public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private GameObject[] markers;
@@ -119,9 +120,41 @@ namespace Controller
 
         private void StunBackward(int pDirection)
         {
-            Vector2 lDir = (transform.position.x - ennemy.transform.position.x > 0) ? Vector2.right : Vector2.left;
+            Vector2 targetPosition;
 
-            transform.DOMove(new Vector2(transform.position.x + lDir.x * distancePush, transform.position.y), 1f);
+            if (ropeController.currentPlayerPlacement == PlayerPlacement.Left)
+            {
+                targetPosition = new Vector2(transform.position.x - distancePush, transform.position.y);
+            }
+            else
+            {
+                targetPosition = new Vector2(transform.position.x + distancePush, transform.position.y);
+            }
+
+            StartCoroutine(MoveToExactPosition(targetPosition));
+        }
+
+        private IEnumerator MoveToExactPosition(Vector2 targetPosition)
+        {
+            Vector2 startPosition = transform.position;
+            float duration = 0.5f;
+            float elapsedTime = 0f;
+    
+            while (elapsedTime < duration)
+            {
+                elapsedTime += Time.fixedDeltaTime;
+                float t = elapsedTime / duration;
+        
+                float height = 4f * t * (1f - t); 
+        
+                Vector2 currentPos = Vector2.Lerp(startPosition, targetPosition, t);
+                currentPos.y += height * 2f; 
+        
+                rb.MovePosition(currentPos);
+        
+                yield return new WaitForFixedUpdate();
+            }
+            rb.MovePosition(targetPosition);
         }
     }
 }
