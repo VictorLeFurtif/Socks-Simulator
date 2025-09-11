@@ -24,7 +24,7 @@ public class AttackManager : MonoBehaviour
 
     public void DetectPlayer()
     {
-        Debug.Log($"bool : isInArea = {isInArea}, isAttacking = {isAttacking}, enemy is attacking = {ennemyAttack.isAttacking}");
+       
         if (isInArea && !isAttacking && !ennemyAttack.isAttacking)
         {
             StartAttack();
@@ -46,7 +46,7 @@ public class AttackManager : MonoBehaviour
     private void StartAttack()
     {
         isAttacking = true;
-        Debug.Log("Attacking");
+       
         animator.SetTrigger("IsAttacking");
 
         //TODO hurt animation
@@ -112,10 +112,13 @@ public class AttackManager : MonoBehaviour
         else
         {
             playerSlider.value = 0;
-            playerController.isStunt = true;
             rp.CurrentKoState = KoState.Ko;
         }
+    }
 
+    public void ResetSlider()
+    {
+        playerSlider.value = playerSlider.maxValue;
     }
 
 }

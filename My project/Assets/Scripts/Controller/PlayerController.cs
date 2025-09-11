@@ -24,6 +24,7 @@ namespace Controller
         [SerializeField] private PlayerPlacement playerNum;
         [SerializeField] private GameObject ennemy;
         [SerializeField] private float distancePush = 2f;
+        [SerializeField] private RopeController ropeController;
 
         private void OnEnable()
         {
@@ -95,7 +96,7 @@ namespace Controller
 
         public void Move(InputAction.CallbackContext ctx)
         {
-            if (isStunt)
+            if (ropeController.currentKoState == KoState.Ko)
                 return;
             moveDirection = ctx.ReadValue<Vector2>();
             moveDirection = new Vector2(moveDirection.x, 0f);
@@ -103,7 +104,7 @@ namespace Controller
 
         public void Attack(InputAction.CallbackContext ctx)
         {
-            if (isStunt)
+            if (ropeController.currentKoState == KoState.Ko)
                 return;
 
             attackManager.DetectPlayer();
@@ -111,7 +112,7 @@ namespace Controller
 
         private void Counter(InputAction.CallbackContext ctx)
         {
-            if (isStunt)
+            if (ropeController.currentKoState == KoState.Ko)
                 return;
             attackManager.PerformCounter();
         }

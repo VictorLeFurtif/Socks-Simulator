@@ -4,7 +4,7 @@ using Interface;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 namespace Controller
 {
@@ -29,10 +29,13 @@ namespace Controller
         [Header("Stun System")]
         [SerializeField, Range(1f, 10f), Tooltip("Maximum stun duration when grabbed")]
         private float maxStunValue = 5f;
-        
+
         [SerializeField, Range(0.1f, 2f), Tooltip("Stun value reduced per button press")]
         private float stunValueToTakeOut = 0.2f;
-        
+
+        [SerializeField, Range(0.1f, 5f), Tooltip("Distance from ko player and the flag")]
+        private float flagDistance;
+
         private float stunValue;
 
         public float StunValue
@@ -49,15 +52,16 @@ namespace Controller
                     stunSlider.value = (currentKoState == KoState.Ko) ? stunValue : 0f;
                 }
 
-                Debug.Log($"[{name}] StunValue -> {stunValue:F2}");
 
                 if (stunValue <= 0)
                 {
                     CurrentKoState = KoState.NotKo;
                     pc.isStunt = false;
-                    if (enemy != null) enemy.lineRenderer.enabled = false;
-                    dragging = false;
+                    enemy.dragging = false;
+                    lineRenderer.enabled = false;
                     HideAllFlags();
+                    attackManager.ResetSlider();
+                    stunSlider.value = stunSlider.maxValue;
                 }
             }
         }
@@ -68,9 +72,9 @@ namespace Controller
         private Key releaseKey = Key.Space;
         [SerializeField, Tooltip("Key to initiate rope drag")]
         private Key dragKey = Key.E;
-         
+
         [Header("State Machine")]
-        [SerializeField] private KoState currentKoState = KoState.NotKo;
+        [SerializeField] public KoState currentKoState = KoState.NotKo;
 
         [SerializeField, Tooltip("Left or Right player position")]
         private PlayerPlacement currentPlayerPlacement = PlayerPlacement.Left;
@@ -110,15 +114,18 @@ namespace Controller
         private float epsilon = 0.5f;
 
         [Header("Runtime State")]
-        [SerializeField, ReadOnly]
+        [SerializeField]
         private bool dragging = false;
 
         [Header("UI Components")]
         [SerializeField, Tooltip("Slider representing stun value")]
         private Slider stunSlider;
 
-        [Header("Player Controller")] [SerializeField]
+        [Header("Player Controller & Attack Manager")]
+        [SerializeField]
         private PlayerController pc;
+
+        [SerializeField] private AttackManager attackManager;
         #endregion
 
         #region Unity Methods
@@ -130,8 +137,14 @@ namespace Controller
 
         private void Update()
         {
+
+            if (currentPlayerPlacement == PlayerPlacement.Left)
+            {
+                //Debug.Log(dragging);  
+            }
+
             TimerStun();
-            
+
             if (CurrentKoState == KoState.NotKo)
             {
                 DragRope();
@@ -140,11 +153,12 @@ namespace Controller
             {
                 TryReleaseRope();
             }
-            
+
         }
 
         private void LateUpdate()
         {
+
             DrawLineRenderer(enemy?.Ass);
         }
 
@@ -154,37 +168,41 @@ namespace Controller
 
         public void DragRope()
         {
+
+            Debug.Log(CanGrab(enemy.transform));
+
             if (Keyboard.current[dragKey].wasPressedThisFrame && !dragging && CurrentKoState == KoState.NotKo && CanGrab(enemy.transform))
             {
                 StartDragging();
             }
-            
+
             if (dragging)
             {
                 CheckWinCondition();
             }
         }
-        
+
         private void StartDragging()
         {
             dragging = true;
             lineRenderer.enabled = true;
             CheckForFlagsVisuals();
-            
+
         }
-        
+
         private void CheckWinCondition()
         {
             bool won = false;
-            
-            if (currentPlayerPlacement == PlayerPlacement.Left) 
+
+            if (currentPlayerPlacement == PlayerPlacement.Left)
                 won = IsPlayerCloseToFlag(epsilon, leftFlag.transform);
-            if (currentPlayerPlacement == PlayerPlacement.Right) 
+            if (currentPlayerPlacement == PlayerPlacement.Right)
                 won = IsPlayerCloseToFlag(epsilon, rightFlag.transform);
 
             if (won)
             {
                 enemy.CurrentPlayerState = PlayerState.Dead;
+                Debug.Log($"{enemy} Lose");
             }
         }
 
@@ -193,32 +211,40 @@ namespace Controller
             if (flag == null) return false;
             return Mathf.Abs(transform.position.x - flag.position.x) < epsilon;
         }
-        
+
         private void CheckForFlagsVisuals()
         {
             HideAllFlags();
-            if (currentPlayerPlacement == PlayerPlacement.Left) 
+
+            if (currentPlayerPlacement == PlayerPlacement.Left)
+            {
                 leftFlag.SetActive(true);
-            else 
+                leftFlag.transform.position = new Vector2(enemy.transform.position.x - flagDistance, enemy.transform.position.y);
+            }
+            else
+            {
                 rightFlag.SetActive(true);
+                rightFlag.transform.position = new Vector2(enemy.transform.position.x + flagDistance, enemy.transform.position.y);
+            }
+
         }
-        
+
         private void HideAllFlags()
         {
             if (leftFlag != null) leftFlag.SetActive(false);
             if (rightFlag != null) rightFlag.SetActive(false);
         }
-        
+
         private bool CanGrab(Transform enemyTransform)
         {
             if (enemyTransform == null) return false;
             return Mathf.Abs(enemyTransform.position.x - transform.position.x) < minDistanceToGrab;
         }
-        
+
         #endregion
 
         #region RopeController Methods For Defenseur
-        
+
         public void TryReleaseRope()
         {
             if (Keyboard.current[releaseKey].wasPressedThisFrame && currentKoState == KoState.Ko)
@@ -241,12 +267,12 @@ namespace Controller
 
         private void DrawLineRenderer(Transform enemyPosition)
         {
-            if (!dragging || enemyPosition == null) 
+            if (!dragging || enemyPosition == null)
             {
                 lineRenderer.enabled = false;
                 return;
             }
-            
+
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, Head.position);
             lineRenderer.SetPosition(1, enemyPosition.position);
