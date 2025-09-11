@@ -96,6 +96,11 @@ namespace Controller
                 if (value == KoState.Ko)
                 {
                     StunValue = maxStunValue;
+                    pc.rb.bodyType = RigidbodyType2D.Kinematic;
+                }
+                else
+                {
+                    pc.rb.bodyType = RigidbodyType2D.Dynamic;
                 }
             }
         }

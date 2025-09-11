@@ -1288,7 +1288,7 @@ MonoBehaviour:
   minDistanceToGrab: 2
   maxStunValue: 10
   stunValueToTakeOut: 0.3
-  flagDistance: 1.87
+  flagDistance: 3.78
   releaseKey: 56
   dragKey: 84
   currentKoState: 1
@@ -2948,6 +2948,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1747572031}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: dragKey
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: leftFlag
       value: 
       objectReference: {fileID: 7394299305766398561}
@@ -2956,12 +2960,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1399875439706973124}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: releaseKey
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: stunSlider
       value: 
       objectReference: {fileID: 4363924705371382922}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: flagDistance
-      value: 1.78
+      value: 3.87
       objectReference: {fileID: 0}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: maxStunValue
