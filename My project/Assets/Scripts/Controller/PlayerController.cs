@@ -21,10 +21,11 @@ namespace Controller
         [SerializeField] private float durationJump = 1f;
         [SerializeField] private AttackManager attackManager;
         [SerializeField] private PlayerPlacement playerNum;
+        [SerializeField] private GameObject ennemy;
+        [SerializeField] private float distancePush = 2f;
 
         private void OnEnable()
         {
-            EventManager.UpdateStunAction += UpdateStun;
 
             inputSystem = new InputSystem_Actions();
 
@@ -58,12 +59,12 @@ namespace Controller
             rb.AddForce(moveDirection * speed, forceType);
         }
 
-        private void UpdateStun(PlayerController pControler)
+        public void UpdateStun()
         {
             int lNumPlayer = 0; 
             if (transform.position.x > 0f)
                 lNumPlayer =1;
-            StunBackward(pControler, lNumPlayer);
+            StunBackward(lNumPlayer);
         }
 
         private void CheckBorderCollision()
@@ -85,7 +86,6 @@ namespace Controller
         {
             if (isStunt)
             {
-                Debug.Log("Cancel Attack");
                 return;
             }
             attackManager.DetectPlayer();
@@ -98,9 +98,11 @@ namespace Controller
             attackManager.PerformCounter();
         }
 
-        private void StunBackward(PlayerController pControler, int pDirection)
+        private void StunBackward( int pDirection)
         {
-            pControler.transform.DOJump(new Vector2(markers[pDirection].transform.position.x, 0f), jumpPower, 1, durationJump).SetEase(Ease.OutQuad);
+            Vector2 lDir = (transform.position.x - ennemy.transform.position.x > 0) ? Vector2.right : Vector2.left; 
+
+            transform.DOMove(new Vector2(transform.position.x + lDir.x * distancePush, transform.position.y), 1f);
         }
     }
 }

@@ -105,7 +105,7 @@ public class AttackManager : MonoBehaviour
 
     private void UpdateSlider()
     {
-        EventManager.UpdateStunAction?.Invoke(playerController);
+        playerController.UpdateStun();
 
         if (playerSlider.value - looseSlider > 0)
             playerSlider.value -= looseSlider;
