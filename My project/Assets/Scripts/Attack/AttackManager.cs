@@ -1,7 +1,8 @@
-using System.Collections;
 using Controller;
 using Enum;
+using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,9 @@ public class AttackManager : MonoBehaviour
     [SerializeField] private Slider playerSlider;
     [SerializeField] private float looseSlider = 2f;
     [SerializeField] private RopeController rp;
+    [SerializeField] private GameObject shaderObj;
+    [SerializeField] private Renderer shaderMat;
+
 
     public void DetectPlayer()
     {
@@ -113,6 +117,7 @@ public class AttackManager : MonoBehaviour
         {
             playerSlider.value = 0;
             rp.CurrentKoState = KoState.Ko;
+            StartCoroutine(ShockWave());
         }
     }
 
@@ -121,4 +126,18 @@ public class AttackManager : MonoBehaviour
         playerSlider.value = playerSlider.maxValue;
     }
 
+    private IEnumerator ShockWave()
+    {
+        string lName = "_WaveDistanceFromCenter";
+        shaderObj.transform.position = transform.position;
+        while (shaderMat.material.GetFloat(lName) < 1)
+        {
+            shaderMat.material.SetFloat(lName, shaderMat.material.GetFloat(lName) + 0.005f);
+            yield return null;
+        }
+        if (!(shaderMat.material.GetFloat(lName) < 1))
+        {
+            shaderMat.material.SetFloat(lName, -0.1f);
+        }
+    }
 }

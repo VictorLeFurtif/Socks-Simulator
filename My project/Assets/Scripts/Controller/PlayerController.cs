@@ -72,11 +72,11 @@ namespace Controller
             if (lTemp.x > 1f || lTemp.x < -1f)
                 moveDirection = new Vector2(lTemp.x, 0f);
         }
-        
+
         private void GetMousePosY(InputAction.CallbackContext context)
         {
             Vector2 lTemp = context.ReadValue<Vector2>();
-            if(lTemp.y > 1f || lTemp.y < -1f)
+            if (lTemp.y > 1f || lTemp.y < -1f)
                 moveDirection = new Vector2(lTemp.y, 0f);
         }
 
@@ -122,6 +122,8 @@ namespace Controller
         {
             Vector2 targetPosition;
 
+
+
             if (ropeController.currentPlayerPlacement == PlayerPlacement.Left)
             {
                 targetPosition = new Vector2(transform.position.x - distancePush, transform.position.y);
@@ -139,19 +141,19 @@ namespace Controller
             Vector2 startPosition = transform.position;
             float duration = 0.5f;
             float elapsedTime = 0f;
-    
+
             while (elapsedTime < duration)
             {
                 elapsedTime += Time.fixedDeltaTime;
                 float t = elapsedTime / duration;
-        
-                float height = 4f * t * (1f - t); 
-        
+
+                float height = 4f * t * (1f - t);
+
                 Vector2 currentPos = Vector2.Lerp(startPosition, targetPosition, t);
-                currentPos.y += height * 2f; 
-        
+                currentPos.y += height * 2f;
+
                 rb.MovePosition(currentPos);
-        
+
                 yield return new WaitForFixedUpdate();
             }
             rb.MovePosition(targetPosition);
