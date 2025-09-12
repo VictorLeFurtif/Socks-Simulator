@@ -1,10 +1,12 @@
 using System;
+using Attack;
 using Enum;
 using Interface;
+using Manager;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 namespace Controller
 {
@@ -22,17 +24,6 @@ namespace Controller
         [Tooltip("Top anchor point for rope attachment")]
         public Transform Head;
 
-        [Header("Grab Settings")]
-        [SerializeField, Range(0.1f, 5f), Tooltip("Minimum distance required to grab enemy")]
-        private float minDistanceToGrab = 1.5f;
-
-        [Header("Stun System")]
-        [SerializeField, Range(1f, 10f), Tooltip("Maximum stun duration when grabbed")]
-        private float maxStunValue = 5f;
-        
-        [SerializeField, Range(0.1f, 2f), Tooltip("Stun value reduced per button press")]
-        private float stunValueToTakeOut = 0.2f;
-        
         private float stunValue;
 
         public float StunValue
@@ -40,24 +31,24 @@ namespace Controller
             get => stunValue;
             private set
             {
-                stunValue = Mathf.Clamp(value, 0f, maxStunValue);
+                stunValue = Mathf.Clamp(value, 0f, commonData.playerDataCommon.RopeData.maxStunValue);
 
                 if (stunSlider != null)
                 {
-                    stunSlider.maxValue = maxStunValue;
+                    stunSlider.maxValue = commonData.playerDataCommon.RopeData.maxStunValue;
                     stunSlider.minValue = 0f;
-                    stunSlider.value = (currentKoState == KoState.Ko) ? stunValue : 0f;
+                    stunSlider.value = (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko) ? stunValue : 0f;
                 }
 
-                Debug.Log($"[{name}] StunValue -> {stunValue:F2}");
 
                 if (stunValue <= 0)
                 {
                     CurrentKoState = KoState.NotKo;
-                    pc.isStunt = false;
-                    if (enemy != null) enemy.lineRenderer.enabled = false;
-                    dragging = false;
+                    enemy.commonData.playerDataCommon.RopeData.dragging = false;
+                    lineRenderer.enabled = false;
                     HideAllFlags();
+                    attackManager.ResetSlider();
+                    stunSlider.value = stunSlider.maxValue;
                 }
             }
         }
@@ -68,30 +59,33 @@ namespace Controller
         private Key releaseKey = Key.Space;
         [SerializeField, Tooltip("Key to initiate rope drag")]
         private Key dragKey = Key.E;
-         
-        [Header("State Machine")]
-        [SerializeField] private KoState currentKoState = KoState.NotKo;
+        
 
         [SerializeField, Tooltip("Left or Right player position")]
-        private PlayerPlacement currentPlayerPlacement = PlayerPlacement.Left;
+        public PlayerPlacement currentPlayerPlacement = PlayerPlacement.Left;
 
         private PlayerState currentPlayerState = PlayerState.Idle;
 
         public PlayerState CurrentPlayerState
         {
             get => currentPlayerState;
-            private set { currentPlayerState = value; }
+            private set => currentPlayerState = value;
         }
 
         public KoState CurrentKoState
         {
-            get => currentKoState;
+            get => commonData.playerDataCommon.RopeData.currentKoState;
             set
             {
-                currentKoState = value;
-                if (value == KoState.Ko)
+                commonData.playerDataCommon.RopeData.currentKoState = value;
+                if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 {
-                    StunValue = maxStunValue;
+                    StunValue = commonData.playerDataCommon.RopeData.maxStunValue;
+                    pc.rb.bodyType = RigidbodyType2D.Kinematic;
+                }
+                else
+                {
+                    pc.rb.bodyType = RigidbodyType2D.Dynamic;
                 }
             }
         }
@@ -99,26 +93,22 @@ namespace Controller
         [Header("Visual Components")]
         [SerializeField, Tooltip("Line renderer for rope visualization")]
         public LineRenderer lineRenderer;
-
-        [SerializeField, Tooltip("Flag shown when left player can win")]
-        private GameObject leftFlag;
-        [SerializeField, Tooltip("Flag shown when right player can win")]
-        private GameObject rightFlag;
-
-        [Header("Win Condition")]
-        [SerializeField, Range(0.1f, 2f), Tooltip("Distance threshold to flag for winning")]
-        private float epsilon = 0.5f;
-
-        [Header("Runtime State")]
-        [SerializeField, ReadOnly]
-        private bool dragging = false;
+        
 
         [Header("UI Components")]
         [SerializeField, Tooltip("Slider representing stun value")]
         private Slider stunSlider;
 
-        [Header("Player Controller")] [SerializeField]
+        [Header("Player Controller & Attack Manager")]
+        [SerializeField]
         private PlayerController pc;
+
+        [SerializeField] private AttackManager attackManager;
+
+        private DataHolderManager commonData;
+
+        [SerializeField] private GameObject leftFlag;
+        [SerializeField] private GameObject rightFlag;
         #endregion
 
         #region Unity Methods
@@ -126,12 +116,13 @@ namespace Controller
         private void Start()
         {
             HideAllFlags();
+            commonData = GetComponent<DataHolderManager>();
         }
 
         private void Update()
         {
             TimerStun();
-            
+
             if (CurrentKoState == KoState.NotKo)
             {
                 DragRope();
@@ -141,10 +132,12 @@ namespace Controller
                 TryReleaseRope();
             }
             
+            RopeTension();
         }
 
         private void LateUpdate()
         {
+
             DrawLineRenderer(enemy?.Ass);
         }
 
@@ -152,39 +145,58 @@ namespace Controller
 
         #region RopeController Methods For Attacker
 
+        private void RopeTension()
+        {
+            
+            if (commonData.playerDataCommon.RopeData.dragging && pc.rb.linearVelocity.x != 0) 
+            {
+                if (currentPlayerPlacement == PlayerPlacement.Left)
+                {
+                    pc.rb.AddForce(-commonData.playerDataCommon.RopeData.tensionStrength * Vector2.left, ForceMode2D.Force);   
+                }
+                else
+                {
+                    pc.rb.AddForce(-commonData.playerDataCommon.RopeData.tensionStrength * Vector2.right, ForceMode2D.Force);  
+                }
+            }
+        }
+        
         public void DragRope()
         {
-            if (Keyboard.current[dragKey].wasPressedThisFrame && !dragging && CurrentKoState == KoState.NotKo && CanGrab(enemy.transform))
+
+            if (Keyboard.current[dragKey].wasPressedThisFrame && !commonData.playerDataCommon.RopeData.dragging &&
+                enemy.commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && CanGrab(enemy.transform))
             {
                 StartDragging();
             }
-            
-            if (dragging)
+
+            if (commonData.playerDataCommon.RopeData.dragging)
             {
                 CheckWinCondition();
             }
         }
-        
+
         private void StartDragging()
         {
-            dragging = true;
+            commonData.playerDataCommon.RopeData.dragging = true;
             lineRenderer.enabled = true;
             CheckForFlagsVisuals();
-            
+
         }
-        
+
         private void CheckWinCondition()
         {
             bool won = false;
-            
-            if (currentPlayerPlacement == PlayerPlacement.Left) 
-                won = IsPlayerCloseToFlag(epsilon, leftFlag.transform);
-            if (currentPlayerPlacement == PlayerPlacement.Right) 
-                won = IsPlayerCloseToFlag(epsilon, rightFlag.transform);
+
+            if (currentPlayerPlacement == PlayerPlacement.Left)
+                won = IsPlayerCloseToFlag(commonData.playerDataCommon.RopeData.epsilon, leftFlag.transform);
+            if (currentPlayerPlacement == PlayerPlacement.Right)
+                won = IsPlayerCloseToFlag(commonData.playerDataCommon.RopeData.epsilon, rightFlag.transform);
 
             if (won)
             {
                 enemy.CurrentPlayerState = PlayerState.Dead;
+                Debug.Log($"{enemy} Lose");
             }
         }
 
@@ -193,43 +205,53 @@ namespace Controller
             if (flag == null) return false;
             return Mathf.Abs(transform.position.x - flag.position.x) < epsilon;
         }
-        
+
         private void CheckForFlagsVisuals()
         {
             HideAllFlags();
-            if (currentPlayerPlacement == PlayerPlacement.Left) 
+
+            if (currentPlayerPlacement == PlayerPlacement.Left)
+            {
                 leftFlag.SetActive(true);
-            else 
+                leftFlag.transform.position = new Vector2(enemy.transform.position.x - commonData.playerDataCommon.RopeData.flagDistance, enemy.transform.position.y);
+            }
+            else
+            {
                 rightFlag.SetActive(true);
+                rightFlag.transform.position = new Vector2(enemy.transform.position.x + commonData.playerDataCommon.RopeData.flagDistance, enemy.transform.position.y);
+            }
+
         }
-        
+
         private void HideAllFlags()
         {
-            if (leftFlag != null) leftFlag.SetActive(false);
-            if (rightFlag != null) rightFlag.SetActive(false);
+            if (leftFlag != null) 
+                leftFlag.SetActive(false);
+            if (rightFlag != null) 
+                rightFlag.SetActive(false);
         }
-        
+
         private bool CanGrab(Transform enemyTransform)
         {
             if (enemyTransform == null) return false;
-            return Mathf.Abs(enemyTransform.position.x - transform.position.x) < minDistanceToGrab;
+            return Mathf.Abs(enemyTransform.position.x - transform.position.x) < commonData.playerDataCommon.RopeData.minDistanceToGrab;
         }
-        
+
         #endregion
 
         #region RopeController Methods For Defenseur
-        
+
         public void TryReleaseRope()
         {
-            if (Keyboard.current[releaseKey].wasPressedThisFrame && currentKoState == KoState.Ko)
+            if (Keyboard.current[releaseKey].wasPressedThisFrame && commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
             {
-                StunValue -= stunValueToTakeOut;
+                StunValue -= commonData.playerDataCommon.RopeData.stunValueToTakeOut;
             }
         }
 
         private void TimerStun()
         {
-            if (currentKoState == KoState.Ko && StunValue > 0)
+            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && StunValue > 0)
             {
                 StunValue -= Time.deltaTime;
             }
@@ -241,12 +263,12 @@ namespace Controller
 
         private void DrawLineRenderer(Transform enemyPosition)
         {
-            if (!dragging || enemyPosition == null) 
+            if (!commonData.playerDataCommon.RopeData.dragging || enemyPosition == null)
             {
                 lineRenderer.enabled = false;
                 return;
             }
-            
+
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, Head.position);
             lineRenderer.SetPosition(1, enemyPosition.position);
@@ -254,50 +276,55 @@ namespace Controller
 
         #endregion
 
-        #region Debug
+        /*
+          #region Debug
 
-#if UNITY_EDITOR
-        private void OnDrawGizmos()
-        {
-            if (enemy != null)
-            {
-                Gizmos.color = CanGrab(enemy.transform) ? Color.green : Color.red;
-                Gizmos.DrawWireSphere(transform.position, minDistanceToGrab);
-            }
+  #if UNITY_EDITOR
+          private void OnDrawGizmos()
+          {
+              if (enemy != null)
+              {
+                  Gizmos.color = CanGrab(enemy.transform) ? Color.green : Color.red;
+                  Gizmos.DrawWireSphere(transform.position, commonData.playerDataCommon.RopeData.minDistanceToGrab);
+              }
 
-            if (leftFlag != null)
-            {
-                Gizmos.color = Color.blue;
-                Gizmos.DrawWireCube(leftFlag.transform.position, new Vector3(epsilon * 2, 1f, 1f));
-            }
+              if (commonData.playerDataCommon.RopeData.leftFlag != null)
+              {
+                  Gizmos.color = Color.blue;
+                  Gizmos.DrawWireCube(commonData.playerDataCommon.RopeData.leftFlag.transform.position,
+                      new Vector3(commonData.playerDataCommon.RopeData.epsilon * 2, 1f, 1f));
+              }
 
-            if (rightFlag != null)
-            {
-                Gizmos.color = Color.yellow;
-                Gizmos.DrawWireCube(rightFlag.transform.position, new Vector3(epsilon * 2, 1f, 1f));
-            }
+              if (commonData.playerDataCommon.RopeData.rightFlag != null)
+              {
+                  Gizmos.color = Color.yellow;
+                  Gizmos.DrawWireCube(commonData.playerDataCommon.RopeData.rightFlag.transform.position,
+                      new Vector3(commonData.playerDataCommon.RopeData.epsilon * 2, 1f, 1f));
+              }
 
-            if (dragging && enemy != null && enemy.Ass != null)
-            {
-                Gizmos.color = Color.magenta;
-                Gizmos.DrawLine(Head.position, enemy.Ass.position);
-            }
-        }
+              if (commonData.playerDataCommon.RopeData.dragging && enemy != null && enemy.Ass != null)
+              {
+                  Gizmos.color = Color.magenta;
+                  Gizmos.DrawLine(Head.position, enemy.Ass.position);
+              }
+          }
 
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.white;
-            if (Head != null)
-            {
-                Gizmos.DrawWireSphere(Head.position, 0.1f);
-            }
-            if (Ass != null)
-            {
-                Gizmos.DrawWireSphere(Ass.position, 0.1f);
-            }
-        }
-#endif
+          private void OnDrawGizmosSelected()
+          {
+              Gizmos.color = Color.white;
+              if (Head != null)
+              {
+                  Gizmos.DrawWireSphere(Head.position, 0.1f);
+              }
+              if (Ass != null)
+              {
+                  Gizmos.DrawWireSphere(Ass.position, 0.1f);
+              }
+          }
+  #endif
 
-        #endregion
+          #endregion*/
     }
+
+    
 }

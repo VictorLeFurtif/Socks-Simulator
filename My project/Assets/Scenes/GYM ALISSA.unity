@@ -749,6 +749,9 @@ MonoBehaviour:
   durationJump: 1
   attackManager: {fileID: 531788700}
   playerNum: 1
+  ennemy: {fileID: 0}
+  distancePush: 2
+  ropeController: {fileID: 0}
 --- !u!114 &531788700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +773,7 @@ MonoBehaviour:
   attackCooldown: 0.5
   playerSlider: {fileID: 5087295}
   looseSlider: 2
+  rp: {fileID: 0}
 --- !u!61 &531788701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2188,7 +2192,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9ef9712253de4364d8009ce6e3ab728d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2230,7 +2234,7 @@ Transform:
   m_GameObject: {fileID: 1454752081}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0413, y: 0, z: 0}
+  m_LocalPosition: {x: 6.88, y: 0.11, z: 0}
   m_LocalScale: {x: 2.0722516, y: 3.3618, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2261,6 +2265,9 @@ MonoBehaviour:
   durationJump: 1
   attackManager: {fileID: 1454752089}
   playerNum: 0
+  ennemy: {fileID: 0}
+  distancePush: 2
+  ropeController: {fileID: 0}
 --- !u!114 &1454752089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2282,6 +2289,7 @@ MonoBehaviour:
   attackCooldown: 0.5
   playerSlider: {fileID: 665368583}
   looseSlider: 2
+  rp: {fileID: 0}
 --- !u!95 &1454752090
 Animator:
   serializedVersion: 7

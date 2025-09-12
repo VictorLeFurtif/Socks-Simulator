@@ -1,5 +1,9 @@
+using System;
+using System.Collections;
+using Attack;
 using DG.Tweening;
 using Enum;
+using Manager;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -10,20 +14,17 @@ namespace Controller
     {
         private Vector2 moveDirection = new Vector2();
         private float radius;
-        public bool isStunt;
         private InputSystem_Actions inputSystem;
-
-        [SerializeField] private int speed = 100;
-        [SerializeField] private Rigidbody2D rb;
+        
+        public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private GameObject[] markers;
-        [SerializeField] private float jumpPower = 5f;
-        [SerializeField] private float durationJump = 1f;
         [SerializeField] private AttackManager attackManager;
         [SerializeField] private PlayerPlacement playerNum;
         [SerializeField] private GameObject ennemy;
-        [SerializeField] private float distancePush = 2f;
+        [SerializeField] private RopeController ropeController;
+        
+        private DataHolderManager commonData;
 
         private void OnEnable()
         {
@@ -56,25 +57,49 @@ namespace Controller
         private void Start()
         {
             radius = spriteRenderer.bounds.extents.x;
+            commonData = GetComponent<DataHolderManager>();
         }
         private void FixedUpdate()
         {
             CheckBorderCollision();
-            rb.AddForce(moveDirection * speed, forceType);
-            //rb.linearVelocity = new Vector2(moveDirection.x * speed, rb.linearVelocity.y);
+            rb.AddForce(moveDirection * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
         }
 
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            TakeOffVelocityOnContact(other);
+        }
+        
+
+        private void TakeOffVelocityOnContact(Collision2D other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
+
+            if ((ropeController.currentPlayerPlacement != PlayerPlacement.Left || !(moveDirection.x > 0)) &&
+                (ropeController.currentPlayerPlacement != PlayerPlacement.Right || !(moveDirection.x < 0))) return;
+            Vector2 currentVelocity = rb.linearVelocity;
+
+            switch (ropeController.currentPlayerPlacement)
+            {
+                case PlayerPlacement.Left when moveDirection.x > 0:
+                case PlayerPlacement.Right when moveDirection.x < 0:
+                    rb.linearVelocity = new Vector2(0, currentVelocity.y);
+                    break;
+            }
+        }
+        
         private void GetMousePosX(InputAction.CallbackContext context)
         {
             Vector2 lTemp = context.ReadValue<Vector2>();
             if (lTemp.x > 1f || lTemp.x < -1f)
                 moveDirection = new Vector2(lTemp.x, 0f);
         }
-        
+
         private void GetMousePosY(InputAction.CallbackContext context)
         {
             Vector2 lTemp = context.ReadValue<Vector2>();
-            if(lTemp.y > 1f || lTemp.y < -1f)
+            if (lTemp.y > 1f || lTemp.y < -1f)
                 moveDirection = new Vector2(lTemp.y, 0f);
         }
 
@@ -95,7 +120,7 @@ namespace Controller
 
         public void Move(InputAction.CallbackContext ctx)
         {
-            if (isStunt)
+            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 return;
             moveDirection = ctx.ReadValue<Vector2>();
             moveDirection = new Vector2(moveDirection.x, 0f);
@@ -103,7 +128,7 @@ namespace Controller
 
         public void Attack(InputAction.CallbackContext ctx)
         {
-            if (isStunt)
+            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 return;
 
             attackManager.DetectPlayer();
@@ -111,16 +136,50 @@ namespace Controller
 
         private void Counter(InputAction.CallbackContext ctx)
         {
-            if (isStunt)
+            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 return;
             attackManager.PerformCounter();
         }
 
         private void StunBackward(int pDirection)
         {
-            Vector2 lDir = (transform.position.x - ennemy.transform.position.x > 0) ? Vector2.right : Vector2.left;
+            Vector2 targetPosition;
 
-            transform.DOMove(new Vector2(transform.position.x + lDir.x * distancePush, transform.position.y), 1f);
+
+
+            if (ropeController.currentPlayerPlacement == PlayerPlacement.Left)
+            {
+                targetPosition = new Vector2(transform.position.x - commonData.playerDataCommon.PlayerControllerData.distancePush, transform.position.y);
+            }
+            else
+            {
+                targetPosition = new Vector2(transform.position.x + commonData.playerDataCommon.PlayerControllerData.distancePush, transform.position.y);
+            }
+
+            StartCoroutine(MoveToExactPosition(targetPosition));
+        }
+
+        private IEnumerator MoveToExactPosition(Vector2 targetPosition)
+        {
+            Vector2 startPosition = transform.position;
+            float duration = 0.5f;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < duration)
+            {
+                elapsedTime += Time.fixedDeltaTime;
+                float t = elapsedTime / duration;
+
+                float height = 4f * t * (1f - t);
+
+                Vector2 currentPos = Vector2.Lerp(startPosition, targetPosition, t);
+                currentPos.y += height * commonData.playerDataCommon.PlayerControllerData.heightFactor; 
+        
+                rb.MovePosition(currentPos);
+
+                yield return new WaitForFixedUpdate();
+            }
+            rb.MovePosition(targetPosition);
         }
     }
 }
