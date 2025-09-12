@@ -1218,7 +1218,6 @@ GameObject:
   - component: {fileID: 1747572029}
   - component: {fileID: 1747572028}
   - component: {fileID: 1747572027}
-  - component: {fileID: 1747572036}
   m_Layer: 0
   m_Name: P2
   m_TagString: Player
@@ -1368,8 +1367,8 @@ MonoBehaviour:
   enemy: {fileID: 4407022384616132565}
   Ass: {fileID: 1232100659}
   Head: {fileID: 60980344}
-  releaseKey: 2
-  dragKey: 52
+  releaseKey: 56
+  dragKey: 84
   currentPlayerPlacement: 1
   lineRenderer: {fileID: 1747572032}
   stunSlider: {fileID: 6066064537157541622}
@@ -1609,37 +1608,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1747572036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747572025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a079aa09dd7d4e38b1cd3b8cfe6d65cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Manager.DataHolderManager
-  scriptableObjectPlayerDataCommun: {fileID: 11400000, guid: 01b76494c3ef784479daf8df30255b5d, type: 2}
-  playerDataCommon:
-    RopeData:
-      minDistanceToGrab: 0
-      maxStunValue: 0
-      stunValueToTakeOut: 0
-      flagDistance: 0
-      currentKoState: 0
-      currentPlayerState: 0
-      epsilon: 0
-      dragging: 0
-      tensionStrength: 0
-    PlayerControllerData:
-      speed: 0
-      distancePush: 0
-      heightFactor: 0
-    AttackManagerData:
-      attackCooldown: 0
-      looseSlider: 0
 --- !u!1 &1935864695 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8723019058609988545, guid: f6141dee644acb44bb010f9f248fa619, type: 3}

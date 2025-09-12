@@ -1,143 +1,152 @@
+using System;
+using System.Collections;
 using Controller;
 using Enum;
-using System.Collections;
-using Unity.VisualScripting;
-using UnityEditor;
+using Manager;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AttackManager : MonoBehaviour
+namespace Attack
 {
-    public bool isAttacking;
-    private bool isInArea = false;
-    public bool canCounter;
-    private bool wasCountered;
-
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Animator animator;
-    //[SerializeField] private PlayerController enemy;
-    [SerializeField] private PlayerController playerController;
-    [SerializeField] private AttackManager ennemyAttack;
-    [SerializeField] private float attackCooldown = 0.5f;
-    [SerializeField] private Slider playerSlider;
-    [SerializeField] private float looseSlider = 2f;
-    [SerializeField] private RopeController rp;
-    [SerializeField] private GameObject shaderObj;
-    [SerializeField] private Renderer shaderMat;
-
-
-    public void DetectPlayer()
+    public class AttackManager : MonoBehaviour
     {
-       
-        if (isInArea && !isAttacking && !ennemyAttack.isAttacking)
+        public bool isAttacking;
+        private bool isInArea = false;
+        public bool canCounter;
+        private bool wasCountered;
+
+        [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private Animator animator;
+        //[SerializeField] private PlayerController enemy;
+        [SerializeField] private PlayerController playerController;
+        [SerializeField] private AttackManager ennemyAttack;
+        [SerializeField] private Slider playerSlider;
+        [SerializeField] private RopeController rp;
+        [SerializeField] private GameObject shaderObj;
+        [SerializeField] private Renderer shaderMat;
+
+        private DataHolderManager commonData;
+
+        public void DetectPlayer()
         {
-            StartAttack();
+
+            if (isInArea && !isAttacking && !ennemyAttack.isAttacking)
+            {
+                StartAttack();
+            }
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D pCollider)
-    {
-        if (pCollider.gameObject.CompareTag("Player") && !isInArea)
-            isInArea = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D pCollider)
-    {
-        if (pCollider.gameObject.CompareTag("Player"))
-            isInArea = false;
-    }
-
-    private void StartAttack()
-    {
-        isAttacking = true;
-       
-        animator.SetTrigger("IsAttacking");
-
-        //TODO hurt animation
-    }
-
-    public void OnAttackEnd()
-    {
-        if (!wasCountered)
-            ennemyAttack.UpdateSlider();
-
-        StartCoroutine(ResetAttackState());
-    }
-
-    private IEnumerator ResetAttackState()
-    {
-        yield return new WaitForSeconds(attackCooldown);
-
-        isAttacking = false;
-        canCounter = false;
-        wasCountered = false;
-
-    }
-
-    public void SetCounterPossible() => canCounter = !canCounter;
-
-    public void PerformCounter()
-    {
-        if (ennemyAttack.canCounter && !wasCountered)
+        private void Start()
         {
-            ennemyAttack.InterruptAttack();
-
-            wasCountered = true;
-            canCounter = false;
-            animator.SetTrigger("IsCounter");
+            commonData = GetComponent<DataHolderManager>();
         }
-    }
 
-    public void InterruptAttack()
-    {
-        if (isAttacking)
+        private void OnTriggerEnter2D(Collider2D pCollider)
         {
+            if (pCollider.gameObject.CompareTag("Player") && !isInArea)
+                isInArea = true;
+        }
+
+        private void OnTriggerExit2D(Collider2D pCollider)
+        {
+            if (pCollider.gameObject.CompareTag("Player"))
+                isInArea = false;
+        }
+
+        private void StartAttack()
+        {
+            isAttacking = true;
+
+            animator.SetTrigger("IsAttacking");
+
+            //TODO hurt animation
+        }
+
+        public void OnAttackEnd()
+        {
+            if (!wasCountered)
+                ennemyAttack.UpdateSlider();
+
+            StartCoroutine(ResetAttackState());
+        }
+
+        private IEnumerator ResetAttackState()
+        {
+            yield return new WaitForSeconds(commonData.playerDataCommon.AttackManagerData.attackCooldown);
+
             isAttacking = false;
             canCounter = false;
-            wasCountered = true;
+            wasCountered = false;
 
-            animator.ResetTrigger("IsAttacking");
         }
-    }
 
+        public void SetCounterPossible() => canCounter = !canCounter;
 
-    public void OnCounterEnd()
-    {
-        ennemyAttack.UpdateSlider();
-        StartCoroutine(ResetAttackState());
-    }
-
-    private void UpdateSlider()
-    {
-        playerController.UpdateStun();
-
-        if (playerSlider.value - looseSlider > 0)
-            playerSlider.value -= looseSlider;
-        else
+        public void PerformCounter()
         {
-            playerSlider.value = 0;
-            rp.CurrentKoState = KoState.Ko;
-            StartCoroutine(ShockWave());
+            if (ennemyAttack.canCounter && !wasCountered)
+            {
+                ennemyAttack.InterruptAttack();
+
+                wasCountered = true;
+                canCounter = false;
+                animator.SetTrigger("IsCounter");
+            }
         }
-    }
 
-    public void ResetSlider()
-    {
-        playerSlider.value = playerSlider.maxValue;
-    }
-
-    private IEnumerator ShockWave()
-    {
-        string lName = "_WaveDistanceFromCenter";
-        shaderObj.transform.position = transform.position;
-        while (shaderMat.material.GetFloat(lName) < 1)
+        public void InterruptAttack()
         {
-            shaderMat.material.SetFloat(lName, shaderMat.material.GetFloat(lName) + 0.005f);
-            yield return null;
+            if (isAttacking)
+            {
+                isAttacking = false;
+                canCounter = false;
+                wasCountered = true;
+
+                animator.ResetTrigger("IsAttacking");
+            }
         }
-        if (!(shaderMat.material.GetFloat(lName) < 1))
+
+
+        public void OnCounterEnd()
         {
-            shaderMat.material.SetFloat(lName, -0.1f);
+            ennemyAttack.UpdateSlider();
+            StartCoroutine(ResetAttackState());
+        }
+
+        private void UpdateSlider()
+        {
+            playerController.UpdateStun();
+
+            if (playerSlider.value - commonData.playerDataCommon.AttackManagerData.looseSlider > 0)
+            {
+                playerSlider.value -= commonData.playerDataCommon.AttackManagerData.looseSlider;
+            }
+            else
+            {
+                playerSlider.value = 0;
+                rp.CurrentKoState = KoState.Ko;
+                StartCoroutine(ShockWave());
+            }
+        }
+
+        public void ResetSlider()
+        {
+            playerSlider.value = playerSlider.maxValue;
+        }
+
+        private IEnumerator ShockWave()
+        {
+            string lName = "_WaveDistanceFromCenter";
+            shaderObj.transform.position = transform.position;
+            while (shaderMat.material.GetFloat(lName) < 1)
+            {
+                shaderMat.material.SetFloat(lName, shaderMat.material.GetFloat(lName) + 0.005f);
+                yield return null;
+            }
+            if (!(shaderMat.material.GetFloat(lName) < 1))
+            {
+                shaderMat.material.SetFloat(lName, -0.1f);
+            }
         }
     }
 }

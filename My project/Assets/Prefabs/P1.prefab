@@ -320,9 +320,10 @@ GameObject:
   - component: {fileID: 7981356175789211043}
   - component: {fileID: 5919270100428847713}
   - component: {fileID: 349520675856694830}
+  - component: {fileID: 4911529832730433248}
   m_Layer: 0
   m_Name: P1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8723019058609988545}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.864248, y: -1.2910904, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -453,10 +454,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 3
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ac31f4075bd8d00408dd13590b0234ce, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -465,7 +466,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!120 &2938798854383453031
 LineRenderer:
@@ -526,7 +527,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.18253899
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -592,19 +593,15 @@ MonoBehaviour:
   enemy: {fileID: 0}
   Ass: {fileID: 1790154767660667836}
   Head: {fileID: 3896351449628562610}
-  minDistanceToGrab: 2
-  maxStunValue: 4.88
-  stunValueToTakeOut: 0.3
-  releaseKey: 1
-  dragKey: 40
-  currentKoState: 1
+  releaseKey: 19
+  dragKey: 20
   currentPlayerPlacement: 0
   lineRenderer: {fileID: 2938798854383453031}
+  stunSlider: {fileID: 0}
+  pc: {fileID: 2934980116777928790}
+  attackManager: {fileID: 7981356175789211043}
   leftFlag: {fileID: 0}
   rightFlag: {fileID: 0}
-  epsilon: 1
-  dragging: 0
-  stunSlider: {fileID: 0}
 --- !u!114 &2934980116777928790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,18 +614,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c83a91f8e519d4459c09e82b0b5b60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  isStunt: 0
-  speed: 1
   rb: {fileID: 4027281279179962070}
   forceType: 1
   spriteRenderer: {fileID: 43132188880953478}
-  markers:
-  - {fileID: 0}
-  - {fileID: 0}
-  jumpPower: 3
-  durationJump: 1
   attackManager: {fileID: 7981356175789211043}
-  playerNum: 1
+  playerNum: 0
+  ennemy: {fileID: 0}
+  ropeController: {fileID: 8945322065795292882}
 --- !u!114 &7981356175789211043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,9 +639,8 @@ MonoBehaviour:
   animator: {fileID: 5919270100428847713}
   playerController: {fileID: 2934980116777928790}
   ennemyAttack: {fileID: 0}
-  attackCooldown: 0.5
   playerSlider: {fileID: 0}
-  looseSlider: 2
+  rp: {fileID: 8945322065795292882}
 --- !u!95 &5919270100428847713
 Animator:
   serializedVersion: 7
@@ -706,7 +697,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.037786007, y: 0.052307606}
+  m_Offset: {x: -0.0050303936, y: 0.052307606}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -716,5 +707,18 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.5611062, y: 0.97477233}
+  m_Size: {x: 3.9788046, y: 0.97477233}
   m_EdgeRadius: 0
+--- !u!114 &4911529832730433248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723019058609988545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a079aa09dd7d4e38b1cd3b8cfe6d65cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Manager.DataHolderManager
+  scriptableObjectPlayerDataCommun: {fileID: 11400000, guid: 01b76494c3ef784479daf8df30255b5d, type: 2}

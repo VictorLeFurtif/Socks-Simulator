@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
+using Attack;
 using DG.Tweening;
 using Enum;
+using Manager;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -11,21 +14,17 @@ namespace Controller
     {
         private Vector2 moveDirection = new Vector2();
         private float radius;
-        public bool isStunt;
         private InputSystem_Actions inputSystem;
-
-        [SerializeField] private int speed = 100;
+        
         public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private GameObject[] markers;
-        [SerializeField] private float jumpPower = 5f;
-        [SerializeField] private float durationJump = 1f;
         [SerializeField] private AttackManager attackManager;
         [SerializeField] private PlayerPlacement playerNum;
         [SerializeField] private GameObject ennemy;
-        [SerializeField] private float distancePush = 2f;
         [SerializeField] private RopeController ropeController;
+        
+        private DataHolderManager commonData;
 
         private void OnEnable()
         {
@@ -58,14 +57,38 @@ namespace Controller
         private void Start()
         {
             radius = spriteRenderer.bounds.extents.x;
+            commonData = GetComponent<DataHolderManager>();
         }
         private void FixedUpdate()
         {
             CheckBorderCollision();
-            rb.AddForce(moveDirection * speed, forceType);
-            //rb.linearVelocity = new Vector2(moveDirection.x * speed, rb.linearVelocity.y);
+            rb.AddForce(moveDirection * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
         }
 
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            TakeOffVelocityOnContact(other);
+        }
+        
+
+        private void TakeOffVelocityOnContact(Collision2D other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
+
+            if ((ropeController.currentPlayerPlacement != PlayerPlacement.Left || !(moveDirection.x > 0)) &&
+                (ropeController.currentPlayerPlacement != PlayerPlacement.Right || !(moveDirection.x < 0))) return;
+            Vector2 currentVelocity = rb.linearVelocity;
+
+            switch (ropeController.currentPlayerPlacement)
+            {
+                case PlayerPlacement.Left when moveDirection.x > 0:
+                case PlayerPlacement.Right when moveDirection.x < 0:
+                    rb.linearVelocity = new Vector2(0, currentVelocity.y);
+                    break;
+            }
+        }
+        
         private void GetMousePosX(InputAction.CallbackContext context)
         {
             Vector2 lTemp = context.ReadValue<Vector2>();
@@ -97,7 +120,7 @@ namespace Controller
 
         public void Move(InputAction.CallbackContext ctx)
         {
-            if (ropeController.currentKoState == KoState.Ko)
+            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 return;
             moveDirection = ctx.ReadValue<Vector2>();
             moveDirection = new Vector2(moveDirection.x, 0f);
@@ -105,7 +128,7 @@ namespace Controller
 
         public void Attack(InputAction.CallbackContext ctx)
         {
-            if (ropeController.currentKoState == KoState.Ko)
+            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 return;
 
             attackManager.DetectPlayer();
@@ -113,7 +136,7 @@ namespace Controller
 
         private void Counter(InputAction.CallbackContext ctx)
         {
-            if (ropeController.currentKoState == KoState.Ko)
+            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 return;
             attackManager.PerformCounter();
         }
@@ -126,11 +149,11 @@ namespace Controller
 
             if (ropeController.currentPlayerPlacement == PlayerPlacement.Left)
             {
-                targetPosition = new Vector2(transform.position.x - distancePush, transform.position.y);
+                targetPosition = new Vector2(transform.position.x - commonData.playerDataCommon.PlayerControllerData.distancePush, transform.position.y);
             }
             else
             {
-                targetPosition = new Vector2(transform.position.x + distancePush, transform.position.y);
+                targetPosition = new Vector2(transform.position.x + commonData.playerDataCommon.PlayerControllerData.distancePush, transform.position.y);
             }
 
             StartCoroutine(MoveToExactPosition(targetPosition));
@@ -150,8 +173,8 @@ namespace Controller
                 float height = 4f * t * (1f - t);
 
                 Vector2 currentPos = Vector2.Lerp(startPosition, targetPosition, t);
-                currentPos.y += height * 2f;
-
+                currentPos.y += height * commonData.playerDataCommon.PlayerControllerData.heightFactor; 
+        
                 rb.MovePosition(currentPos);
 
                 yield return new WaitForFixedUpdate();
