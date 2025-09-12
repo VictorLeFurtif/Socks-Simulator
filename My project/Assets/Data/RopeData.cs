@@ -21,15 +21,15 @@ namespace Data
         public float flagDistance;
         
         [Header("State Machine")]
-        public KoState currentKoState;
-        public PlayerState currentPlayerState;
+        [HideInInspector] public KoState currentKoState;
+        [HideInInspector] public PlayerState currentPlayerState;
 
         [Header("Win Condition")]
         [SerializeField, Range(0.1f, 2f), Tooltip("Distance threshold to flag for winning")]
         public float epsilon;
 
         [Header("Runtime State")]
-        public bool dragging;
+        [HideInInspector] public bool dragging;
 
 
         public float tensionStrength;

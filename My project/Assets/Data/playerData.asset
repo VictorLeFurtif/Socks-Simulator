@@ -23,7 +23,7 @@ MonoBehaviour:
     dragging: 0
     tensionStrength: 10
   <PlayerControllerData>k__BackingField:
-    speed: 0.5
+    speed: 0.52
     distancePush: 5
   <AttackManagerData>k__BackingField:
     attackCooldown: 0.5

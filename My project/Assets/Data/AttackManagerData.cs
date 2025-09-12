@@ -11,7 +11,7 @@ namespace Data
         [Range(0.1f,5f), Tooltip("CoolDown before Attacking again")]public float attackCooldown;
 
         [Header("Value Loose on slider After Hit")]
-        [Range(0.1f,5f)]public float looseSlider;
+        [Range(0,10)]public int looseSlider;
 
     }
 }
