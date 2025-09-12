@@ -1256,13 +1256,13 @@ MonoBehaviour:
   scriptableObjectPlayerDataCommun: {fileID: 11400000, guid: 01b76494c3ef784479daf8df30255b5d, type: 2}
   playerDataCommon:
     RopeData:
-      minDistanceToGrab: 0
-      maxStunValue: 0
-      stunValueToTakeOut: 0
-      flagDistance: 0
+      minDistanceToGrab: 0.1
+      maxStunValue: 1
+      stunValueToTakeOut: 0.1
+      flagDistance: 0.1
       currentKoState: 1
       currentPlayerState: 0
-      epsilon: 0
+      epsilon: 0.1
       dragging: 0
       tensionStrength: 0
     PlayerControllerData:
@@ -1270,7 +1270,7 @@ MonoBehaviour:
       distancePush: 0
       heightFactor: 0
     AttackManagerData:
-      attackCooldown: 0
+      attackCooldown: 0.1
       looseSlider: 0
 --- !u!1 &1935864695 stripped
 GameObject:
@@ -2569,6 +2569,10 @@ PrefabInstance:
       propertyPath: ennemy
       value: 
       objectReference: {fileID: 1747572025}
+    - target: {fileID: 4027281279179962070, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_LinearDamping
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4633832220740660274, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.864248

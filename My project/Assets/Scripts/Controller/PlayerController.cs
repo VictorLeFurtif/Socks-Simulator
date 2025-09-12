@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Attack;
 using DG.Tweening;
@@ -62,9 +63,32 @@ namespace Controller
         {
             CheckBorderCollision();
             rb.AddForce(moveDirection * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
-            //rb.linearVelocity = new Vector2(moveDirection.x * speed, rb.linearVelocity.y);
         }
 
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            TakeOffVelocityOnContact(other);
+        }
+        
+
+        private void TakeOffVelocityOnContact(Collision2D other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
+
+            if ((ropeController.currentPlayerPlacement != PlayerPlacement.Left || !(moveDirection.x > 0)) &&
+                (ropeController.currentPlayerPlacement != PlayerPlacement.Right || !(moveDirection.x < 0))) return;
+            Vector2 currentVelocity = rb.linearVelocity;
+
+            switch (ropeController.currentPlayerPlacement)
+            {
+                case PlayerPlacement.Left when moveDirection.x > 0:
+                case PlayerPlacement.Right when moveDirection.x < 0:
+                    rb.linearVelocity = new Vector2(0, currentVelocity.y);
+                    break;
+            }
+        }
+        
         private void GetMousePosX(InputAction.CallbackContext context)
         {
             Vector2 lTemp = context.ReadValue<Vector2>();
