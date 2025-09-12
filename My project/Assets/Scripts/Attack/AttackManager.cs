@@ -116,7 +116,9 @@ namespace Attack
             playerController.UpdateStun();
 
             if (playerSlider.value - commonData.playerDataCommon.AttackManagerData.looseSlider > 0)
+            {
                 playerSlider.value -= commonData.playerDataCommon.AttackManagerData.looseSlider;
+            }
             else
             {
                 playerSlider.value = 0;

@@ -12,5 +12,8 @@ namespace Data
         [Header("Push Distance")]
         [Range(0.1f,5f), Tooltip("Distance when hit ")] public float distancePush;
         
+        [Header("Push Height")]
+        [Range(0.1f,5f), Tooltip("Distance when hit in Y ")] public float heightFactor;
+        
     }
 }

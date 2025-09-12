@@ -147,7 +147,7 @@ namespace Controller
                 float height = 4f * t * (1f - t); 
         
                 Vector2 currentPos = Vector2.Lerp(startPosition, targetPosition, t);
-                currentPos.y += height * 2f; 
+                currentPos.y += height * commonData.playerDataCommon.PlayerControllerData.heightFactor; 
         
                 rb.MovePosition(currentPos);
         

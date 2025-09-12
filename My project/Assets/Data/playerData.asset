@@ -25,6 +25,7 @@ MonoBehaviour:
   <PlayerControllerData>k__BackingField:
     speed: 0.52
     distancePush: 5
+    heightFactor: 0.8
   <AttackManagerData>k__BackingField:
     attackCooldown: 0.5
-    looseSlider: 2
+    looseSlider: 10
