@@ -16,7 +16,9 @@ namespace Controller
         private float radius;
         private InputSystem_Actions inputSystem;
         private float camWidth;
-
+        
+        private bool isCollidingWithPlayer = false;
+        private Transform otherPlayerTransform;
 
         public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
@@ -62,34 +64,58 @@ namespace Controller
             radius = spriteRenderer.bounds.extents.x;
             commonData = GetComponent<DataHolderManager>();
         }
+        
         private void FixedUpdate()
         {
             CheckBorderCollision();
-            rb.AddForce(moveDirection * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
+            Vector2 allowedMovement = GetAllowedMovement(moveDirection);
+            rb.AddForce(allowedMovement * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
         }
 
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                isCollidingWithPlayer = true;
+                otherPlayerTransform = other.transform;
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                isCollidingWithPlayer = false;
+                otherPlayerTransform = null;
+            }
+        }
 
         private void OnCollisionStay2D(Collision2D other)
         {
-            TakeOffVelocityOnContact(other);
+            if (other.gameObject.CompareTag("Player"))
+            {
+                Vector2 directionToOther = (other.transform.position - transform.position).normalized;
+                
+                if (Vector2.Dot(moveDirection.normalized, directionToOther) > 0)
+                {
+                    rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                }
+            }
         }
         
-
-        private void TakeOffVelocityOnContact(Collision2D other)
+        private Vector2 GetAllowedMovement(Vector2 intendedMovement)
         {
-            if (!other.gameObject.CompareTag("Player")) return;
-
-            if ((ropeController.currentPlayerPlacement != PlayerPlacement.Left || !(moveDirection.x > 0)) &&
-                (ropeController.currentPlayerPlacement != PlayerPlacement.Right || !(moveDirection.x < 0))) return;
-            Vector2 currentVelocity = rb.linearVelocity;
-
-            switch (ropeController.currentPlayerPlacement)
+            if (!isCollidingWithPlayer || otherPlayerTransform == null) return intendedMovement;
+            
+            float directionToOther = otherPlayerTransform.position.x - transform.position.x;
+            
+            if ((intendedMovement.x > 0 && directionToOther > 0) || 
+                (intendedMovement.x < 0 && directionToOther < 0))
             {
-                case PlayerPlacement.Left when moveDirection.x > 0:
-                case PlayerPlacement.Right when moveDirection.x < 0:
-                    rb.linearVelocity = new Vector2(0, currentVelocity.y);
-                    break;
+                return new Vector2(0, intendedMovement.y); 
             }
+            
+            return intendedMovement;
         }
         
         private void GetMousePosX(InputAction.CallbackContext context)
@@ -152,8 +178,6 @@ namespace Controller
         private void StunBackward(int pDirection)
         {
             Vector2 targetPosition;
-
-
 
             if (ropeController.currentPlayerPlacement == PlayerPlacement.Left)
             {
