@@ -15,7 +15,9 @@ namespace Controller
         private Vector2 moveDirection = new Vector2();
         private float radius;
         private InputSystem_Actions inputSystem;
-        
+        private float camWidth;
+
+
         public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
         [SerializeField] private SpriteRenderer spriteRenderer;
@@ -28,6 +30,7 @@ namespace Controller
 
         private void OnEnable()
         {
+            camWidth = Camera.main.orthographicSize * Camera.main.aspect;
             inputSystem = new InputSystem_Actions();
 
             //TODO trouver un moyens de faire plus propre c moche
@@ -113,9 +116,14 @@ namespace Controller
 
         private void CheckBorderCollision()
         {
-            float camWidth = Camera.main.orthographicSize * Camera.main.aspect;
-            Vector3 posToCam = new Vector3(Mathf.Clamp(transform.position.x, -camWidth + radius, camWidth - radius), transform.position.y, transform.position.z);
+            Vector3 camPos = Camera.main.transform.position;
+            Vector3 posToCam = new Vector3(Mathf.Clamp(transform.position.x, camPos.x - camWidth + radius, camPos.x + camWidth - radius), transform.position.y, transform.position.z);
             transform.position = posToCam;
+        }
+
+        private void CheckPlayerDistance()
+        {
+
         }
 
         public void Move(InputAction.CallbackContext ctx)
