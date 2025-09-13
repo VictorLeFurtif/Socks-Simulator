@@ -576,7 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Manager.GameManager
   currentState: 0
   menuSceneName: Menu
-  gameSceneName: GYM V5
+  gameSceneName: GYM V6
 --- !u!4 &702399446
 Transform:
   m_ObjectHideFlags: 0

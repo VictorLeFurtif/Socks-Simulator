@@ -132,7 +132,7 @@ namespace Manager
         {
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
             
-            while (!asyncLoad.isDone)
+            while (asyncLoad is { isDone: false })
             {
                 yield return null;
             }

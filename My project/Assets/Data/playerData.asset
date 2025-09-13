@@ -21,7 +21,7 @@ MonoBehaviour:
     currentPlayerState: 0
     epsilon: 0.19
     dragging: 0
-    tensionStrength: 10
+    tensionStrength: 5.14
   <PlayerControllerData>k__BackingField:
     speed: 1.53
     distancePush: 5

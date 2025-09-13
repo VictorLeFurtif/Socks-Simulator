@@ -193,13 +193,20 @@ namespace Controller
             if (currentPlayerPlacement == PlayerPlacement.Right)
                 won = IsPlayerCloseToFlag(commonData.playerDataCommon.RopeData.epsilon, rightFlag.transform);
 
-            if (won)
+            if (won && GameManager.Instance?.CurrentState != GameState.GameOver )
             {
                 enemy.CurrentPlayerState = PlayerState.Dead;
-                Debug.Log($"{enemy} Lose");
+                HandleWin();
+                GameManager.Instance?.GameOver();
             }
         }
 
+        private void HandleWin()
+        {
+            string winnerPlacement = enemy.currentPlayerPlacement.ToString();
+        }
+        
+        
         private bool IsPlayerCloseToFlag(float epsilon, Transform flag)
         {
             if (flag == null) return false;
