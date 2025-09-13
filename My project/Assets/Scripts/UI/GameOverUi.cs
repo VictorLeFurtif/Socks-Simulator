@@ -6,12 +6,7 @@ namespace UI
     public class GameOverUI : MonoBehaviour
     {
         [SerializeField] private Canvas gameOverCanvas;
-    
-        private void Start()
-        {
-            gameOverCanvas.gameObject.SetActive(false);
-        }
-    
+        
         private void OnEnable()
         {
             GameManager.OnGameStateChanged += OnGameStateChanged;
@@ -22,16 +17,22 @@ namespace UI
             GameManager.OnGameStateChanged -= OnGameStateChanged;
         }
     
+        private void Start()
+        {
+            gameOverCanvas.gameObject.SetActive(true);
+            gameOverCanvas.enabled = false; 
+        }
+
         private void OnGameStateChanged(GameState newState)
         {
             switch (newState)
             {
                 case GameState.GameOver:
-                    Debug.Log("Lost");
-                    gameOverCanvas.gameObject.SetActive(true);
+                    Debug.Log("Lost - GameOverUI activated");
+                    gameOverCanvas.enabled = true;
                     break;
                 case GameState.Game:
-                    gameOverCanvas.gameObject.SetActive(false);
+                    gameOverCanvas.enabled = false;
                     break;
             }
         }
@@ -43,7 +44,7 @@ namespace UI
 
         public void RestartGame()
         {
-            GameManager.Instance?.RestartGame();
+            GameManager.Instance?.LoadGameScene();
         }
     }
 }

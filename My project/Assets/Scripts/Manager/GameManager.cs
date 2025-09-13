@@ -102,6 +102,7 @@ namespace Manager
         public void GameOver()
         {
             ChangeGameState(GameState.GameOver);
+            Time.timeScale = 0f;
         }
 
         public void RestartGame()
@@ -112,6 +113,7 @@ namespace Manager
         public void ReturnToMenu()
         {
             LoadMenuScene();
+            Time.timeScale = 1;
         }
 
         #endregion
@@ -125,6 +127,7 @@ namespace Manager
 
         public void LoadGameScene()
         {
+            Time.timeScale = 1;
             StartCoroutine(LoadSceneAndChangeState(gameSceneName, GameState.Game));
         }
 
