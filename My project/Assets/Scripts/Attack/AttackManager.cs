@@ -50,7 +50,10 @@ namespace Attack
         private void OnTriggerExit2D(Collider2D pCollider)
         {
             if (pCollider.gameObject.CompareTag("Player"))
+            {
                 isInArea = false;
+                InterruptAttack();
+            }
         }
 
         private void StartAttack()
