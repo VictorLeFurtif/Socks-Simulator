@@ -12,7 +12,7 @@ namespace Data
         
         [Header("Stun System")]
         [SerializeField, Range(1f, 10f), Tooltip("Maximum stun duration when grabbed")]
-        public float maxStunValue;
+        public float[] maxStunValue;
         
         [Range(0.1f, 2f), Tooltip("Stun value reduced per button press")]
         public float stunValueToTakeOut;
@@ -36,7 +36,7 @@ namespace Data
         
         public RopeData(
             float minDistanceToGrab = 1f,
-            float maxStunValue = 5f,
+            float[] maxStunValue = null,
             float stunValueToTakeOut = 0.5f,
             float flagDistance = 2f,
             KoState currentKoState = KoState.NotKo,
@@ -46,7 +46,7 @@ namespace Data
             float tensionStrength = 0f)
         {
             this.minDistanceToGrab = minDistanceToGrab;
-            this.maxStunValue = maxStunValue;
+            this.maxStunValue = maxStunValue ?? new float[3];
             this.stunValueToTakeOut = stunValueToTakeOut;
             this.flagDistance = flagDistance;
             this.currentKoState = currentKoState;

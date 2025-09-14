@@ -24,6 +24,8 @@ namespace Controller
         [Tooltip("Top anchor point for rope attachment")]
         public Transform Head;
 
+        private int koIndex = 0;
+
         private float stunValue;
 
         public float StunValue
@@ -31,11 +33,11 @@ namespace Controller
             get => stunValue;
             private set
             {
-                stunValue = Mathf.Clamp(value, 0f, commonData.playerDataCommon.RopeData.maxStunValue);
+                stunValue = Mathf.Clamp(value, 0f, commonData.playerDataCommon.RopeData.maxStunValue[koIndex]);
 
                 if (stunSlider != null)
                 {
-                    stunSlider.maxValue = commonData.playerDataCommon.RopeData.maxStunValue;
+                    stunSlider.maxValue = commonData.playerDataCommon.RopeData.maxStunValue[koIndex];
                     stunSlider.minValue = 0f;
                     stunSlider.value = (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko) ? stunValue : 0f;
                 }
@@ -44,6 +46,7 @@ namespace Controller
                 if (stunValue <= 0)
                 {
                     CurrentKoState = KoState.NotKo;
+                    koIndex += 1;
                     enemy.commonData.playerDataCommon.RopeData.dragging = false;
                     lineRenderer.enabled = false;
                     HideAllFlags();
@@ -78,9 +81,12 @@ namespace Controller
             set
             {
                 commonData.playerDataCommon.RopeData.currentKoState = value;
+
+                koIndex = Mathf.Clamp(koIndex, 0, commonData.playerDataCommon.RopeData.maxStunValue.Length - 1);
+
                 if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 {
-                    StunValue = commonData.playerDataCommon.RopeData.maxStunValue;
+                    StunValue = commonData.playerDataCommon.RopeData.maxStunValue[koIndex];
                     pc.rb.bodyType = RigidbodyType2D.Kinematic;
                 }
                 else
@@ -193,13 +199,20 @@ namespace Controller
             if (currentPlayerPlacement == PlayerPlacement.Right)
                 won = IsPlayerCloseToFlag(commonData.playerDataCommon.RopeData.epsilon, rightFlag.transform);
 
-            if (won)
+            if (won && GameManager.Instance?.CurrentState != GameState.GameOver )
             {
                 enemy.CurrentPlayerState = PlayerState.Dead;
-                Debug.Log($"{enemy} Lose");
+                HandleWin();
+                GameManager.Instance?.GameOver();
             }
         }
 
+        private void HandleWin()
+        {
+            string winnerPlacement = enemy.currentPlayerPlacement.ToString();
+        }
+        
+        
         private bool IsPlayerCloseToFlag(float epsilon, Transform flag)
         {
             if (flag == null) return false;
