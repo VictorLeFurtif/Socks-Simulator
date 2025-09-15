@@ -1,12 +1,13 @@
-using System;
-using System.Collections;
 using Attack;
 using DG.Tweening;
 using Enum;
 using Manager;
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Controller
 {
@@ -191,7 +192,6 @@ namespace Controller
             if (collision.gameObject.CompareTag("Wall"))
             { 
                 touchedWall = true;
-                Debug.Log("Wall here");
             }
         }
 
@@ -200,7 +200,6 @@ namespace Controller
             if (collision.gameObject.CompareTag("Wall"))
             {
                 touchedWall = false;
-                Debug.Log("Wall out");
             }
                 
         }
@@ -267,6 +266,8 @@ namespace Controller
                 rb.MovePosition(nextPosition);
                 yield return new WaitForFixedUpdate();
             }
+            rb.linearVelocity= Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Kinematic;
         }
     }
 }
