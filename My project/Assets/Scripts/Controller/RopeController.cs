@@ -247,6 +247,7 @@ namespace Controller
             return Mathf.Abs(transform.position.x - flag.position.x) < epsilon;
         }
 
+        [SerializeField] private float yPositionFlags;
         private void CheckForFlagsVisuals()
         {
             HideAllFlags();
@@ -254,12 +255,12 @@ namespace Controller
             if (currentPlayerPlacement == PlayerPlacement.Left)
             {
                 leftFlag.SetActive(true);
-                leftFlag.transform.position = new Vector2(enemy.transform.position.x - commonData.playerDataCommon.RopeData.flagDistance, enemy.transform.position.y);
+                leftFlag.transform.position = new Vector2(enemy.transform.position.x - commonData.playerDataCommon.RopeData.flagDistance, yPositionFlags);
             }
             else
             {
                 rightFlag.SetActive(true);
-                rightFlag.transform.position = new Vector2(enemy.transform.position.x + commonData.playerDataCommon.RopeData.flagDistance, enemy.transform.position.y);
+                rightFlag.transform.position = new Vector2(enemy.transform.position.x + commonData.playerDataCommon.RopeData.flagDistance, yPositionFlags);
             }
 
         }
