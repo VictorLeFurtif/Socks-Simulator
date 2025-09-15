@@ -1,10 +1,11 @@
-using System;
-using System.Collections;
 using Controller;
 using Enum;
 using Manager;
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Attack
 {
@@ -24,13 +25,15 @@ namespace Attack
         [SerializeField] private RopeController rp;
         [SerializeField] private GameObject shaderObj;
         [SerializeField] private Renderer shaderMat;
+        [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private float distanceToAttack;
 
         private DataHolderManager commonData;
 
         public void DetectPlayer()
         {
 
-            if (isInArea && !isAttacking && !ennemyAttack.isAttacking)
+            if (isInArea && !isAttacking && !ennemyAttack.isAttacking && ennemyAttack.rp.CurrentKoState == KoState.NotKo)
             {
                 StartAttack();
             }
@@ -41,26 +44,29 @@ namespace Attack
             commonData = GetComponent<DataHolderManager>();
         }
 
-        private void OnTriggerEnter2D(Collider2D pCollider)
-        {
-            if (pCollider.gameObject.CompareTag("Player") && !isInArea)
-                isInArea = true;
-        }
 
-        private void OnTriggerExit2D(Collider2D pCollider)
+        private void Update()
         {
-            if (pCollider.gameObject.CompareTag("Player"))
+            CheckDistance();
+        }
+        private void CheckDistance()
+        {
+            if (Mathf.Abs(transform.position.x - ennemyAttack.gameObject.transform.position.x) < distanceToAttack)
             {
-                isInArea = false;
-                InterruptAttack();
+                isInArea = true;
+                return;
             }
+            isInArea = false;
+
         }
 
         private void StartAttack()
         {
             isAttacking = true;
-
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.linearVelocity = Vector3.zero;
             animator.SetTrigger("IsAttacking");
+
 
             //TODO hurt animation
         }
@@ -80,6 +86,7 @@ namespace Attack
             isAttacking = false;
             canCounter = false;
             wasCountered = false;
+            rb.bodyType = RigidbodyType2D.Dynamic;
 
         }
 
@@ -101,11 +108,9 @@ namespace Attack
         {
             if (isAttacking)
             {
-                isAttacking = false;
-                canCounter = false;
-                wasCountered = true;
-
                 animator.ResetTrigger("IsAttacking");
+                animator.Play("Idle");
+                StartCoroutine(ResetAttackState());
             }
         }
 
@@ -128,7 +133,15 @@ namespace Attack
             {
                 playerSlider.value = 0;
                 rp.CurrentKoState = KoState.Ko;
-                StartCoroutine(ShockWave());
+            }
+        }
+
+        public  void CheckShouldInterrupt()
+        {
+            if (!isInArea)
+            {
+                Debug.Log(isInArea + " should interrupt");
+                InterruptAttack();
             }
         }
 
@@ -137,10 +150,10 @@ namespace Attack
             playerSlider.value = playerSlider.maxValue;
         }
 
-        private IEnumerator ShockWave()
+        public IEnumerator ShockWave()
         {
             string lName = "_WaveDistanceFromCenter";
-            shaderObj.transform.position = transform.position;
+            shaderObj.transform.position = ennemyAttack.gameObject.transform.position;
             while (shaderMat.material.GetFloat(lName) < 1)
             {
                 shaderMat.material.SetFloat(lName, shaderMat.material.GetFloat(lName) + 0.005f);
@@ -151,5 +164,37 @@ namespace Attack
                 shaderMat.material.SetFloat(lName, -0.1f);
             }
         }
+
+        private void OnEnable()
+        {
+            PlayerScoreManager.OnRoundReset += ResetElement;
+        }
+
+        private void OnDisable()
+        {
+            PlayerScoreManager.OnRoundReset -= ResetElement;
+        }
+
+        private void ResetElement()
+        {
+            ResetSlider();
+        }
+
+#if UNITY_EDITOR
+
+        private void OnDrawGizmos()
+        {
+            if (isInArea)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawLine(transform.position, ennemyAttack.gameObject.transform.position);
+            }
+            else
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(transform.position, ennemyAttack.gameObject.transform.position);
+            }
+        }
+#endif
     }
 }

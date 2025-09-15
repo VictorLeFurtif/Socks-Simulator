@@ -1,12 +1,13 @@
-using System;
-using System.Collections;
 using Attack;
 using DG.Tweening;
 using Enum;
 using Manager;
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Controller
 {
@@ -16,9 +17,7 @@ namespace Controller
         private float radius;
         private InputSystem_Actions inputSystem;
         private float camWidth;
-        
-        private bool isCollidingWithPlayer = false;
-        private Transform otherPlayerTransform;
+        private bool touchedWall;
 
         public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
@@ -27,8 +26,11 @@ namespace Controller
         [SerializeField] private PlayerPlacement playerNum;
         [SerializeField] private GameObject ennemy;
         [SerializeField] private RopeController ropeController;
-        
+        [SerializeField] private Collider2D playerCollider;
+
         private DataHolderManager commonData;
+
+        [SerializeField] private CancelPushing antiPushZone;
 
         private void OnEnable()
         {
@@ -64,7 +66,7 @@ namespace Controller
             radius = spriteRenderer.bounds.extents.x;
             commonData = GetComponent<DataHolderManager>();
         }
-        
+
         private void FixedUpdate()
         {
             CheckBorderCollision();
@@ -72,6 +74,7 @@ namespace Controller
             rb.AddForce(allowedMovement * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
         }
 
+        /*
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Player"))
@@ -101,23 +104,35 @@ namespace Controller
                     rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
                 }
             }
+        }*/
+
+        public Vector2 GetMoveDirection()
+        {
+            return moveDirection;
         }
-        
+
         private Vector2 GetAllowedMovement(Vector2 intendedMovement)
         {
-            if (!isCollidingWithPlayer || otherPlayerTransform == null) return intendedMovement;
-            
-            float directionToOther = otherPlayerTransform.position.x - transform.position.x;
-            
-            if ((intendedMovement.x > 0 && directionToOther > 0) || 
-                (intendedMovement.x < 0 && directionToOther < 0))
+
+            if (antiPushZone == null || !antiPushZone.IsPlayerInAntiPushZone())
             {
-                return new Vector2(0, intendedMovement.y); 
+                return intendedMovement;
             }
-            
+
+
+            Transform otherPlayer = antiPushZone.GetOtherPlayerTransform();
+            if (otherPlayer == null) return intendedMovement;
+
+            float directionToOther = otherPlayer.position.x - transform.position.x;
+
+            if ((intendedMovement.x > 0 && directionToOther > 0) || (intendedMovement.x < 0 && directionToOther < 0))
+            {
+                return new Vector2(0, intendedMovement.y);
+            }
+
             return intendedMovement;
         }
-        
+
         private void GetMousePosX(InputAction.CallbackContext context)
         {
             Vector2 lTemp = context.ReadValue<Vector2>();
@@ -147,11 +162,6 @@ namespace Controller
             transform.position = posToCam;
         }
 
-        private void CheckPlayerDistance()
-        {
-
-        }
-
         public void Move(InputAction.CallbackContext ctx)
         {
             if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
@@ -173,6 +183,23 @@ namespace Controller
             if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 return;
             attackManager.PerformCounter();
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Wall"))
+            { 
+                touchedWall = true;
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Wall"))
+            {
+                touchedWall = false;
+            }
+                
         }
 
         private void StunBackward(int pDirection)
@@ -197,21 +224,46 @@ namespace Controller
             float duration = 0.5f;
             float elapsedTime = 0f;
 
+            Vector2 direction = (targetPosition - startPosition).normalized;
+            float distance = Vector2.Distance(startPosition, targetPosition);
+
+            float colliderRadius = playerCollider.bounds.size.x / 2f; 
+
             while (elapsedTime < duration)
             {
+                if (touchedWall)
+                {
+                    yield break;
+                }
+
                 elapsedTime += Time.fixedDeltaTime;
                 float t = elapsedTime / duration;
-
                 float height = 4f * t * (1f - t);
+                Vector2 nextPosition = Vector2.Lerp(startPosition, targetPosition, t);
+                nextPosition.y += height * commonData.playerDataCommon.PlayerControllerData.heightFactor;
 
-                Vector2 currentPos = Vector2.Lerp(startPosition, targetPosition, t);
-                currentPos.y += height * commonData.playerDataCommon.PlayerControllerData.heightFactor; 
-        
-                rb.MovePosition(currentPos);
+                Vector2 moveDirection = (nextPosition - (Vector2)transform.position).normalized;
+                float moveDistance = Vector2.Distance(transform.position, nextPosition);
 
+                RaycastHit2D hit = Physics2D.CircleCast(
+                    transform.position,
+                    colliderRadius,
+                    moveDirection,
+                    moveDistance,
+                    LayerMask.GetMask("Walls", "Obstacles")
+                );
+
+                if (hit.collider != null)
+                {
+                    touchedWall = true;
+                    yield break;
+                }
+
+                rb.MovePosition(nextPosition);
                 yield return new WaitForFixedUpdate();
             }
-            rb.MovePosition(targetPosition);
+            rb.linearVelocity= Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Kinematic;
         }
     }
 }

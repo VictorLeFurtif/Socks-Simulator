@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 8f9d33f98cbbe2c41a501fe8ae7a80a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4895111271451369389
+    second: Drapeau bleu_0
+  - first:
+      213: 6878761136374340268
+    second: Drapeau bleu_1
+  - first:
+      213: 7181865970521459014
+    second: Drapeau bleu_2
+  - first:
+      213: 5387260297818030251
+    second: Drapeau bleu_3
+  - first:
+      213: -7982785423796743702
+    second: Drapeau bleu_4
+  - first:
+      213: 4132757562922140675
+    second: Drapeau bleu_5
+  - first:
+      213: 6813164611014956370
+    second: Drapeau bleu_6
+  - first:
+      213: -96801012346037213
+    second: Drapeau bleu_7
+  - first:
+      213: -1286515965229870178
+    second: Drapeau bleu_8
+  - first:
+      213: 2088285165587299295
+    second: Drapeau bleu_9
+  - first:
+      213: -2987401928596649284
+    second: Drapeau bleu_10
+  - first:
+      213: 2881556496281808537
+    second: Drapeau bleu_11
+  - first:
+      213: -9131187008039298934
+    second: Drapeau bleu_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Drapeau bleu_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 52
+        width: 382
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daf9ed614cdeee340800000000000000
+      internalID: 4895111271451369389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_1
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 434
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caada5ceec4467f50800000000000000
+      internalID: 6878761136374340268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_2
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 440
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 649c56d8c0d1ba360800000000000000
+      internalID: 7181865970521459014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 438
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba0420ca2b463ca40800000000000000
+      internalID: 5387260297818030251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_4
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 433
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae1dd60a3f2773190800000000000000
+      internalID: -7982785423796743702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_5
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 309
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30488c07b118a5930800000000000000
+      internalID: 4132757562922140675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 299
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2551fc3bd193d8e50800000000000000
+      internalID: 6813164611014956370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 290
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c573dfdf718aef0800000000000000
+      internalID: -96801012346037213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_8
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 285
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93da9ebb80652ee0800000000000000
+      internalID: -1286515965229870178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_9
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 279
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb7c8c3b441bfc10800000000000000
+      internalID: 2088285165587299295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_10
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 281
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba0eac16cd9a86d0800000000000000
+      internalID: -2987401928596649284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_11
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 266
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99ea811cd585df720800000000000000
+      internalID: 2881556496281808537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drapeau bleu_12
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 273
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a88d7289bc1874180800000000000000
+      internalID: -9131187008039298934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Drapeau bleu_0: 4895111271451369389
+      Drapeau bleu_1: 6878761136374340268
+      Drapeau bleu_10: -2987401928596649284
+      Drapeau bleu_11: 2881556496281808537
+      Drapeau bleu_12: -9131187008039298934
+      Drapeau bleu_2: 7181865970521459014
+      Drapeau bleu_3: 5387260297818030251
+      Drapeau bleu_4: -7982785423796743702
+      Drapeau bleu_5: 4132757562922140675
+      Drapeau bleu_6: 6813164611014956370
+      Drapeau bleu_7: -96801012346037213
+      Drapeau bleu_8: -1286515965229870178
+      Drapeau bleu_9: 2088285165587299295
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
