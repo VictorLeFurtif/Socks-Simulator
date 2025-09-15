@@ -317,54 +317,23 @@ namespace Controller
 
         #endregion
 
-        /*
+        
           #region Debug
 
-  #if UNITY_EDITOR
+  #if UNITY_EDITOR 
           private void OnDrawGizmos()
           {
-              if (enemy != null)
+              if (enemy != null && commonData != null)
               {
                   Gizmos.color = CanGrab(enemy.transform) ? Color.green : Color.red;
                   Gizmos.DrawWireSphere(transform.position, commonData.playerDataCommon.RopeData.minDistanceToGrab);
               }
-
-              if (commonData.playerDataCommon.RopeData.leftFlag != null)
-              {
-                  Gizmos.color = Color.blue;
-                  Gizmos.DrawWireCube(commonData.playerDataCommon.RopeData.leftFlag.transform.position,
-                      new Vector3(commonData.playerDataCommon.RopeData.epsilon * 2, 1f, 1f));
-              }
-
-              if (commonData.playerDataCommon.RopeData.rightFlag != null)
-              {
-                  Gizmos.color = Color.yellow;
-                  Gizmos.DrawWireCube(commonData.playerDataCommon.RopeData.rightFlag.transform.position,
-                      new Vector3(commonData.playerDataCommon.RopeData.epsilon * 2, 1f, 1f));
-              }
-
-              if (commonData.playerDataCommon.RopeData.dragging && enemy != null && enemy.Ass != null)
-              {
-                  Gizmos.color = Color.magenta;
-                  Gizmos.DrawLine(Head.position, enemy.Ass.position);
-              }
+              
           }
-
-          private void OnDrawGizmosSelected()
-          {
-              Gizmos.color = Color.white;
-              if (Head != null)
-              {
-                  Gizmos.DrawWireSphere(Head.position, 0.1f);
-              }
-              if (Ass != null)
-              {
-                  Gizmos.DrawWireSphere(Ass.position, 0.1f);
-              }
-          }
+          
   #endif
 
-          #endregion*/
+          #endregion
     }
 
     

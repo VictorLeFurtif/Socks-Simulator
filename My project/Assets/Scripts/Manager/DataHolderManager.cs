@@ -8,7 +8,7 @@ namespace Manager
     {
         [SerializeField] private PlayerDataCommon scriptableObjectPlayerDataCommun;
         public PlayerDataCommonInstance playerDataCommon;
-
+        [HideInInspector] public PlayerDataCommon ScriptableObjectPlayerDataCommun { get; private set; }
         private void Awake()
         {
             playerDataCommon = scriptableObjectPlayerDataCommun.Instance();

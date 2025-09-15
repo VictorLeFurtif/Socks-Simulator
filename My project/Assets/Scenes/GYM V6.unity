@@ -6413,6 +6413,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9aebe3b97f73b9447abc03136da3ee21, type: 2}
+    - target: {fileID: 890187087741012119, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1202166924143035003, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_Size.x
       value: 6.6600647
@@ -6501,6 +6505,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1839981755820350026, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839981755820350026, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.34
+      objectReference: {fileID: 0}
     - target: {fileID: 3511062414783144215, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_Size.x
       value: 5.9595404
@@ -6572,6 +6584,14 @@ PrefabInstance:
     - target: {fileID: 7196199175114784169, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: distanceToAttack
       value: 6.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810198359311002763, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810198359311002763, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.46
       objectReference: {fileID: 0}
     - target: {fileID: 8019689466870172520, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_Name
@@ -7466,10 +7486,30 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 5.55
       objectReference: {fileID: 0}
+    - target: {fileID: 1790154767660667836, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790154767660667836, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.19
+      objectReference: {fileID: 0}
     - target: {fileID: 2934980116777928790, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: ennemy
       value: 
       objectReference: {fileID: 1747572025}
+    - target: {fileID: 3896351449628562610, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896351449628562610, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027281279179962070, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4633832220740660274, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.56
