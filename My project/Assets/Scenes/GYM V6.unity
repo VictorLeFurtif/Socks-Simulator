@@ -2882,9 +2882,9 @@ GameObject:
   - component: {fileID: 1136223885}
   - component: {fileID: 1136223887}
   - component: {fileID: 1136223888}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4840,6 +4840,7 @@ MonoBehaviour:
   rp: {fileID: 1747572031}
   shaderObj: {fileID: 1302475538}
   shaderMat: {fileID: 1302475539}
+  rb: {fileID: 1747572033}
 --- !u!114 &1747572030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4859,7 +4860,7 @@ MonoBehaviour:
   playerNum: 1
   ennemy: {fileID: 1935864695}
   ropeController: {fileID: 1747572031}
-  antiPushZone: {fileID: 1365084223}
+  antiPushZone: {fileID: 0}
 --- !u!114 &1747572031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5018,7 +5019,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 1
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &1747572034
@@ -5361,9 +5362,9 @@ GameObject:
   - component: {fileID: 1894776165}
   - component: {fileID: 1894776164}
   - component: {fileID: 1894776163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7125,6 +7126,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4027281279179962070, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_SleepingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027281279179962070, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_LinearDamping
       value: 5
       objectReference: {fileID: 0}
@@ -7208,6 +7213,10 @@ PrefabInstance:
       propertyPath: playerDataCommon.PlayerControllerData.heightFactor
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7981356175789211043, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 8361313266364614251}
     - target: {fileID: 7981356175789211043, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: rp
       value: 
@@ -8114,6 +8123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c83a91f8e519d4459c09e82b0b5b60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!50 &8361313266364614251 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4027281279179962070, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+  m_PrefabInstance: {fileID: 4936011553098359917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!222 &8521309238524598953
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -87,7 +87,7 @@ namespace Controller
                 if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 {
                     StunValue = commonData.playerDataCommon.RopeData.maxStunValue[koIndex];
-                    pc.rb.bodyType = RigidbodyType2D.Kinematic;
+                    //pc.rb.bodyType = RigidbodyType2D.Kinematic;
                 }
                 else
                 {
@@ -185,6 +185,7 @@ namespace Controller
         private void StartDragging()
         {
             commonData.playerDataCommon.RopeData.dragging = true;
+            enemy.pc.rb.bodyType = RigidbodyType2D.Kinematic;
             lineRenderer.enabled = true;
             CheckForFlagsVisuals();
 
