@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5b3d966983cf5b4469bf31743293d195
+guid: d3b24dd9ab0d2e541afb5f889ea5e3c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2933984740619117708
-    second: chaussette_0
+      213: -949880676405164698
+    second: chaussette2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chaussette_0
+      name: chaussette2_0
       rect:
         serializedVersion: 2
-        x: 59
-        y: 65
-        width: 483
-        height: 649
+        x: 14
+        y: 39
+        width: 595
+        height: 555
       alignment: 9
-      pivot: {x: 0.6517788, y: 0.016463716}
+      pivot: {x: 0.26499733, y: 0.015336175}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47b1bfe5c646847d0800000000000000
-      internalID: -2933984740619117708
+      spriteID: 665ccd7be8851d2f0800000000000000
+      internalID: -949880676405164698
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 947f7f2f7bc11bc4aa6075874b00f8fa
+    spriteID: f15c37d9878316c409426c40de8c6003
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chaussette_0: -2933984740619117708
+      chaussette2_0: -949880676405164698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
