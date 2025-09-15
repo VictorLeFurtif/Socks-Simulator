@@ -18,8 +18,6 @@ namespace Controller
         private InputSystem_Actions inputSystem;
         private float camWidth;
         private bool touchedWall;
-        private bool isCollidingWithPlayer = false;
-        private Transform otherPlayerTransform;
 
         public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
@@ -233,7 +231,6 @@ namespace Controller
 
             while (elapsedTime < duration)
             {
-                Debug.Log(touchedWall);
                 if (touchedWall)
                 {
                     yield break;
@@ -258,7 +255,6 @@ namespace Controller
 
                 if (hit.collider != null)
                 {
-                    Debug.Log("Obstacle détecté ! Arrêt du mouvement.");
                     touchedWall = true;
                     yield break;
                 }
