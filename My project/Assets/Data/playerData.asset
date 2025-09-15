@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Data.PlayerDataCommon
   <RopeData>k__BackingField:
     minDistanceToGrab: 2
-    maxStunValue: 10
+    maxStunValue:
+    - 3.09
+    - 5.58
+    - 10
     stunValueToTakeOut: 0.1
     flagDistance: 4
     currentKoState: 1
@@ -23,7 +26,7 @@ MonoBehaviour:
     dragging: 0
     tensionStrength: 5.14
   <PlayerControllerData>k__BackingField:
-    speed: 1.53
+    speed: 0.96
     distancePush: 5
     heightFactor: 0.8
   <AttackManagerData>k__BackingField:

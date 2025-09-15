@@ -30,6 +30,8 @@ namespace Controller
         
         private DataHolderManager commonData;
 
+        [SerializeField] private CancelPushing antiPushZone;
+
         private void OnEnable()
         {
             camWidth = Camera.main.orthographicSize * Camera.main.aspect;
@@ -72,6 +74,7 @@ namespace Controller
             rb.AddForce(allowedMovement * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
         }
 
+        /*
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Player"))
@@ -101,20 +104,32 @@ namespace Controller
                     rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
                 }
             }
+        }*/
+
+        public Vector2 GetMoveDirection()
+        {
+            return moveDirection;
         }
         
         private Vector2 GetAllowedMovement(Vector2 intendedMovement)
         {
-            if (!isCollidingWithPlayer || otherPlayerTransform == null) return intendedMovement;
+
+            if (antiPushZone == null || !antiPushZone.IsPlayerInAntiPushZone())
+            {
+                return intendedMovement;
+            }
             
-            float directionToOther = otherPlayerTransform.position.x - transform.position.x;
-            
-            if ((intendedMovement.x > 0 && directionToOther > 0) || 
-                (intendedMovement.x < 0 && directionToOther < 0))
+
+            Transform otherPlayer = antiPushZone.GetOtherPlayerTransform();
+            if (otherPlayer == null) return intendedMovement;
+
+            float directionToOther = otherPlayer.position.x - transform.position.x;
+
+            if ((intendedMovement.x > 0 && directionToOther > 0) || (intendedMovement.x < 0 && directionToOther < 0))
             {
                 return new Vector2(0, intendedMovement.y); 
             }
-            
+
             return intendedMovement;
         }
         
