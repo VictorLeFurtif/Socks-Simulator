@@ -23,6 +23,7 @@ namespace Manager
         [SerializeField] private string menuSceneName = "Menu";
         [SerializeField] private string gameSceneName = "GYM V6";
         
+        
         public static event Action<GameState> OnGameStateChanged;
         
         public static GameManager Instance

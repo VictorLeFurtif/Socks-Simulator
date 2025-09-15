@@ -26,7 +26,7 @@ MonoBehaviour:
     dragging: 0
     tensionStrength: 5.14
   <PlayerControllerData>k__BackingField:
-    speed: 0.96
+    speed: 0.8
     distancePush: 5
     heightFactor: 0.8
   <AttackManagerData>k__BackingField:
