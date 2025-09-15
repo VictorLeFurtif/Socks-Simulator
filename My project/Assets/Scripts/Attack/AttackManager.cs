@@ -24,6 +24,7 @@ namespace Attack
         [SerializeField] private RopeController rp;
         [SerializeField] private GameObject shaderObj;
         [SerializeField] private Renderer shaderMat;
+        [SerializeField] private Rigidbody2D rb;
 
         private DataHolderManager commonData;
 
@@ -59,9 +60,10 @@ namespace Attack
         private void StartAttack()
         {
             isAttacking = true;
-
+            rb.bodyType = RigidbodyType2D.Static;
             animator.SetTrigger("IsAttacking");
 
+            
             //TODO hurt animation
         }
 
@@ -80,6 +82,7 @@ namespace Attack
             isAttacking = false;
             canCounter = false;
             wasCountered = false;
+            rb.bodyType = RigidbodyType2D.Dynamic;
 
         }
 
@@ -101,11 +104,8 @@ namespace Attack
         {
             if (isAttacking)
             {
-                isAttacking = false;
-                canCounter = false;
-                wasCountered = true;
-
                 animator.ResetTrigger("IsAttacking");
+                ResetAttackState();
             }
         }
 
