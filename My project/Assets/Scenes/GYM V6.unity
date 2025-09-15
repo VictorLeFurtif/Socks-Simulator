@@ -7524,19 +7524,19 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 2b8940df186bf884a99fd4ff3f7f562a, type: 2}
     - target: {fileID: 6069565374010837269, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Size.x
-      value: 6.7057056
+      value: 6.545766
       objectReference: {fileID: 0}
     - target: {fileID: 6069565374010837269, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Size.y
-      value: 6.7057056
+      value: 6.545766
       objectReference: {fileID: 0}
     - target: {fileID: 6069565374010837269, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Offset.x
-      value: 1.3325806
+      value: 1.2526112
       objectReference: {fileID: 0}
     - target: {fileID: 6069565374010837269, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Offset.y
-      value: 2.7687597
+      value: 2.8487294
       objectReference: {fileID: 0}
     - target: {fileID: 7981356175789211043, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: shaderMat
@@ -7564,19 +7564,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8770536755587737485, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Size.x
-      value: 6.964669
+      value: 6.271596
       objectReference: {fileID: 0}
     - target: {fileID: 8770536755587737485, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Size.y
-      value: 6.964669
+      value: 6.3071404
       objectReference: {fileID: 0}
     - target: {fileID: 8770536755587737485, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Offset.x
-      value: 1.0104107
+      value: 0.66387504
       objectReference: {fileID: 0}
     - target: {fileID: 8770536755587737485, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Offset.y
-      value: 3.2411363
+      value: 2.9123714
       objectReference: {fileID: 0}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: enemy
