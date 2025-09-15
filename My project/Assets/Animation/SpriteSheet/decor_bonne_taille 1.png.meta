@@ -128,8 +128,8 @@ TextureImporter:
         y: 296
         width: 400
         height: 407
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.3295566, y: 0.038210332}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -146,12 +146,12 @@ TextureImporter:
       name: decor_bonne_taille 1_1
       rect:
         serializedVersion: 2
-        x: 509
-        y: 294
-        width: 401
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 506
+        y: 292
+        width: 400
+        height: 420
+      alignment: 9
+      pivot: {x: 0.3295566, y: 0.038210332}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: decor_bonne_taille 1_2
       rect:
         serializedVersion: 2
-        x: 958
-        y: 293
-        width: 402
-        height: 395
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 940
+        y: 291
+        width: 428
+        height: 420
+      alignment: 9
+      pivot: {x: 0.2633239, y: 0.038210187}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,12 +190,12 @@ TextureImporter:
       name: decor_bonne_taille 1_3
       rect:
         serializedVersion: 2
-        x: 1385
-        y: 294
-        width: 403
-        height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1377
+        y: 292
+        width: 415
+        height: 522
+      alignment: 9
+      pivot: {x: 0.3751003, y: 0.028336389}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: decor_bonne_taille 1_4
       rect:
         serializedVersion: 2
-        x: 1794
-        y: 289
-        width: 412
-        height: 476
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1792
+        y: 293
+        width: 422
+        height: 522
+      alignment: 9
+      pivot: {x: 0.30181915, y: 0.020930966}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,12 +234,12 @@ TextureImporter:
       name: decor_bonne_taille 1_5
       rect:
         serializedVersion: 2
-        x: 2220
-        y: 292
-        width: 399
-        height: 402
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2215
+        y: 297
+        width: 422
+        height: 522
+      alignment: 9
+      pivot: {x: 0.25601846, y: 0.020930966}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,12 +256,12 @@ TextureImporter:
       name: decor_bonne_taille 1_6
       rect:
         serializedVersion: 2
-        x: 2419
-        y: 679
-        width: 35
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2639
+        y: 298
+        width: 465
+        height: 522
+      alignment: 9
+      pivot: {x: 0.25601846, y: 0.020930966}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -274,33 +274,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: decor_bonne_taille 1_7
-      rect:
-        serializedVersion: 2
-        x: 2657
-        y: 293
-        width: 437
-        height: 407
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6805949027b28a710800000000000000
-      internalID: 1704660227741798534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e36521e3d3c244140862a0d239b7fecc
     internalID: 0
     vertices: []
     indices: 

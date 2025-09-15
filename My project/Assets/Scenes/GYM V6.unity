@@ -5853,7 +5853,7 @@ PrefabInstance:
       objectReference: {fileID: 3196843201955616194}
     - target: {fileID: 7196199175114784169, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: distanceToAttack
-      value: 4
+      value: 6.99
       objectReference: {fileID: 0}
     - target: {fileID: 8019689466870172520, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_Name
@@ -6838,7 +6838,7 @@ PrefabInstance:
       objectReference: {fileID: 5805106370572638601}
     - target: {fileID: 7981356175789211043, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: distanceToAttack
-      value: 4
+      value: 6.99
       objectReference: {fileID: 0}
     - target: {fileID: 8723019058609988545, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Name
