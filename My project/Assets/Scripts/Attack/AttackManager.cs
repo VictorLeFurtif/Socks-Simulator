@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilitary;
 using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Attack
@@ -126,16 +127,21 @@ namespace Attack
         {
             if (playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider < playerSlider.maxValue)
             {
-                playerSlider.value += commonData.playerDataCommon.AttackManagerData.looseSlider;
+                UiHelper.UpdateSlider(this,playerSlider,playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider);
             }
             else
             {
-                playerSlider.value = playerSlider.maxValue;
-                ToggleSlidersAttack(false);
-                rp.CurrentKoState = KoState.Ko;
+                StartCoroutine(UpdateSliderIfKo());
             }
         }
 
+        IEnumerator UpdateSliderIfKo()
+        {
+            yield return UiHelper.UpdateSliderCoroutine(this,playerSlider,playerSlider.maxValue);
+            ToggleSlidersAttack(false);
+            rp.CurrentKoState = KoState.Ko;
+        }
+        
         public void ToggleSlidersAttack(bool _bool)
         {
             playerSlider.gameObject.SetActive(_bool);
