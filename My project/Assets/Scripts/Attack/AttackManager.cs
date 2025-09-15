@@ -47,9 +47,7 @@ namespace Attack
 
         private void Update()
         {
-            Debug.Log($"{isInArea} and player : {gameObject.name}");
             CheckDistance();
-            Debug.Log(isInArea);
         }
         private void CheckDistance()
         {
@@ -155,6 +153,21 @@ namespace Attack
             {
                 shaderMat.material.SetFloat(lName, -0.1f);
             }
+        }
+
+        private void OnEnable()
+        {
+            PlayerScoreManager.OnRoundReset += ResetElement;
+        }
+
+        private void OnDisable()
+        {
+            PlayerScoreManager.OnRoundReset -= ResetElement;
+        }
+
+        private void ResetElement()
+        {
+            ResetSlider();
         }
 
 #if UNITY_EDITOR

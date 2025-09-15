@@ -147,8 +147,27 @@ namespace Controller
             DrawLineRenderer(enemy?.Ass);
         }
 
+        private void OnEnable()
+        {
+            PlayerScoreManager.OnRoundReset += ResetElement;
+        }
+
+        private void OnDisable()
+        {
+            PlayerScoreManager.OnRoundReset -= ResetElement;
+        }
+
         #endregion
 
+        private void ResetElement()
+        {
+            commonData.playerDataCommon.RopeData.dragging = false;
+            CurrentKoState = KoState.NotKo;
+            CurrentPlayerState = PlayerState.Idle;
+            HideAllFlags();
+            stunSlider.value = stunSlider.maxValue; //reset slider
+        }
+        
         #region RopeController Methods For Attacker
 
         private void RopeTension()
@@ -196,22 +215,30 @@ namespace Controller
             bool won = false;
 
             if (currentPlayerPlacement == PlayerPlacement.Left)
+            {
                 won = IsPlayerCloseToFlag(commonData.playerDataCommon.RopeData.epsilon, leftFlag.transform);
+                
+            }       
+            
             if (currentPlayerPlacement == PlayerPlacement.Right)
+            {
                 won = IsPlayerCloseToFlag(commonData.playerDataCommon.RopeData.epsilon, rightFlag.transform);
+                
+            }
 
             if (won && GameManager.Instance?.CurrentState != GameState.GameOver )
             {
                 enemy.CurrentPlayerState = PlayerState.Dead;
-                HandleWin();
-                GameManager.Instance?.GameOver();
+                
+                HandleScoring();
             }
         }
 
-        private void HandleWin()
+        private void HandleScoring()
         {
-            string winnerPlacement = enemy.currentPlayerPlacement.ToString();
+            PlayerScoreManager._instance.AddScore(currentPlayerPlacement);
         }
+        
         
         
         private bool IsPlayerCloseToFlag(float epsilon, Transform flag)
