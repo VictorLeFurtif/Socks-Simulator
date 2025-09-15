@@ -19,7 +19,7 @@ MonoBehaviour:
     - 5.58
     - 10
     stunValueToTakeOut: 0.2
-    flagDistance: 7.3
+    flagDistance: 10
     currentKoState: 1
     currentPlayerState: 0
     epsilon: 0.19
@@ -27,7 +27,7 @@ MonoBehaviour:
     tensionStrength: 5.14
   <PlayerControllerData>k__BackingField:
     speed: 0.8
-    distancePush: 2.4
+    distancePush: 5
     heightFactor: 0.8
   <AttackManagerData>k__BackingField:
     attackCooldown: 0.5

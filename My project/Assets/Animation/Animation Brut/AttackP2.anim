@@ -40,18 +40,16 @@ AnimationClip:
       value: {fileID: -2846266765370558545, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
     - time: 0.14285715
       value: {fileID: -4121210083895986453, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
-    - time: 0.2857143
-      value: {fileID: 1496326190417380903, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
     - time: 0.42857143
-      value: {fileID: 8171555530897059684, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
-    - time: 0.5714286
-      value: {fileID: 8880314888022001202, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
+      value: {fileID: 1496326190417380903, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
     - time: 0.71428573
-      value: {fileID: 1943235911076410870, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
-    - time: 0.85714287
-      value: {fileID: -4450667410386373136, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
+      value: {fileID: 8171555530897059684, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
     - time: 1
-      value: {fileID: 1704660227741798534, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
+      value: {fileID: 8880314888022001202, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
+    - time: 1.1428572
+      value: {fileID: 1943235911076410870, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
+    - time: 1.2857143
+      value: {fileID: -4450667410386373136, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -90,13 +88,12 @@ AnimationClip:
     - {fileID: 8880314888022001202, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
     - {fileID: 1943235911076410870, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
     - {fileID: -4450667410386373136, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
-    - {fileID: 1704660227741798534, guid: 86ac32f37c49d304dbc121d6878a7853, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.1428572
+    m_StopTime: 1.4285715
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -178,4 +175,39 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.2857143
+    functionName: PerformCounter
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.71428573
+    functionName: PerformCounter
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.71428573
+    functionName: CheckShouldInterrupt
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.85714287
+    functionName: ShockWave
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.2857143
+    functionName: OnAttackEnd
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

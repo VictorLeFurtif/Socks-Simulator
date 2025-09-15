@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using Controller;
 using Enum;
+using UnityEngine.UI;
 
 namespace Manager
 {
@@ -20,7 +21,11 @@ namespace Manager
         
         [SerializeField] private int leftPlayerScore = 0;
         [SerializeField] private int rightPlayerScore = 0;
-        
+
+        [Header("Flags")]
+        [SerializeField] private Image[] flagsP1;
+        [SerializeField] private Image[] flagsP2;
+
         public static event Action<PlayerPlacement> OnPlayerScored;
         public static event Action<PlayerPlacement> OnPlayerWon;
         public static event Action OnRoundReset;
@@ -62,10 +67,12 @@ namespace Manager
         {
             if (player == PlayerPlacement.Left)
             {
+                flagsP1[leftPlayerScore].gameObject.SetActive(true);
                 leftPlayerScore++;
             }
             else if (player == PlayerPlacement.Right)
             {
+                flagsP2[rightPlayerScore].gameObject.SetActive(true);
                 rightPlayerScore++;
             }
             

@@ -64,6 +64,7 @@ namespace Attack
         {
             isAttacking = true;
             rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.linearVelocity = Vector3.zero;
             animator.SetTrigger("IsAttacking");
 
 
@@ -108,6 +109,7 @@ namespace Attack
             if (isAttacking)
             {
                 animator.ResetTrigger("IsAttacking");
+                animator.Play("Idle");
                 StartCoroutine(ResetAttackState());
             }
         }
@@ -131,7 +133,15 @@ namespace Attack
             {
                 playerSlider.value = 0;
                 rp.CurrentKoState = KoState.Ko;
-                //StartCoroutine(ShockWave());
+            }
+        }
+
+        public  void CheckShouldInterrupt()
+        {
+            if (!isInArea)
+            {
+                Debug.Log(isInArea + " should interrupt");
+                InterruptAttack();
             }
         }
 
