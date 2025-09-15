@@ -42,6 +42,7 @@ namespace Attack
         private void Start()
         {
             commonData = GetComponent<DataHolderManager>();
+            ResetSlider();
         }
 
 
@@ -123,19 +124,22 @@ namespace Attack
 
         private void UpdateSlider()
         {
-            playerController.UpdateStun();
-
-            if (playerSlider.value - commonData.playerDataCommon.AttackManagerData.looseSlider > 0)
+            if (playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider < playerSlider.maxValue)
             {
-                playerSlider.value -= commonData.playerDataCommon.AttackManagerData.looseSlider;
+                playerSlider.value += commonData.playerDataCommon.AttackManagerData.looseSlider;
             }
             else
             {
-                playerSlider.value = 0;
+                playerSlider.value = playerSlider.maxValue;
+                ToggleSlidersAttack(false);
                 rp.CurrentKoState = KoState.Ko;
             }
         }
 
+        public void ToggleSlidersAttack(bool _bool)
+        {
+            playerSlider.gameObject.SetActive(_bool);
+        }
         public  void CheckShouldInterrupt()
         {
             if (!isInArea)
@@ -147,7 +151,8 @@ namespace Attack
 
         public void ResetSlider()
         {
-            playerSlider.value = playerSlider.maxValue;
+            playerSlider.value = 0;
+            ToggleSlidersAttack(true);
         }
 
         public IEnumerator ShockWave()

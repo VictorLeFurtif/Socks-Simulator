@@ -52,6 +52,7 @@ namespace Controller
                     HideAllFlags();
                     attackManager.ResetSlider();
                     stunSlider.value = stunSlider.maxValue;
+                    attackManager.ToggleSlidersAttack(true);
                 }
             }
         }
@@ -87,11 +88,13 @@ namespace Controller
                 if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 {
                     StunValue = commonData.playerDataCommon.RopeData.maxStunValue[koIndex];
+                    ToggleSlidersStun(true);
                     //pc.rb.bodyType = RigidbodyType2D.Kinematic;
                 }
                 else
                 {
                     pc.rb.bodyType = RigidbodyType2D.Dynamic;
+                    ToggleSlidersStun(false);
                 }
             }
         }
@@ -166,6 +169,7 @@ namespace Controller
             CurrentPlayerState = PlayerState.Idle;
             HideAllFlags();
             stunSlider.value = stunSlider.maxValue; //reset slider
+            koIndex = 0;
         }
         
         #region RopeController Methods For Attacker
@@ -318,6 +322,15 @@ namespace Controller
 
         #endregion
 
+
+        #region UI
+
+        private void ToggleSlidersStun(bool _bool)
+        {
+            stunSlider.gameObject.SetActive(_bool);
+        }
+
+        #endregion
         
           #region Debug
 
