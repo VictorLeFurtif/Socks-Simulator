@@ -21,7 +21,7 @@ namespace Manager
         
         [Header("Scene Names")]
         [SerializeField] private string menuSceneName = "Menu";
-        [SerializeField] private string gameSceneName = "Game";
+        [SerializeField] private string gameSceneName = "GYM V6";
         
         public static event Action<GameState> OnGameStateChanged;
         

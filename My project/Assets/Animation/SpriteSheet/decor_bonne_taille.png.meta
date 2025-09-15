@@ -1,0 +1,332 @@
+fileFormatVersion: 2
+guid: 1edc043f681573f4f940a43ef1e24c4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7546673444880650053
+    second: decor_bonne_taille_0
+  - first:
+      213: 3246148930231798481
+    second: decor_bonne_taille_1
+  - first:
+      213: -470868541131618559
+    second: decor_bonne_taille_2
+  - first:
+      213: 8113284904341149348
+    second: decor_bonne_taille_3
+  - first:
+      213: -8427123027140708481
+    second: decor_bonne_taille_4
+  - first:
+      213: 3129589653252084567
+    second: decor_bonne_taille_5
+  - first:
+      213: -2296630112393662643
+    second: decor_bonne_taille_6
+  - first:
+      213: -6518363412201680994
+    second: decor_bonne_taille_7
+  - first:
+      213: -7564319429912784776
+    second: decor_bonne_taille_8
+  - first:
+      213: -2871031727843712502
+    second: decor_bonne_taille_9
+  - first:
+      213: -4748712191690743227
+    second: decor_bonne_taille_10
+  - first:
+      213: 6385499648478165294
+    second: decor_bonne_taille_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: decor_bonne_taille_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 171
+        width: 575
+        height: 663
+      alignment: 9
+      pivot: {x: 0.7078675, y: 0.034283828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f0cfd938b2bb860800000000000000
+      internalID: 7546673444880650053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decor_bonne_taille_1
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 173
+        width: 568
+        height: 663
+      alignment: 9
+      pivot: {x: 0.6818842, y: 0.01550507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da0b72d043ac0d20800000000000000
+      internalID: 3246148930231798481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decor_bonne_taille_2
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 175
+        width: 481
+        height: 663
+      alignment: 9
+      pivot: {x: 0.60871464, y: 0.023016537}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10781fd7e832779f0800000000000000
+      internalID: -470868541131618559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decor_bonne_taille_3
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 168
+        width: 657
+        height: 663
+      alignment: 9
+      pivot: {x: 0.8183664, y: 0.011749199}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a61bcc62ad289070800000000000000
+      internalID: 8113284904341149348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decor_bonne_taille_4
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 170
+        width: 648
+        height: 663
+      alignment: 9
+      pivot: {x: 0.7387755, y: 0.015504886}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7773c07148dc0b80800000000000000
+      internalID: -8427123027140708481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decor_bonne_taille_5
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 163
+        width: 657
+        height: 663
+      alignment: 9
+      pivot: {x: 0.7463557, y: 0.030527981}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75314d655398e6b20800000000000000
+      internalID: 3129589653252084567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decor_bonne_taille_6
+      rect:
+        serializedVersion: 2
+        x: 3605
+        y: 158
+        width: 657
+        height: 663
+      alignment: 9
+      pivot: {x: 0.6212833, y: 0.038039654}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f6f42b41bb020e0800000000000000
+      internalID: -2296630112393662643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 480170fc2aa3acc4989e76545a79f3ea
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      decor_bonne_taille_0: 7546673444880650053
+      decor_bonne_taille_1: 3246148930231798481
+      decor_bonne_taille_10: -4748712191690743227
+      decor_bonne_taille_11: 6385499648478165294
+      decor_bonne_taille_2: -470868541131618559
+      decor_bonne_taille_3: 8113284904341149348
+      decor_bonne_taille_4: -8427123027140708481
+      decor_bonne_taille_5: 3129589653252084567
+      decor_bonne_taille_6: -2296630112393662643
+      decor_bonne_taille_7: -6518363412201680994
+      decor_bonne_taille_8: -7564319429912784776
+      decor_bonne_taille_9: -2871031727843712502
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
