@@ -175,7 +175,8 @@ namespace Attack
             if (!isInArea && ennemyAttack.rp.CurrentKoState == KoState.NotKo)
             {
                 Debug.Log(isInArea + " should interrupt");
-                InterruptAttack();
+                shoulNotDoEvent = true;
+                StartCoroutine(ResetAttackState());
                 return;
             }
             shoulNotDoEvent = false;

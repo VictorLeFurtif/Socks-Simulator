@@ -17,7 +17,6 @@ namespace Controller
         private float radius;
         private InputSystem_Actions inputSystem;
         private float camWidth;
-        private bool touchedWall;
 
         public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
@@ -61,8 +60,34 @@ namespace Controller
             }
         }
 
+        private void OnDisable()
+        {
+            switch (playerNum)
+            {
+                case PlayerPlacement.Left:
+                    //inputSystem.Player.Move.performed += Move;
+                    //inputSystem.Player.Move.canceled += ctx => moveDirection = Vector2.zero;
+                    inputSystem.Player.Look.performed -= GetMousePosY;
+                    inputSystem.Player.Look.canceled -= ctx => moveDirection = Vector2.zero;
+                    inputSystem.Player.Attack.performed -= Attack;
+                    inputSystem.Player.Counter.performed -= Counter;
+                    break;
+                case PlayerPlacement.Right:
+                    inputSystem.Player1.Enable();
+                    //inputSystem.Player1.Move.performed += Move;
+                    //inputSystem.Player1.Move.canceled += ctx => moveDirection = Vector2.zero;
+                    inputSystem.Player1.Look.performed -= GetMousePosX;
+                    inputSystem.Player1.Look.canceled -= ctx => moveDirection = Vector2.zero;
+                    inputSystem.Player1.Attack.performed -= Attack;
+                    inputSystem.Player1.Counter.performed -= Counter;
+                    break;
+            }
+        }
+
         private void Start()
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             radius = spriteRenderer.bounds.extents.x;
             commonData = GetComponent<DataHolderManager>();
         }
@@ -196,23 +221,6 @@ namespace Controller
             attackManager.PerformCounter();
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Wall"))
-            { 
-                touchedWall = true;
-            }
-        }
-
-        private void OnCollisionExit2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Wall"))
-            {
-                touchedWall = false;
-            }
-                
-        }
-
         private void StunBackward(int pDirection)
         {
             Vector2 targetPosition;
@@ -263,7 +271,6 @@ namespace Controller
 
                 if (hit.collider != null)
                 {
-                    touchedWall = true;
                     yield break;
                 }
 
