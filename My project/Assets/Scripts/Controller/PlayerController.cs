@@ -237,6 +237,7 @@ namespace Controller
             {
                 if (touchedWall)
                 {
+                    rb.bodyType = RigidbodyType2D.Kinematic;
                     yield break;
                 }
 

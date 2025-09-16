@@ -39,8 +39,10 @@ namespace Attack
             if (isInArea && !isAttacking && !ennemyAttack.isAttacking && ennemyAttack.rp.CurrentKoState == KoState.NotKo)
             {
                 shoulNotDoEvent = false;
+                StartAttack();
             }
-            StartAttack();
+            else if(!isAttacking && ennemyAttack.rp.CurrentKoState == KoState.NotKo)
+                StartAttack();
 
         }
 
@@ -95,6 +97,7 @@ namespace Attack
             canCounter = false;
             wasCountered = false;
             shoulNotDoEvent = true;
+            shouldNotCounter = true;
             rb.bodyType = RigidbodyType2D.Dynamic;
 
         }
@@ -113,11 +116,12 @@ namespace Attack
                 ennemyAttack.InterruptAttack();
                 isAttacking = true;
                 shouldNotCounter = false;
-                shouldNotCounter = false;
                 wasCountered = true;
                 canCounter = false;
+                animator.SetTrigger("IsCounter");
             }
-            animator.SetTrigger("IsCounter");
+            else if(!isAttacking)
+                animator.SetTrigger("IsCounter");
 
         }
 
@@ -150,6 +154,7 @@ namespace Attack
             }
             else
             {
+                Debug.Log("bla");
                 StartCoroutine(UpdateSliderIfKo());
             }
         }
@@ -167,7 +172,7 @@ namespace Attack
         }
         public void CheckShouldInterrupt()
         {
-            if (!isInArea)
+            if (!isInArea && ennemyAttack.rp.CurrentKoState == KoState.NotKo)
             {
                 Debug.Log(isInArea + " should interrupt");
                 InterruptAttack();
