@@ -86,6 +86,8 @@ namespace Controller
 
         private void Start()
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             radius = spriteRenderer.bounds.extents.x;
             commonData = GetComponent<DataHolderManager>();
         }
