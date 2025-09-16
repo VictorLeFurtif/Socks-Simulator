@@ -16,6 +16,8 @@ namespace Attack
         private bool isInArea = false;
         public bool canCounter;
         private bool wasCountered;
+        private bool shoulNotDoEvent = true;
+        private bool shouldNotCounter = true;
 
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Animator animator;
@@ -36,8 +38,10 @@ namespace Attack
 
             if (isInArea && !isAttacking && !ennemyAttack.isAttacking && ennemyAttack.rp.CurrentKoState == KoState.NotKo)
             {
-                StartAttack();
+                shoulNotDoEvent = false;
             }
+            StartAttack();
+
         }
 
         private void Start()
@@ -75,6 +79,8 @@ namespace Attack
 
         public void OnAttackEnd()
         {
+            if (shoulNotDoEvent)
+                return;
             if (!wasCountered)
                 ennemyAttack.UpdateSlider();
 
@@ -88,25 +94,34 @@ namespace Attack
             isAttacking = false;
             canCounter = false;
             wasCountered = false;
+            shoulNotDoEvent = true;
             rb.bodyType = RigidbodyType2D.Dynamic;
 
         }
 
-        public void SetCounterPossible() => canCounter = !canCounter;
+        public void SetCounterPossible()
+        {
+            if (shoulNotDoEvent)
+                return;
+            canCounter = !canCounter;
+        }
 
         public void PerformCounter()
         {
-            if (ennemyAttack.canCounter && !wasCountered)
+            if (ennemyAttack.canCounter && !wasCountered && !isAttacking)
             {
                 ennemyAttack.InterruptAttack();
-
+                isAttacking = true;
+                shouldNotCounter = false;
+                shouldNotCounter = false;
                 wasCountered = true;
                 canCounter = false;
-                animator.SetTrigger("IsCounter");
             }
+            animator.SetTrigger("IsCounter");
+
         }
 
-        public void InterruptAttack()
+        private void InterruptAttack()
         {
             if (isAttacking)
             {
@@ -119,8 +134,11 @@ namespace Attack
 
         public void OnCounterEnd()
         {
-            ennemyAttack.UpdateSlider();
-            StartCoroutine(ResetAttackState());
+            if (!shouldNotCounter)
+            {
+                ennemyAttack.UpdateSlider();
+                StartCoroutine(ResetAttackState());
+            }
         }
 
         private void UpdateSlider()
@@ -128,7 +146,7 @@ namespace Attack
             playerController.UpdateStun();
             if (playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider < playerSlider.maxValue)
             {
-                UiHelper.UpdateSlider(this,playerSlider,playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider);
+                UiHelper.UpdateSlider(this, playerSlider, playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider);
             }
             else
             {
@@ -138,22 +156,24 @@ namespace Attack
 
         IEnumerator UpdateSliderIfKo()
         {
-            yield return UiHelper.UpdateSliderCoroutine(this,playerSlider,playerSlider.maxValue);
+            yield return UiHelper.UpdateSliderCoroutine(this, playerSlider, playerSlider.maxValue);
             ToggleSlidersAttack(false);
             rp.CurrentKoState = KoState.Ko;
         }
-        
+
         public void ToggleSlidersAttack(bool _bool)
         {
             playerSlider.gameObject.SetActive(_bool);
         }
-        public  void CheckShouldInterrupt()
+        public void CheckShouldInterrupt()
         {
             if (!isInArea)
             {
                 Debug.Log(isInArea + " should interrupt");
                 InterruptAttack();
+                return;
             }
+            shoulNotDoEvent = false;
         }
 
         public void ResetSlider()
@@ -164,6 +184,8 @@ namespace Attack
 
         public IEnumerator ShockWave()
         {
+            if (shoulNotDoEvent)
+                yield break;
             string lName = "_WaveDistanceFromCenter";
             shaderObj.transform.position = ennemyAttack.gameObject.transform.position;
             while (shaderMat.material.GetFloat(lName) < 1)
