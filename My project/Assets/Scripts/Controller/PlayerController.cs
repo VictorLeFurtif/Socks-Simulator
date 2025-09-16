@@ -71,6 +71,13 @@ namespace Controller
         {
             CheckBorderCollision();
             Vector2 allowedMovement = GetAllowedMovement(moveDirection);
+
+            if(ropeController.CurrentKoState == KoState.Ko) 
+            {
+                allowedMovement = Vector2.zero;
+                rb.linearVelocity = Vector2.zero;
+            }
+
             rb.AddForce(allowedMovement * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
             rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, commonData.playerDataCommon.PlayerControllerData.clampSpeed);
         }
@@ -235,11 +242,7 @@ namespace Controller
 
             while (elapsedTime < duration)
             {
-                if (touchedWall)
-                {
-                    rb.bodyType = RigidbodyType2D.Kinematic;
-                    yield break;
-                }
+               
 
                 elapsedTime += Time.fixedDeltaTime;
                 float t = elapsedTime / duration;
