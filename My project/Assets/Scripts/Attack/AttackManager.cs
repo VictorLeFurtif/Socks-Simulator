@@ -229,21 +229,6 @@ namespace Attack
             ResetSlider();
         }
 
-#if UNITY_EDITOR
 
-        private void OnDrawGizmos()
-        {
-            if (isInArea)
-            {
-                Gizmos.color = Color.green;
-                Gizmos.DrawLine(transform.position, enemyAttack.gameObject.transform.position);
-            }
-            else
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawLine(transform.position, enemyAttack.gameObject.transform.position);
-            }
-        }
-#endif
     }
 }
