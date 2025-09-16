@@ -267,7 +267,10 @@ namespace Controller
                 yield return new WaitForFixedUpdate();
             }
             rb.linearVelocity= Vector2.zero;
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            if (ropeController.CurrentKoState == KoState.Ko)
+            {
+                rb.bodyType = RigidbodyType2D.Kinematic;
+            }
         }
     }
 }
