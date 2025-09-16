@@ -61,6 +61,30 @@ namespace Controller
             }
         }
 
+        private void OnDisable()
+        {
+            switch (playerNum)
+            {
+                case PlayerPlacement.Left:
+                    //inputSystem.Player.Move.performed += Move;
+                    //inputSystem.Player.Move.canceled += ctx => moveDirection = Vector2.zero;
+                    inputSystem.Player.Look.performed -= GetMousePosY;
+                    inputSystem.Player.Look.canceled -= ctx => moveDirection = Vector2.zero;
+                    inputSystem.Player.Attack.performed -= Attack;
+                    inputSystem.Player.Counter.performed -= Counter;
+                    break;
+                case PlayerPlacement.Right:
+                    inputSystem.Player1.Enable();
+                    //inputSystem.Player1.Move.performed += Move;
+                    //inputSystem.Player1.Move.canceled += ctx => moveDirection = Vector2.zero;
+                    inputSystem.Player1.Look.performed -= GetMousePosX;
+                    inputSystem.Player1.Look.canceled -= ctx => moveDirection = Vector2.zero;
+                    inputSystem.Player1.Attack.performed -= Attack;
+                    inputSystem.Player1.Counter.performed -= Counter;
+                    break;
+            }
+        }
+
         private void Start()
         {
             radius = spriteRenderer.bounds.extents.x;
