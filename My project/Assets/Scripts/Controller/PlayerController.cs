@@ -219,23 +219,6 @@ namespace Controller
             attackManager.PerformCounter();
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Wall"))
-            { 
-                touchedWall = true;
-            }
-        }
-
-        private void OnCollisionExit2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Wall"))
-            {
-                touchedWall = false;
-            }
-                
-        }
-
         private void StunBackward(int pDirection)
         {
             Vector2 targetPosition;
@@ -286,7 +269,6 @@ namespace Controller
 
                 if (hit.collider != null)
                 {
-                    touchedWall = true;
                     yield break;
                 }
 
