@@ -17,6 +17,7 @@ namespace Attack
         public bool canCounter;
         private bool wasCountered;
         private bool shoulNotDoEvent = true;
+        private bool shouldNotCounter = true;
 
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Animator animator;
@@ -107,14 +108,17 @@ namespace Attack
 
         public void PerformCounter()
         {
-            if (ennemyAttack.canCounter && !wasCountered)
+            if (ennemyAttack.canCounter && !wasCountered && !isAttacking)
             {
                 ennemyAttack.InterruptAttack();
-
+                isAttacking = true;
+                shouldNotCounter = false;
+                shouldNotCounter = false;
                 wasCountered = true;
                 canCounter = false;
-                animator.SetTrigger("IsCounter");
             }
+            animator.SetTrigger("IsCounter");
+
         }
 
         private void InterruptAttack()
@@ -130,8 +134,11 @@ namespace Attack
 
         public void OnCounterEnd()
         {
-            ennemyAttack.UpdateSlider();
-            StartCoroutine(ResetAttackState());
+            if (!shouldNotCounter)
+            {
+                ennemyAttack.UpdateSlider();
+                StartCoroutine(ResetAttackState());
+            }
         }
 
         private void UpdateSlider()
@@ -160,13 +167,13 @@ namespace Attack
         }
         public void CheckShouldInterrupt()
         {
-            if (shoulNotDoEvent)
-                return;
             if (!isInArea)
             {
                 Debug.Log(isInArea + " should interrupt");
                 InterruptAttack();
+                return;
             }
+            shoulNotDoEvent = false;
         }
 
         public void ResetSlider()
