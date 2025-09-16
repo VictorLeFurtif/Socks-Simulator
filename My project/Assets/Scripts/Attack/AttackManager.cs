@@ -18,6 +18,7 @@ namespace Attack
         private bool wasCountered;
         private bool shoulNotDoEvent = true;
         private bool shouldNotCounter = true;
+        private bool dontRepeatCounter; //TODO a refacto
 
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Animator animator;
@@ -82,17 +83,27 @@ namespace Attack
         public void OnAttackEnd()
         {
             if (shoulNotDoEvent)
+            {
+                animator.SetBool("AttackedBad", true);
                 return;
+            }
             if (!wasCountered)
+            {
                 ennemyAttack.UpdateSlider();
+                animator.SetBool("AttackedBad", true);
+            }
 
             StartCoroutine(ResetAttackState());
         }
 
         private IEnumerator ResetAttackState()
         {
+
             yield return new WaitForSeconds(commonData.playerDataCommon.AttackManagerData.attackCooldown);
 
+            animator.Play("Idle");
+
+            dontRepeatCounter = false;
             isAttacking = false;
             canCounter = false;
             wasCountered = false;
@@ -111,17 +122,19 @@ namespace Attack
 
         public void PerformCounter()
         {
-            if (ennemyAttack.canCounter && !wasCountered && !isAttacking)
+            if (ennemyAttack.canCounter && !wasCountered && !isAttacking && !dontRepeatCounter)
             {
-                ennemyAttack.InterruptAttack();
+                dontRepeatCounter = true;
                 isAttacking = true;
+                ennemyAttack.InterruptAttack();
                 shouldNotCounter = false;
                 wasCountered = true;
                 canCounter = false;
                 animator.SetTrigger("IsCounter");
+                ennemyAttack.animator.SetBool("AttackedBad", true);
             }
             else if(!isAttacking)
-                animator.SetTrigger("IsCounter");
+                animator.SetTrigger("IsCounter"); //a refacto
 
         }
 
@@ -129,8 +142,8 @@ namespace Attack
         {
             if (isAttacking)
             {
-                animator.ResetTrigger("IsAttacking");
                 animator.Play("Idle");
+                animator.ResetTrigger("IsAttacking");
                 StartCoroutine(ResetAttackState());
             }
         }
@@ -142,19 +155,22 @@ namespace Attack
             {
                 ennemyAttack.UpdateSlider();
                 StartCoroutine(ResetAttackState());
+                animator.SetTrigger("CounteredBad");
             }
         }
 
         private void UpdateSlider()
         {
             playerController.UpdateStun();
+
             if (playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider < playerSlider.maxValue)
             {
                 UiHelper.UpdateSlider(this, playerSlider, playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider);
+                animator.SetTrigger("TakingDamage");
+
             }
             else
             {
-                Debug.Log("bla");
                 StartCoroutine(UpdateSliderIfKo());
             }
         }
@@ -164,6 +180,7 @@ namespace Attack
             yield return UiHelper.UpdateSliderCoroutine(this, playerSlider, playerSlider.maxValue);
             ToggleSlidersAttack(false);
             rp.CurrentKoState = KoState.Ko;
+            animator.SetBool("IsStunned", true);
         }
 
         public void ToggleSlidersAttack(bool _bool)
@@ -174,7 +191,6 @@ namespace Attack
         {
             if (!isInArea && ennemyAttack.rp.CurrentKoState == KoState.NotKo)
             {
-                Debug.Log(isInArea + " should interrupt");
                 shoulNotDoEvent = true;
                 StartCoroutine(ResetAttackState());
                 return;

@@ -32,4 +32,4 @@ MonoBehaviour:
     heightFactor: 0.8
   <AttackManagerData>k__BackingField:
     attackCooldown: 2
-    looseSlider: 10
+    looseSlider: 5

@@ -26,6 +26,8 @@ namespace Controller
         [SerializeField] private GameObject ennemy;
         [SerializeField] private RopeController ropeController;
         [SerializeField] private Collider2D playerCollider;
+        [SerializeField] private Animator animatorPlayer;
+
 
         private DataHolderManager commonData;
 
@@ -92,6 +94,7 @@ namespace Controller
             commonData = GetComponent<DataHolderManager>();
         }
 
+
         private void FixedUpdate()
         {
             CheckBorderCollision();
@@ -105,6 +108,9 @@ namespace Controller
 
             rb.AddForce(allowedMovement * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
             rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, commonData.playerDataCommon.PlayerControllerData.clampSpeed);
+
+            animatorPlayer.SetFloat("velocity", Mathf.Abs(rb.linearVelocityX));
+            
         }
 
         /*

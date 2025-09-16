@@ -5483,6 +5483,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c83a91f8e519d4459c09e82b0b5b60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!95 &1747572038 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 613484177901962035, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+  m_PrefabInstance: {fileID: 1688701364716047909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1768249905
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,6 +7212,10 @@ PrefabInstance:
       propertyPath: ennemy
       value: 
       objectReference: {fileID: 1935864695}
+    - target: {fileID: 3809542287267580230, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: animatorPlayer
+      value: 
+      objectReference: {fileID: 1747572038}
     - target: {fileID: 3912392541613030389, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_Size.x
       value: 5.914312
@@ -7227,6 +7236,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 4407022384616132565}
+    - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1747572038}
     - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: leftFlag
       value: 
@@ -8608,6 +8621,10 @@ PrefabInstance:
       propertyPath: ennemy
       value: 
       objectReference: {fileID: 1747572025}
+    - target: {fileID: 2934980116777928790, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: animatorPlayer
+      value: 
+      objectReference: {fileID: 8361313266364614253}
     - target: {fileID: 3896351449628562610, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.64
@@ -8736,6 +8753,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1747572031}
+    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 8361313266364614253}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: leftFlag
       value: 
@@ -10084,6 +10105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c83a91f8e519d4459c09e82b0b5b60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!95 &8361313266364614253 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5919270100428847713, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+  m_PrefabInstance: {fileID: 4936011553098359917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8373830889602292114
 GameObject:
   m_ObjectHideFlags: 0
