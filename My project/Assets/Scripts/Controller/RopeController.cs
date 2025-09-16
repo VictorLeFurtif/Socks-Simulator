@@ -322,7 +322,6 @@ namespace Controller
 
         #endregion
 
-
         #region UI
 
         private void ToggleSlidersStun(bool _bool)
