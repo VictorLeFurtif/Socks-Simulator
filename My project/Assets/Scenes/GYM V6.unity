@@ -7269,6 +7269,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1302475538}
     - target: {fileID: 7196199175114784169, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: enemyAttack
+      value: 
+      objectReference: {fileID: 8361313266364614248}
+    - target: {fileID: 7196199175114784169, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: ennemyAttack
       value: 
       objectReference: {fileID: 8361313266364614248}
@@ -8717,6 +8721,10 @@ PrefabInstance:
       propertyPath: shaderObj
       value: 
       objectReference: {fileID: 1302475538}
+    - target: {fileID: 7981356175789211043, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: enemyAttack
+      value: 
+      objectReference: {fileID: 1747572029}
     - target: {fileID: 7981356175789211043, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: ennemyAttack
       value: 
