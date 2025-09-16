@@ -42,19 +42,19 @@ namespace Controller
             {
                 case PlayerPlacement.Left:
                     inputSystem.Player.Enable();
-                    inputSystem.Player.Move.performed += Move;
-                    inputSystem.Player.Move.canceled += ctx => moveDirection = Vector2.zero;
-                    //inputSystem.Player.Look.performed += GetMousePosX;
-                    //inputSystem.Player.Look.canceled += ctx => moveDirection = Vector2.zero;
+                    //inputSystem.Player.Move.performed += Move;
+                    //inputSystem.Player.Move.canceled += ctx => moveDirection = Vector2.zero;
+                    inputSystem.Player.Look.performed += GetMousePosY;
+                    inputSystem.Player.Look.canceled += ctx => moveDirection = Vector2.zero;
                     inputSystem.Player.Attack.performed += Attack;
                     inputSystem.Player.Counter.performed += Counter;
                     break;
                 case PlayerPlacement.Right:
                     inputSystem.Player1.Enable();
-                    inputSystem.Player1.Move.performed += Move;
-                    inputSystem.Player1.Move.canceled += ctx => moveDirection = Vector2.zero;
-                    //inputSystem.Player1.Look.performed += GetMousePosY;
-                    //inputSystem.Player1.Look.canceled += ctx => moveDirection = Vector2.zero;
+                    //inputSystem.Player1.Move.performed += Move;
+                    //inputSystem.Player1.Move.canceled += ctx => moveDirection = Vector2.zero;
+                    inputSystem.Player1.Look.performed += GetMousePosX;
+                    inputSystem.Player1.Look.canceled += ctx => moveDirection = Vector2.zero;
                     inputSystem.Player1.Attack.performed += Attack;
                     inputSystem.Player1.Counter.performed += Counter;
                     break;
@@ -72,6 +72,7 @@ namespace Controller
             CheckBorderCollision();
             Vector2 allowedMovement = GetAllowedMovement(moveDirection);
             rb.AddForce(allowedMovement * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
+            rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, commonData.playerDataCommon.PlayerControllerData.clampSpeed);
         }
 
         /*
@@ -135,6 +136,7 @@ namespace Controller
 
         private void GetMousePosX(InputAction.CallbackContext context)
         {
+            Debug.Log("detected");
             Vector2 lTemp = context.ReadValue<Vector2>();
             if (lTemp.x > 1f || lTemp.x < -1f)
                 moveDirection = new Vector2(lTemp.x, 0f);
@@ -142,6 +144,8 @@ namespace Controller
 
         private void GetMousePosY(InputAction.CallbackContext context)
         {
+            Debug.Log("detected");
+
             Vector2 lTemp = context.ReadValue<Vector2>();
             if (lTemp.y > 1f || lTemp.y < -1f)
                 moveDirection = new Vector2(lTemp.y, 0f);

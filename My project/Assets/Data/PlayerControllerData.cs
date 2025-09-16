@@ -8,12 +8,17 @@ namespace Data
     {
         [Header("Move Speed")]
         [Range(0.1f,5f), Tooltip("Move speed of the entity")] public float speed;
-        
+
+        [Header("Clamp Speed")]
+        [Range(0.1f, 20f), Tooltip("Speed cant go over")] public float clampSpeed;
+
         [Header("Push Distance")]
         [Range(0.1f,5f), Tooltip("Distance when hit ")] public float distancePush;
         
         [Header("Push Height")]
         [Range(0.1f,5f), Tooltip("Distance when hit in Y ")] public float heightFactor;
+
         
+
     }
 }

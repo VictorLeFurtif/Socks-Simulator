@@ -466,6 +466,10 @@ PrefabInstance:
       propertyPath: m_MaxValue
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4365345254410143544, guid: 210c4aba4e2341a4c9957a49ce6cb3b6, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5831944542565159975, guid: 210c4aba4e2341a4c9957a49ce6cb3b6, type: 3}
       propertyPath: m_Name
       value: Slider P2
@@ -1445,6 +1449,10 @@ PrefabInstance:
     - target: {fileID: 5955147381791936449, guid: db4645b6052e1dc419222eb904ed878e, type: 3}
       propertyPath: m_MaxValue
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955147381791936449, guid: db4645b6052e1dc419222eb904ed878e, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2859,6 +2867,10 @@ PrefabInstance:
     - target: {fileID: 1102257626064655496, guid: 744bb9932d9d6c047b7835a9875981ba, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691666716597523219, guid: 744bb9932d9d6c047b7835a9875981ba, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6247048871000012721, guid: 744bb9932d9d6c047b7835a9875981ba, type: 3}
       propertyPath: m_Pivot.x
@@ -5051,6 +5063,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2123959608385319434, guid: 02c826a1a85a73147978a0ead54ae844, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686569743108944427, guid: 02c826a1a85a73147978a0ead54ae844, type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3920035204782318692, guid: 02c826a1a85a73147978a0ead54ae844, type: 3}
