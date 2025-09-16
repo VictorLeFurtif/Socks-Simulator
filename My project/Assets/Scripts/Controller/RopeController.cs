@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using Attack;
+using DG.Tweening;
 using Enum;
 using Interface;
 using Manager;
@@ -27,6 +29,8 @@ namespace Controller
         private int koIndex = 0;
 
         private float stunValue;
+
+        [SerializeField] private Slider goldenSlider;
 
         public float StunValue
         {
@@ -76,6 +80,8 @@ namespace Controller
             private set => currentPlayerState = value;
         }
 
+    
+        
         public KoState CurrentKoState
         {
             get => commonData.playerDataCommon.RopeData.currentKoState;
@@ -87,9 +93,7 @@ namespace Controller
 
                 if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 {
-                    StunValue = commonData.playerDataCommon.RopeData.maxStunValue[koIndex];
-                    ToggleSlidersStun(true);
-                    //pc.rb.bodyType = RigidbodyType2D.Kinematic;
+                    StartCoroutine(SliderTransitionForKo());
                 }
                 else
                 {
@@ -168,8 +172,9 @@ namespace Controller
             CurrentKoState = KoState.NotKo;
             CurrentPlayerState = PlayerState.Idle;
             HideAllFlags();
-            stunSlider.value = stunSlider.maxValue; //reset slider
+            stunSlider.value = commonData.playerDataCommon.RopeData.maxStunValue[0]; //reset slider
             koIndex = 0;
+            StunValue = 0;
         }
         
         #region RopeController Methods For Attacker
@@ -289,7 +294,7 @@ namespace Controller
 
         public void TryReleaseRope()
         {
-            if (Keyboard.current[releaseKey].wasPressedThisFrame && commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
+            if (Keyboard.current[releaseKey].wasPressedThisFrame && commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && StunValue > 0)
             {
                 StunValue -= commonData.playerDataCommon.RopeData.stunValueToTakeOut;
             }
@@ -321,8 +326,7 @@ namespace Controller
         }
 
         #endregion
-
-
+        
         #region UI
 
         private void ToggleSlidersStun(bool _bool)
@@ -332,7 +336,7 @@ namespace Controller
 
         #endregion
         
-          #region Debug
+        #region Debug
 
   #if UNITY_EDITOR 
           private void OnDrawGizmos()
@@ -346,6 +350,20 @@ namespace Controller
           }
           
   #endif
+
+          #endregion
+
+          #region Coroutine
+          
+          private IEnumerator SliderTransitionForKo()
+          {
+              goldenSlider.gameObject.SetActive(true);
+              yield return goldenSlider.transform.DOShakeRotation(1f, new Vector3(0, 0, 45f)).WaitForCompletion();
+              goldenSlider.gameObject.SetActive(false);
+              ToggleSlidersStun(true);
+              yield return new WaitForSeconds(1f);
+              StunValue = commonData.playerDataCommon.RopeData.maxStunValue[koIndex];
+          }
 
           #endregion
     }
