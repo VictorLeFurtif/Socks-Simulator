@@ -128,6 +128,7 @@ namespace Attack
             if (playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider < playerSlider.maxValue)
             {
                 UiHelper.UpdateSlider(this,playerSlider,playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider);
+                playerController.UpdateStun();
             }
             else
             {
