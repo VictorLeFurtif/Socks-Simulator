@@ -17,7 +17,6 @@ namespace Controller
         private float radius;
         private InputSystem_Actions inputSystem;
         private float camWidth;
-        private bool touchedWall;
 
         public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
