@@ -28,7 +28,7 @@ namespace Controller
         [SerializeField] private RopeController ropeController;
         [SerializeField] private Collider2D playerCollider;
         [SerializeField] private Animator animatorPlayer;
-
+        [SerializeField] private PlayerScoreManager playerScoreManager;
 
         private DataHolderManager commonData;
 
@@ -152,6 +152,12 @@ namespace Controller
         public Vector2 GetMoveDirection()
         {
             return moveDirection;
+        }
+
+        public void WaitDeath()
+        {
+            if(playerScoreManager.win)
+                playerScoreManager.PlayerWins(playerScoreManager.winPlayer);
         }
 
         private Vector2 GetAllowedMovement(Vector2 intendedMovement)
