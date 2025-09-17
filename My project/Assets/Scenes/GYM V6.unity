@@ -9181,16 +9181,24 @@ PrefabInstance:
       value: P2
       objectReference: {fileID: 0}
     - target: {fileID: 8552940993353977716, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: m_Parameters.textureMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552940993353977716, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b10ecc42ec47c9442bda4798f589ef08, type: 2}
+      objectReference: {fileID: 2100000, guid: 361dd432d5e206a449887213c5cc45fd, type: 2}
+    - target: {fileID: 8552940993353977716, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: m_Parameters.textureScale.x
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8552940993353977716, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8552940993353977716, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.22916603
+      value: 0.18253899
       objectReference: {fileID: 0}
     - target: {fileID: 8680851792924190362, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_Sprite
@@ -10530,9 +10538,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 844327746}
     - target: {fileID: 2938798854383453031, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_Parameters.textureMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938798854383453031, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4459e187ae4afca4b9ffcd56f50aa617, type: 2}
+      objectReference: {fileID: 2100000, guid: 361dd432d5e206a449887213c5cc45fd, type: 2}
+    - target: {fileID: 2938798854383453031, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_Parameters.textureScale.x
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3896351449628562610, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.64
