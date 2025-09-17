@@ -26,10 +26,10 @@ MonoBehaviour:
     dragging: 0
     tensionStrength: 2
   <PlayerControllerData>k__BackingField:
-    speed: 1.71
-    clampSpeed: 8.52
+    speed: 0.8
+    clampSpeed: 17.43
     distancePush: 5
     heightFactor: 0.8
   <AttackManagerData>k__BackingField:
-    attackCooldown: 3.73
-    looseSlider: 3
+    attackCooldown: 2
+    looseSlider: 5

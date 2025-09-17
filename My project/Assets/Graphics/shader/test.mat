@@ -55,7 +55,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Shockwave_strengh: -0.1
-    - _WaveDistanceFromCenter: -1
+    - _WaveDistanceFromCenter: -0.1
     - _XSizeRatio: 1.777
     - _size: 0.05
     m_Colors:

@@ -26,6 +26,8 @@ namespace Controller
         [SerializeField] private GameObject ennemy;
         [SerializeField] private RopeController ropeController;
         [SerializeField] private Collider2D playerCollider;
+        [SerializeField] private Animator animatorPlayer;
+
 
         private DataHolderManager commonData;
 
@@ -92,6 +94,7 @@ namespace Controller
             commonData = GetComponent<DataHolderManager>();
         }
 
+
         private void FixedUpdate()
         {
             CheckBorderCollision();
@@ -105,6 +108,9 @@ namespace Controller
 
             rb.AddForce(allowedMovement * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
             rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, commonData.playerDataCommon.PlayerControllerData.clampSpeed);
+
+            animatorPlayer.SetFloat("velocity", Mathf.Abs(rb.linearVelocityX));
+            
         }
 
         /*
@@ -168,7 +174,6 @@ namespace Controller
 
         private void GetMousePosX(InputAction.CallbackContext context)
         {
-            Debug.Log("detected");
             Vector2 lTemp = context.ReadValue<Vector2>();
             if (lTemp.x > 1f || lTemp.x < -1f)
                 moveDirection = new Vector2(lTemp.x, 0f);
@@ -176,8 +181,6 @@ namespace Controller
 
         private void GetMousePosY(InputAction.CallbackContext context)
         {
-            Debug.Log("detected");
-
             Vector2 lTemp = context.ReadValue<Vector2>();
             if (lTemp.y > 1f || lTemp.y < -1f)
                 moveDirection = new Vector2(lTemp.y, 0f);

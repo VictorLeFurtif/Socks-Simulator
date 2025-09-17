@@ -1,11 +1,23 @@
+using System.Collections;
 using Manager;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
     public class GameOverUI : MonoBehaviour
     {
-        [SerializeField] private Canvas gameOverCanvas;
+        [SerializeField] private Image winnerImage;
+        [SerializeField] private Sprite player1WinSprite;
+        [SerializeField] private Sprite player2WinSprite;
+        [SerializeField] private float autoReturnDelay = 5f;
+        
+        private Canvas gameOverCanvas;
+        
+        private void Awake()
+        {
+            gameOverCanvas = GetComponent<Canvas>();
+        }
         
         private void OnEnable()
         {
@@ -19,8 +31,7 @@ namespace UI
     
         private void Start()
         {
-            gameOverCanvas.gameObject.SetActive(true);
-            gameOverCanvas.enabled = false; 
+            gameOverCanvas.enabled = false;
         }
 
         private void OnGameStateChanged(GameState newState)
@@ -28,23 +39,36 @@ namespace UI
             switch (newState)
             {
                 case GameState.GameOver:
-                    Debug.Log("Lost - GameOverUI activated");
-                    gameOverCanvas.enabled = true;
+                    ShowGameOver();
                     break;
                 case GameState.Game:
-                    gameOverCanvas.enabled = false;
+                    HideGameOver();
                     break;
             }
         }
 
-        public void ButtonMenu()
+        private void ShowGameOver()
         {
-            GameManager.Instance?.ReturnToMenu();
+            PlayerScoreManager psm = PlayerScoreManager._instance;
+            
+            int winner = psm.GetLeftPlayerScore() > psm.GetRightPlayerScore() ? 1 : 2;
+            winnerImage.sprite = winner == 1 ? player1WinSprite : player2WinSprite;
+            
+            gameOverCanvas.enabled = true;
+            StartCoroutine(AutoReturnToMenu());
         }
 
-        public void RestartGame()
+        private void HideGameOver()
         {
-            GameManager.Instance?.LoadGameScene();
+            gameOverCanvas.enabled = false;
+            StopAllCoroutines();
         }
+
+        private IEnumerator AutoReturnToMenu()
+        {
+            yield return new WaitForSecondsRealtime(autoReturnDelay);
+            GameManager.Instance?.ReturnToMenu();
+        }
+        
     }
 }

@@ -12,54 +12,84 @@ namespace Attack
 {
     public class AttackManager : MonoBehaviour
     {
+        [Header("States")]
         public bool isAttacking;
-        private bool isInArea = false;
         public bool canCounter;
-        private bool wasCountered;
-        private bool shoulNotDoEvent = true;
-        private bool shouldNotCounter = true;
 
-        [SerializeField] private SpriteRenderer spriteRenderer;
+        [Header("Components")]
         [SerializeField] private Animator animator;
-        //[SerializeField] private PlayerController enemy;
         [SerializeField] private PlayerController playerController;
-        [SerializeField] private AttackManager ennemyAttack;
+        [SerializeField] private AttackManager enemyAttack;
         [SerializeField] private Slider playerSlider;
         [SerializeField] private RopeController rp;
         [SerializeField] private GameObject shaderObj;
         [SerializeField] private Renderer shaderMat;
         [SerializeField] private Rigidbody2D rb;
+
+        [Header("Settings")]
         [SerializeField] private float distanceToAttack;
 
         private DataHolderManager commonData;
+        private bool wasCountered;
+        private bool isInArea = false;
+        private bool shoulNotDoEvent = true;
+        private bool shouldNotCounter = true;
+        private bool dontRepeatCounter;
 
-        public void DetectPlayer()
-        {
-
-            if (isInArea && !isAttacking && !ennemyAttack.isAttacking && ennemyAttack.rp.CurrentKoState == KoState.NotKo)
-            {
-                shoulNotDoEvent = false;
-                StartAttack();
-            }
-            else if(!isAttacking && ennemyAttack.rp.CurrentKoState == KoState.NotKo)
-                StartAttack();
-
-        }
 
         private void Start()
         {
             commonData = GetComponent<DataHolderManager>();
             ResetSlider();
         }
+        private void OnEnable()
+        {
+            PlayerScoreManager.OnRoundReset += ResetElement;
+        }
 
+        private void OnDisable()
+        {
+            PlayerScoreManager.OnRoundReset -= ResetElement;
+        }
 
         private void Update()
         {
             CheckDistance();
         }
+
+        public void DetectPlayer()
+        {
+
+            if (isInArea && !isAttacking && !enemyAttack.isAttacking && enemyAttack.rp.CurrentKoState == KoState.NotKo)
+            {
+                shoulNotDoEvent = false;
+                StartAttack();
+            }
+            else if(!isAttacking && enemyAttack.rp.CurrentKoState == KoState.NotKo)
+                StartAttack();
+        }
+
+        public void PerformCounter()
+        {
+            if (enemyAttack.canCounter && !wasCountered && !isAttacking && !dontRepeatCounter && enemyAttack.rp.CurrentKoState != KoState.Ko)
+            {
+                dontRepeatCounter = true;
+                isAttacking = true;
+                shouldNotCounter = false;
+                wasCountered = true;
+                canCounter = false;
+
+                enemyAttack.InterruptAttack();
+                animator.SetTrigger("IsCounter");
+                enemyAttack.animator.SetBool("AttackedBad", true);
+            }
+            else if (!isAttacking && enemyAttack.rp.CurrentKoState != KoState.Ko)
+                animator.SetTrigger("IsCounter"); 
+        }
+
         private void CheckDistance()
         {
-            if (Mathf.Abs(transform.position.x - ennemyAttack.gameObject.transform.position.x) < distanceToAttack)
+            if (Mathf.Abs(transform.position.x - enemyAttack.gameObject.transform.position.x) < distanceToAttack)
             {
                 isInArea = true;
                 return;
@@ -74,31 +104,36 @@ namespace Attack
             rb.bodyType = RigidbodyType2D.Kinematic;
             rb.linearVelocity = Vector3.zero;
             animator.SetTrigger("IsAttacking");
-
-
-            //TODO hurt animation
         }
 
         public void OnAttackEnd()
         {
             if (shoulNotDoEvent)
                 return;
+            
             if (!wasCountered)
-                ennemyAttack.UpdateSlider();
+            {
+                enemyAttack.UpdateSlider();
+            }
 
             StartCoroutine(ResetAttackState());
         }
 
         private IEnumerator ResetAttackState()
         {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            animator.Play("Idle");
+
+
             yield return new WaitForSeconds(commonData.playerDataCommon.AttackManagerData.attackCooldown);
 
+
+            dontRepeatCounter = false;
             isAttacking = false;
             canCounter = false;
             wasCountered = false;
             shoulNotDoEvent = true;
             shouldNotCounter = true;
-            rb.bodyType = RigidbodyType2D.Dynamic;
 
         }
 
@@ -109,28 +144,12 @@ namespace Attack
             canCounter = !canCounter;
         }
 
-        public void PerformCounter()
-        {
-            if (ennemyAttack.canCounter && !wasCountered && !isAttacking)
-            {
-                ennemyAttack.InterruptAttack();
-                isAttacking = true;
-                shouldNotCounter = false;
-                wasCountered = true;
-                canCounter = false;
-                animator.SetTrigger("IsCounter");
-            }
-            else if(!isAttacking)
-                animator.SetTrigger("IsCounter");
-
-        }
-
         private void InterruptAttack()
         {
             if (isAttacking)
             {
-                animator.ResetTrigger("IsAttacking");
                 animator.Play("Idle");
+                animator.ResetTrigger("IsAttacking");
                 StartCoroutine(ResetAttackState());
             }
         }
@@ -140,23 +159,23 @@ namespace Attack
         {
             if (!shouldNotCounter)
             {
-                ennemyAttack.UpdateSlider();
+                enemyAttack.UpdateSlider();
                 StartCoroutine(ResetAttackState());
+                animator.SetTrigger("CounteredBad");
             }
         }
 
         private void UpdateSlider()
         {
             playerController.UpdateStun();
+
             if (playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider < playerSlider.maxValue)
             {
                 UiHelper.UpdateSlider(this, playerSlider, playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider);
+                animator.SetTrigger("TakingDamage");
             }
             else
-            {
-                Debug.Log("bla");
                 StartCoroutine(UpdateSliderIfKo());
-            }
         }
 
         IEnumerator UpdateSliderIfKo()
@@ -164,17 +183,18 @@ namespace Attack
             yield return UiHelper.UpdateSliderCoroutine(this, playerSlider, playerSlider.maxValue);
             ToggleSlidersAttack(false);
             rp.CurrentKoState = KoState.Ko;
+            animator.SetBool("IsStunned", true);
         }
 
         public void ToggleSlidersAttack(bool _bool)
         {
             playerSlider.gameObject.SetActive(_bool);
         }
+
         public void CheckShouldInterrupt()
         {
-            if (!isInArea && ennemyAttack.rp.CurrentKoState == KoState.NotKo)
+            if (!isInArea && enemyAttack.rp.CurrentKoState == KoState.NotKo)
             {
-                Debug.Log(isInArea + " should interrupt");
                 shoulNotDoEvent = true;
                 StartCoroutine(ResetAttackState());
                 return;
@@ -193,10 +213,10 @@ namespace Attack
             if (shoulNotDoEvent)
                 yield break;
             string lName = "_WaveDistanceFromCenter";
-            shaderObj.transform.position = ennemyAttack.gameObject.transform.position;
+            shaderObj.transform.position = enemyAttack.gameObject.transform.position;
             while (shaderMat.material.GetFloat(lName) < 1)
             {
-                shaderMat.material.SetFloat(lName, shaderMat.material.GetFloat(lName) + 0.005f);
+                shaderMat.material.SetFloat(lName, shaderMat.material.GetFloat(lName) + 0.015f);
                 yield return null;
             }
             if (!(shaderMat.material.GetFloat(lName) < 1))
@@ -205,36 +225,11 @@ namespace Attack
             }
         }
 
-        private void OnEnable()
-        {
-            PlayerScoreManager.OnRoundReset += ResetElement;
-        }
-
-        private void OnDisable()
-        {
-            PlayerScoreManager.OnRoundReset -= ResetElement;
-        }
-
         private void ResetElement()
         {
             ResetSlider();
         }
 
-#if UNITY_EDITOR
 
-        private void OnDrawGizmos()
-        {
-            if (isInArea)
-            {
-                Gizmos.color = Color.green;
-                Gizmos.DrawLine(transform.position, ennemyAttack.gameObject.transform.position);
-            }
-            else
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawLine(transform.position, ennemyAttack.gameObject.transform.position);
-            }
-        }
-#endif
     }
 }

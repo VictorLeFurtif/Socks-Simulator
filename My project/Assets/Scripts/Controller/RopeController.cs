@@ -16,6 +16,8 @@ namespace Controller
     {
         #region Fields
 
+        [SerializeField] Animator animator;
+
         [Header("Enemy")]
         [SerializeField, Tooltip("Reference to the opponent player")]
         private RopeController enemy;
@@ -31,6 +33,7 @@ namespace Controller
         private float stunValue;
 
         [SerializeField] private Slider goldenSlider;
+        [SerializeField] private GameObject fxSlider;
 
         public float StunValue
         {
@@ -50,6 +53,8 @@ namespace Controller
                 if (stunValue <= 0)
                 {
                     CurrentKoState = KoState.NotKo;
+                    enemy.animator.SetBool("Dragging", false);
+                    animator.SetBool("IsStunned", false);
                     koIndex += 1;
                     enemy.commonData.playerDataCommon.RopeData.dragging = false;
                     lineRenderer.enabled = false;
@@ -64,9 +69,9 @@ namespace Controller
 
         [Header("Input Keys (New Input System)")]
         [SerializeField, Tooltip("Key to spam for breaking free when stunned")]
-        private Key releaseKey = Key.Space;
+        private Key releaseKey = Key.E;
         [SerializeField, Tooltip("Key to initiate rope drag")]
-        private Key dragKey = Key.E;
+        private Key dragKey = Key.F;
         
 
         [SerializeField, Tooltip("Left or Right player position")]
@@ -175,6 +180,9 @@ namespace Controller
             stunSlider.value = commonData.playerDataCommon.RopeData.maxStunValue[0]; //reset slider
             koIndex = 0;
             StunValue = 0;
+            CurrentPlayerState = PlayerState.Idle;
+            animator.ResetTrigger("Dead");
+            animator.Play("Idle");
         }
         
         #region RopeController Methods For Attacker
@@ -201,6 +209,7 @@ namespace Controller
             if (Keyboard.current[dragKey].wasPressedThisFrame && !commonData.playerDataCommon.RopeData.dragging &&
                 enemy.commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && CanGrab(enemy.transform))
             {
+                animator.SetBool("Dragging", true);
                 StartDragging();
             }
 
@@ -238,7 +247,7 @@ namespace Controller
             if (won && GameManager.Instance?.CurrentState != GameState.GameOver )
             {
                 enemy.CurrentPlayerState = PlayerState.Dead;
-                
+                enemy.animator.SetTrigger("Dead");
                 HandleScoring();
             }
         }
@@ -292,11 +301,36 @@ namespace Controller
 
         #region RopeController Methods For Defenseur
 
+        private bool isShaking = false;
+        private bool goingLeft = true; 
+
         public void TryReleaseRope()
         {
-            if (Keyboard.current[releaseKey].wasPressedThisFrame && commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && StunValue > 0)
+            if (Keyboard.current[releaseKey].wasPressedThisFrame && 
+                commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && 
+                StunValue > 0)
             {
                 StunValue -= commonData.playerDataCommon.RopeData.stunValueToTakeOut;
+        
+                if (!isShaking)
+                {
+                    fxSlider.SetActive(true);
+                    isShaking = true;
+                    float targetAngle = goingLeft ? -45f : 45f;
+            
+                    stunSlider.transform.DORotate(new Vector3(0, 0, targetAngle), 0.1f)
+                        .SetEase(Ease.InFlash)
+                        .OnComplete(() => {
+                            stunSlider.transform.DORotate(Vector3.zero, 0.1f)
+                                .SetEase(Ease.Linear)
+                                .OnComplete(() => {
+                                    isShaking = false;
+                                    fxSlider.SetActive(false);
+                                });
+                        });
+            
+                    goingLeft = !goingLeft;
+                }
             }
         }
 
