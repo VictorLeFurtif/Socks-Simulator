@@ -53,6 +53,7 @@ namespace Controller
                 if (stunValue <= 0)
                 {
                     CurrentKoState = KoState.NotKo;
+                    enemy.animator.SetBool("Dragging", false);
                     animator.SetBool("IsStunned", false);
                     koIndex += 1;
                     enemy.commonData.playerDataCommon.RopeData.dragging = false;
@@ -208,6 +209,7 @@ namespace Controller
             if (Keyboard.current[dragKey].wasPressedThisFrame && !commonData.playerDataCommon.RopeData.dragging &&
                 enemy.commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && CanGrab(enemy.transform))
             {
+                animator.SetBool("Dragging", true);
                 StartDragging();
             }
 
