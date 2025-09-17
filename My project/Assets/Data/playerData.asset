@@ -31,5 +31,5 @@ MonoBehaviour:
     distancePush: 5
     heightFactor: 0.8
   <AttackManagerData>k__BackingField:
-    attackCooldown: 0.5
-    looseSlider: 10
+    attackCooldown: 2
+    looseSlider: 5

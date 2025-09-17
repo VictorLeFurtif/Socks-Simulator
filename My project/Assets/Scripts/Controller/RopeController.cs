@@ -16,6 +16,8 @@ namespace Controller
     {
         #region Fields
 
+        [SerializeField] Animator animator;
+
         [Header("Enemy")]
         [SerializeField, Tooltip("Reference to the opponent player")]
         private RopeController enemy;
@@ -50,6 +52,7 @@ namespace Controller
                 if (stunValue <= 0)
                 {
                     CurrentKoState = KoState.NotKo;
+                    animator.SetBool("IsStunned", false);
                     koIndex += 1;
                     enemy.commonData.playerDataCommon.RopeData.dragging = false;
                     lineRenderer.enabled = false;
@@ -238,7 +241,7 @@ namespace Controller
             if (won && GameManager.Instance?.CurrentState != GameState.GameOver )
             {
                 enemy.CurrentPlayerState = PlayerState.Dead;
-                
+                enemy.animator.SetTrigger("Dead");
                 HandleScoring();
             }
         }
