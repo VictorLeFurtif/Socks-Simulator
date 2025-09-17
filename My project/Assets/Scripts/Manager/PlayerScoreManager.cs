@@ -3,6 +3,7 @@ using UnityEngine;
 using Controller;
 using Enum;
 using UnityEngine.UI;
+using System.Collections;
 
 namespace Manager
 {
@@ -26,12 +27,16 @@ namespace Manager
         [SerializeField] private Image[] flagsP1;
         [SerializeField] private Image[] flagsP2;
 
+        [Header("Round Image")]
+        [SerializeField] private Image[] Rounds;
+
         public static event Action<PlayerPlacement> OnPlayerScored;
         public static event Action<PlayerPlacement> OnPlayerWon;
         public static event Action OnRoundReset;
 
         private DataHolderManager leftData;
         private DataHolderManager rightData;
+        private int currentRound = 0;
 
         public static PlayerScoreManager _instance;
         private void Awake()
@@ -88,7 +93,7 @@ namespace Manager
             }
             else
             {
-                ResetRound();
+                StartCoroutine(ShowRound());
             }
         }
         
@@ -120,6 +125,14 @@ namespace Manager
             }
         }
         
+        private IEnumerator ShowRound()
+        {
+            Rounds[currentRound].gameObject.SetActive(true);
+            yield return new WaitForSeconds(2);
+            Rounds[currentRound].gameObject.SetActive(false);
+            currentRound++;
+            ResetRound();
+        }
         
         
         public void ResetGame()
