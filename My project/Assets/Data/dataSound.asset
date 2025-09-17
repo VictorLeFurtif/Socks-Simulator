@@ -24,8 +24,9 @@ MonoBehaviour:
   stun: {fileID: 8300000, guid: 15a4d5ea729034442ac65d2fbe97046a, type: 3}
   flagGain: {fileID: 8300000, guid: 577fd6bea4288b74e88fcd54a96b572d, type: 3}
   roundStart: {fileID: 8300000, guid: fbe81ebce43e9cb428c2f8641dec3d35, type: 3}
-  round1: {fileID: 8300000, guid: 98507fe768483334f85d7391fd6625a9, type: 3}
-  round2: {fileID: 8300000, guid: 2161894a2ee9085498087295b729556a, type: 3}
-  round3: {fileID: 8300000, guid: 90c7b1ceeda1d8241a52f3f8b025979f, type: 3}
   win: {fileID: 8300000, guid: 03aaeda7853d1df46a1c52c2280a3683, type: 3}
   mainSound: {fileID: 8300000, guid: 59f15438fe2667f4a8032ee3d446278e, type: 3}
+  tabRound:
+  - {fileID: 8300000, guid: 98507fe768483334f85d7391fd6625a9, type: 3}
+  - {fileID: 8300000, guid: 2161894a2ee9085498087295b729556a, type: 3}
+  - {fileID: 8300000, guid: 90c7b1ceeda1d8241a52f3f8b025979f, type: 3}

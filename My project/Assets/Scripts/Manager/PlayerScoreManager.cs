@@ -100,11 +100,13 @@ namespace Manager
             
             if (leftPlayerScore >= scoreToWin)
             {
+                SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.Dead);
                 winPlayer = PlayerPlacement.Left;
                 win = true;
             }
             else if (rightPlayerScore >= scoreToWin)
             {
+                SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.Dead);
                 winPlayer = PlayerPlacement.Right;
                 win = true;
             }
@@ -148,7 +150,7 @@ namespace Manager
         private IEnumerator ShowRound()
         {
             PlayerController.blockMovement = true;
-
+            SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.Round[currentRound]);
             canvasRound.enabled = true;
             Rounds[currentRound].gameObject.SetActive(true);
             yield return new WaitForSecondsRealtime(timeForRoundPause);

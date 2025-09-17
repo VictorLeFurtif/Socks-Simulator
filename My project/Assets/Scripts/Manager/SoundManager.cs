@@ -51,7 +51,7 @@ namespace Manager
         private void Start()
         {
             audioSource.volume = 1f;
-            InitialisationAudioObjectDestroyAtEnd(SoundData.MainSound, true, true, 1, "Main Music");
+            InitialisationAudioObjectDestroyAtEnd(SoundData.MainSound, true, true, 0.7f, "Main Music");
         }
         
         
