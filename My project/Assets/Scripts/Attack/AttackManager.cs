@@ -122,10 +122,11 @@ namespace Attack
         private IEnumerator ResetAttackState()
         {
             rb.bodyType = RigidbodyType2D.Dynamic;
+            animator.Play("Idle");
+
 
             yield return new WaitForSeconds(commonData.playerDataCommon.AttackManagerData.attackCooldown);
 
-            animator.Play("Idle");
 
             dontRepeatCounter = false;
             isAttacking = false;

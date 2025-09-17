@@ -1,0 +1,2782 @@
+fileFormatVersion: 2
+guid: b17313dfe4ba0f44a96fd645d5efffb3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1901745395725515978
+    second: Soleil_0
+  - first:
+      213: -3371005469880710450
+    second: Soleil_1
+  - first:
+      213: 8694297011660096329
+    second: Soleil_2
+  - first:
+      213: -9192340537024394379
+    second: Soleil_3
+  - first:
+      213: -2510448868763588955
+    second: Soleil_4
+  - first:
+      213: -676097360738301612
+    second: Soleil_5
+  - first:
+      213: 3419871930410543390
+    second: Soleil_6
+  - first:
+      213: 3866818382452408361
+    second: Soleil_7
+  - first:
+      213: -7523865066610643616
+    second: Soleil_8
+  - first:
+      213: -627093141189092608
+    second: Soleil_9
+  - first:
+      213: 7908233544661582856
+    second: Soleil_10
+  - first:
+      213: 85300351503810786
+    second: Soleil_11
+  - first:
+      213: -5503558914019860326
+    second: Soleil_12
+  - first:
+      213: 4832773181808127117
+    second: Soleil_13
+  - first:
+      213: -6363726406913449747
+    second: Soleil_14
+  - first:
+      213: -7702127890754972500
+    second: Soleil_15
+  - first:
+      213: 2948643038637479317
+    second: Soleil_16
+  - first:
+      213: -3901970272252950622
+    second: Soleil_17
+  - first:
+      213: -1594434959516284027
+    second: Soleil_18
+  - first:
+      213: -7491450371045452355
+    second: Soleil_19
+  - first:
+      213: 6906687563747895822
+    second: Soleil_20
+  - first:
+      213: 7226377318534389731
+    second: Soleil_21
+  - first:
+      213: -9030723663169589707
+    second: Soleil_22
+  - first:
+      213: -1121107319454400693
+    second: Soleil_23
+  - first:
+      213: 963226504882583112
+    second: Soleil_24
+  - first:
+      213: 6926352300480526072
+    second: Soleil_25
+  - first:
+      213: -1738754827415349870
+    second: Soleil_26
+  - first:
+      213: 2412682558391316911
+    second: Soleil_27
+  - first:
+      213: 6101550148809542611
+    second: Soleil_28
+  - first:
+      213: 6007578492754153445
+    second: Soleil_29
+  - first:
+      213: 3479595604404004279
+    second: Soleil_30
+  - first:
+      213: 4181505182121628165
+    second: Soleil_31
+  - first:
+      213: -3921884886458652867
+    second: Soleil_32
+  - first:
+      213: -8305167166933170801
+    second: Soleil_33
+  - first:
+      213: 5471392716254474916
+    second: Soleil_34
+  - first:
+      213: 7422014955156817461
+    second: Soleil_35
+  - first:
+      213: 619747526564745919
+    second: Soleil_36
+  - first:
+      213: 4515571815987681149
+    second: Soleil_37
+  - first:
+      213: 1578787924466985482
+    second: Soleil_38
+  - first:
+      213: -4627397622369163250
+    second: Soleil_39
+  - first:
+      213: -6602116126048927828
+    second: Soleil_40
+  - first:
+      213: 5531822276325346875
+    second: Soleil_41
+  - first:
+      213: 3967056581245849585
+    second: Soleil_42
+  - first:
+      213: -2344286144607819844
+    second: Soleil_43
+  - first:
+      213: 8763572421273912529
+    second: Soleil_44
+  - first:
+      213: -4871186605781495838
+    second: Soleil_45
+  - first:
+      213: -2004603107531752397
+    second: Soleil_46
+  - first:
+      213: -9153467394175123812
+    second: Soleil_47
+  - first:
+      213: -4938330319316502797
+    second: Soleil_48
+  - first:
+      213: -7246531303175943979
+    second: Soleil_49
+  - first:
+      213: -2788081552588272342
+    second: Soleil_50
+  - first:
+      213: -3857254123610972910
+    second: Soleil_51
+  - first:
+      213: -5670823489945544406
+    second: Soleil_52
+  - first:
+      213: 7124723608813208412
+    second: Soleil_53
+  - first:
+      213: -5689111654917812261
+    second: Soleil_54
+  - first:
+      213: -5861867737751363311
+    second: Soleil_55
+  - first:
+      213: -4534010511345841223
+    second: Soleil_56
+  - first:
+      213: 6550037601820070972
+    second: Soleil_57
+  - first:
+      213: -3659665273001403373
+    second: Soleil_58
+  - first:
+      213: 3011888200682421600
+    second: Soleil_59
+  - first:
+      213: 7103678008163272755
+    second: Soleil_60
+  - first:
+      213: -3596945727990045098
+    second: Soleil_61
+  - first:
+      213: 3717061985660279372
+    second: Soleil_62
+  - first:
+      213: 6831049009256710735
+    second: Soleil_63
+  - first:
+      213: -3276742918745866057
+    second: Soleil_64
+  - first:
+      213: 7435411943025962888
+    second: Soleil_65
+  - first:
+      213: 6810935544029917500
+    second: Soleil_66
+  - first:
+      213: -463404547086901796
+    second: Soleil_67
+  - first:
+      213: 2230081311530063830
+    second: Soleil_68
+  - first:
+      213: 166082457197515738
+    second: Soleil_69
+  - first:
+      213: 403445766171919130
+    second: Soleil_70
+  - first:
+      213: 5958166921586417065
+    second: Soleil_71
+  - first:
+      213: -5301981252000933082
+    second: Soleil_72
+  - first:
+      213: -3467690435612480534
+    second: Soleil_73
+  - first:
+      213: 8352168409825270968
+    second: Soleil_74
+  - first:
+      213: 6745786084712306590
+    second: Soleil_75
+  - first:
+      213: -8631646682826817732
+    second: Soleil_76
+  - first:
+      213: 6060531146790065968
+    second: Soleil_77
+  - first:
+      213: -6103243534877491889
+    second: Soleil_78
+  - first:
+      213: 7657641970964675163
+    second: Soleil_79
+  - first:
+      213: -6369720956347881018
+    second: Soleil_80
+  - first:
+      213: -3054957234541761209
+    second: Soleil_81
+  - first:
+      213: 9033332815858928786
+    second: Soleil_82
+  - first:
+      213: 7484700308920216821
+    second: Soleil_83
+  - first:
+      213: -8026656526593292221
+    second: Soleil_84
+  - first:
+      213: -5908885700714642314
+    second: Soleil_85
+  - first:
+      213: 3034190360503654543
+    second: Soleil_86
+  - first:
+      213: 5466189088859083912
+    second: Soleil_87
+  - first:
+      213: -8898890619971529645
+    second: Soleil_88
+  - first:
+      213: 5488172964570663603
+    second: Soleil_89
+  - first:
+      213: -7131220911165690684
+    second: Soleil_90
+  - first:
+      213: -2806466628939558425
+    second: Soleil_91
+  - first:
+      213: -9162378184099245909
+    second: Soleil_92
+  - first:
+      213: -112334636551476666
+    second: Soleil_93
+  - first:
+      213: 8546188790277849461
+    second: Soleil_94
+  - first:
+      213: 2731656928335599585
+    second: Soleil_95
+  - first:
+      213: 7868759335734478650
+    second: Soleil_96
+  - first:
+      213: -5971628865232334486
+    second: Soleil_97
+  - first:
+      213: -5460545578407478504
+    second: Soleil_98
+  - first:
+      213: -483508897599496929
+    second: Soleil_99
+  - first:
+      213: 8710362360733486005
+    second: Soleil_100
+  - first:
+      213: -8124940104109346198
+    second: Soleil_101
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Soleil_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1209
+        height: 1059
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 633cb8273a4ab95e0800000000000000
+      internalID: -1901745395725515978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_1
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 766
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca8cdfa268c731d0800000000000000
+      internalID: -3371005469880710450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_2
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 748
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9438db7511958a870800000000000000
+      internalID: 8694297011660096329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_3
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 746
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57bcc341cfe3e6080800000000000000
+      internalID: -9192340537024394379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 715
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a6a0960e08192dd0800000000000000
+      internalID: -2510448868763588955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_5
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 719
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4594d9358050e96f0800000000000000
+      internalID: -676097360738301612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_6
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 704
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e192375c663d57f20800000000000000
+      internalID: 3419871930410543390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_7
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 700
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920c601e4d2b9a530800000000000000
+      internalID: 3866818382452408361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_8
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 690
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06da3b6c59cd59790800000000000000
+      internalID: -7523865066610643616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_9
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 690
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00b175e4c1e1c47f0800000000000000
+      internalID: -627093141189092608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_10
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 696
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804c16e5280bfbd60800000000000000
+      internalID: 7908233544661582856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_11
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 694
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0c99eb73c0f2100800000000000000
+      internalID: 85300351503810786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_12
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 679
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a906969a35e6f93b0800000000000000
+      internalID: -5503558914019860326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_13
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 683
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8c25bd8a95711340800000000000000
+      internalID: 4832773181808127117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_14
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 682
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0a624ac808fa7a0800000000000000
+      internalID: -6363726406913449747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_15
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 662
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca4dbe0bd7b8c1590800000000000000
+      internalID: -7702127890754972500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 661
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5955a67983fabe820800000000000000
+      internalID: 2948643038637479317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_17
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 652
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a78a3ef5ba69d9c0800000000000000
+      internalID: -3901970272252950622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_18
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 643
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b419c1add6fd9e0800000000000000
+      internalID: -1594434959516284027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_19
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 633
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db51e553495090890800000000000000
+      internalID: -7491450371045452355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_20
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 624
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a2dcbfebb79df50800000000000000
+      internalID: 6906687563747895822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_21
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 612
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ef9e2c52ef394460800000000000000
+      internalID: 7226377318534389731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_22
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 612
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53eef08dcac6ca280800000000000000
+      internalID: -9030723663169589707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_23
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 612
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f74d435d60170f0800000000000000
+      internalID: -1121107319454400693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_24
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 611
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84674cd17611e5d00800000000000000
+      internalID: 963226504882583112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_25
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 616
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6f95b48b85f1060800000000000000
+      internalID: 6926352300480526072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_26
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 613
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 295996062b3bed7e0800000000000000
+      internalID: -1738754827415349870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_27
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 604
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1f1b001029b7120800000000000000
+      internalID: 2412682558391316911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_28
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 604
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db460f688f0da450800000000000000
+      internalID: 6101550148809542611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_29
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 593
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef43e44fc43f5350800000000000000
+      internalID: 6007578492754153445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_30
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 601
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5e28a34c10a4030800000000000000
+      internalID: 3479595604404004279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_31
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 590
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50290defec0b70a30800000000000000
+      internalID: 4181505182121628165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_32
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 584
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d37a8ac897aa299c0800000000000000
+      internalID: -3921884886458652867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_33
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 593
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8506bed67e1ebc80800000000000000
+      internalID: -8305167166933170801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_34
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 577
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a2f10fcfaa4eeb40800000000000000
+      internalID: 5471392716254474916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_35
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 578
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53642c7374b400760800000000000000
+      internalID: 7422014955156817461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_36
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 577
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb291538719c99800800000000000000
+      internalID: 619747526564745919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_37
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 572
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7716b164a88aae30800000000000000
+      internalID: 4515571815987681149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_38
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 577
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0ae785a04bf8e510800000000000000
+      internalID: 1578787924466985482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_39
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 568
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08e234216e28cfb0800000000000000
+      internalID: -4627397622369163250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_40
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 559
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cafb9f4ec529064a0800000000000000
+      internalID: -6602116126048927828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_41
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 560
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3e07fc2d0bf4cc40800000000000000
+      internalID: 5531822276325346875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_42
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 556
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ffc80931f0dd0730800000000000000
+      internalID: 3967056581245849585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_43
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 550
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb7e7ca0c2c677fd0800000000000000
+      internalID: -2344286144607819844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_44
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 544
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d4017d8fa67e9970800000000000000
+      internalID: 8763572421273912529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_45
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 541
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2efc0c73791166cb0800000000000000
+      internalID: -4871186605781495838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_46
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 529
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33cfce338183e24e0800000000000000
+      internalID: -2004603107531752397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_47
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 532
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e3213f6e958f080800000000000000
+      internalID: -9153467394175123812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_48
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 532
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f6399d2db6877bb0800000000000000
+      internalID: -4938330319316502797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_49
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 525
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d8037c6c262f6b90800000000000000
+      internalID: -7246531303175943979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_50
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 504
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d082d899ebe49d0800000000000000
+      internalID: -2788081552588272342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_51
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 503
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21dd1c9afc7487ac0800000000000000
+      internalID: -3857254123610972910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_52
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 509
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29dad9c4103d41b0800000000000000
+      internalID: -5670823489945544406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_53
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 498
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c538622bf5a10e260800000000000000
+      internalID: 7124723608813208412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_54
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 489
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdfc61197173c01b0800000000000000
+      internalID: -5689111654917812261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_55
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 482
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 111e10b995676aea0800000000000000
+      internalID: -5861867737751363311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_56
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 469
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb085f4675f311c0800000000000000
+      internalID: -4534010511345841223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_57
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 473
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34dfe9ce7866ea50800000000000000
+      internalID: 6550037601820070972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_58
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 474
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c1bede2d1463dc0800000000000000
+      internalID: -3659665273001403373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_59
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 474
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06dbdd06c506cc920800000000000000
+      internalID: 3011888200682421600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_60
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 55
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3388353f285559260800000000000000
+      internalID: 7103678008163272755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_61
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 56
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6566bc6fae4151ec0800000000000000
+      internalID: -3596945727990045098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_62
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 55
+        width: 25
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a936f9e28a59330800000000000000
+      internalID: 3717061985660279372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_63
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 53
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f42c708a1e2ccce50800000000000000
+      internalID: 6831049009256710735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_64
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 60
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b040e32daba682d0800000000000000
+      internalID: -3276742918745866057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_65
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 59
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f62c684c3ef2760800000000000000
+      internalID: 7435411943025962888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_66
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 60
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c313cf99acd458e50800000000000000
+      internalID: 6810935544029917500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_67
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 60
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdd95970508a199f0800000000000000
+      internalID: -463404547086901796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_68
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 56
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d79cf92327d2fe10800000000000000
+      internalID: 2230081311530063830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_69
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 61
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad39ea86d1b0e4200800000000000000
+      internalID: 166082457197515738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_70
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 53
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1300da69c3599500800000000000000
+      internalID: 403445766171919130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_71
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 53
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad14a95f39afa250800000000000000
+      internalID: 5958166921586417065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_72
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 55
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b14b474249b66b0800000000000000
+      internalID: -5301981252000933082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_73
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 59
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeb6c42ebe940efc0800000000000000
+      internalID: -3467690435612480534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_74
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 51
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bcdfd3caecd8e370800000000000000
+      internalID: 8352168409825270968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_75
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 57
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e97dc0e04b8dd9d50800000000000000
+      internalID: 6745786084712306590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_76
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 53
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3fbd6b031b363880800000000000000
+      internalID: -8631646682826817732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_77
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 52
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 037dc9ac7f45b1450800000000000000
+      internalID: 6060531146790065968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_78
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 60
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4d7de5675cec4ba0800000000000000
+      internalID: -6103243534877491889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_79
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 56
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ab878fcc8654a60800000000000000
+      internalID: 7657641970964675163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_80
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 57
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9e586d9843a97a0800000000000000
+      internalID: -6369720956347881018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_81
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 60
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74de02fb49c9a95d0800000000000000
+      internalID: -3054957234541761209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_82
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 57
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c862bd558dc5d70800000000000000
+      internalID: 9033332815858928786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_83
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 54
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc227b764ffed760800000000000000
+      internalID: 7484700308920216821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_84
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 45
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34806568a669b9090800000000000000
+      internalID: -8026656526593292221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_85
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 50
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 674c48603cb6ffda0800000000000000
+      internalID: -5908885700714642314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_86
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 50
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f881cba9e0c9b1a20800000000000000
+      internalID: 3034190360503654543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_87
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 51
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 884df84e30ecbdb40800000000000000
+      internalID: 5466189088859083912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_88
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 50
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3549a85212ac08480800000000000000
+      internalID: -8898890619971529645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_89
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 40
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba0323db38e92c40800000000000000
+      internalID: 5488172964570663603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_90
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 43
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cca1273d50d80d90800000000000000
+      internalID: -7131220911165690684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_91
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 39
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1d114687d6d09d0800000000000000
+      internalID: -2806466628939558425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_92
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 40
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba0d9fef591b8d080800000000000000
+      internalID: -9162378184099245909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_93
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 38
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a60644e38e07ef0800000000000000
+      internalID: -112334636551476666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_94
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 40
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 571cfe3dc692a9670800000000000000
+      internalID: 8546188790277849461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_95
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 38
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e79dadd08bc8e520800000000000000
+      internalID: 2731656928335599585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_96
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 32
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a370e75ece2733d60800000000000000
+      internalID: 7868759335734478650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_97
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 33
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a619b55af23802da0800000000000000
+      internalID: -5971628865232334486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_98
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 31
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b31374abe3834b0800000000000000
+      internalID: -5460545578407478504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_99
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d57d8283b3a49f0800000000000000
+      internalID: -483508897599496929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_100
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 20
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bbc378ea6c61e870800000000000000
+      internalID: 8710362360733486005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soleil_101
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 21
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a62bc39e50a6e3f80800000000000000
+      internalID: -8124940104109346198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Soleil_0: -1901745395725515978
+      Soleil_1: -3371005469880710450
+      Soleil_10: 7908233544661582856
+      Soleil_100: 8710362360733486005
+      Soleil_101: -8124940104109346198
+      Soleil_11: 85300351503810786
+      Soleil_12: -5503558914019860326
+      Soleil_13: 4832773181808127117
+      Soleil_14: -6363726406913449747
+      Soleil_15: -7702127890754972500
+      Soleil_16: 2948643038637479317
+      Soleil_17: -3901970272252950622
+      Soleil_18: -1594434959516284027
+      Soleil_19: -7491450371045452355
+      Soleil_2: 8694297011660096329
+      Soleil_20: 6906687563747895822
+      Soleil_21: 7226377318534389731
+      Soleil_22: -9030723663169589707
+      Soleil_23: -1121107319454400693
+      Soleil_24: 963226504882583112
+      Soleil_25: 6926352300480526072
+      Soleil_26: -1738754827415349870
+      Soleil_27: 2412682558391316911
+      Soleil_28: 6101550148809542611
+      Soleil_29: 6007578492754153445
+      Soleil_3: -9192340537024394379
+      Soleil_30: 3479595604404004279
+      Soleil_31: 4181505182121628165
+      Soleil_32: -3921884886458652867
+      Soleil_33: -8305167166933170801
+      Soleil_34: 5471392716254474916
+      Soleil_35: 7422014955156817461
+      Soleil_36: 619747526564745919
+      Soleil_37: 4515571815987681149
+      Soleil_38: 1578787924466985482
+      Soleil_39: -4627397622369163250
+      Soleil_4: -2510448868763588955
+      Soleil_40: -6602116126048927828
+      Soleil_41: 5531822276325346875
+      Soleil_42: 3967056581245849585
+      Soleil_43: -2344286144607819844
+      Soleil_44: 8763572421273912529
+      Soleil_45: -4871186605781495838
+      Soleil_46: -2004603107531752397
+      Soleil_47: -9153467394175123812
+      Soleil_48: -4938330319316502797
+      Soleil_49: -7246531303175943979
+      Soleil_5: -676097360738301612
+      Soleil_50: -2788081552588272342
+      Soleil_51: -3857254123610972910
+      Soleil_52: -5670823489945544406
+      Soleil_53: 7124723608813208412
+      Soleil_54: -5689111654917812261
+      Soleil_55: -5861867737751363311
+      Soleil_56: -4534010511345841223
+      Soleil_57: 6550037601820070972
+      Soleil_58: -3659665273001403373
+      Soleil_59: 3011888200682421600
+      Soleil_6: 3419871930410543390
+      Soleil_60: 7103678008163272755
+      Soleil_61: -3596945727990045098
+      Soleil_62: 3717061985660279372
+      Soleil_63: 6831049009256710735
+      Soleil_64: -3276742918745866057
+      Soleil_65: 7435411943025962888
+      Soleil_66: 6810935544029917500
+      Soleil_67: -463404547086901796
+      Soleil_68: 2230081311530063830
+      Soleil_69: 166082457197515738
+      Soleil_7: 3866818382452408361
+      Soleil_70: 403445766171919130
+      Soleil_71: 5958166921586417065
+      Soleil_72: -5301981252000933082
+      Soleil_73: -3467690435612480534
+      Soleil_74: 8352168409825270968
+      Soleil_75: 6745786084712306590
+      Soleil_76: -8631646682826817732
+      Soleil_77: 6060531146790065968
+      Soleil_78: -6103243534877491889
+      Soleil_79: 7657641970964675163
+      Soleil_8: -7523865066610643616
+      Soleil_80: -6369720956347881018
+      Soleil_81: -3054957234541761209
+      Soleil_82: 9033332815858928786
+      Soleil_83: 7484700308920216821
+      Soleil_84: -8026656526593292221
+      Soleil_85: -5908885700714642314
+      Soleil_86: 3034190360503654543
+      Soleil_87: 5466189088859083912
+      Soleil_88: -8898890619971529645
+      Soleil_89: 5488172964570663603
+      Soleil_9: -627093141189092608
+      Soleil_90: -7131220911165690684
+      Soleil_91: -2806466628939558425
+      Soleil_92: -9162378184099245909
+      Soleil_93: -112334636551476666
+      Soleil_94: 8546188790277849461
+      Soleil_95: 2731656928335599585
+      Soleil_96: 7868759335734478650
+      Soleil_97: -5971628865232334486
+      Soleil_98: -5460545578407478504
+      Soleil_99: -483508897599496929
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
