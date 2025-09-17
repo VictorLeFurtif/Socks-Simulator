@@ -142,14 +142,16 @@ namespace Manager
                 rightPlayer.rb.linearVelocity = Vector2.zero;
             }
         }
-        
+
+
+        [SerializeField] private float timeForRoundPause = 5f;
         private IEnumerator ShowRound()
         {
             PlayerController.blockMovement = true;
 
             canvasRound.enabled = true;
             Rounds[currentRound].gameObject.SetActive(true);
-            yield return new WaitForSecondsRealtime(2);
+            yield return new WaitForSecondsRealtime(timeForRoundPause);
             Rounds[currentRound].gameObject.SetActive(false);
             canvasRound.enabled = false;
             if(currentRound >= decor.Length)
