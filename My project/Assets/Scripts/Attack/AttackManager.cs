@@ -71,7 +71,7 @@ namespace Attack
 
         public void PerformCounter()
         {
-            if (enemyAttack.canCounter && !wasCountered && !isAttacking && !dontRepeatCounter)
+            if (enemyAttack.canCounter && !wasCountered && !isAttacking && !dontRepeatCounter && enemyAttack.rp.CurrentKoState != KoState.Ko)
             {
                 dontRepeatCounter = true;
                 isAttacking = true;
@@ -215,7 +215,7 @@ namespace Attack
             shaderObj.transform.position = enemyAttack.gameObject.transform.position;
             while (shaderMat.material.GetFloat(lName) < 1)
             {
-                shaderMat.material.SetFloat(lName, shaderMat.material.GetFloat(lName) + 0.005f);
+                shaderMat.material.SetFloat(lName, shaderMat.material.GetFloat(lName) + 0.015f);
                 yield return null;
             }
             if (!(shaderMat.material.GetFloat(lName) < 1))

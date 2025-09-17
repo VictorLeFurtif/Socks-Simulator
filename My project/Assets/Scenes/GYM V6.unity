@@ -4656,7 +4656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ccf16ceee1ada54f8573cf4ff2f143c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.GameOverUI
-  gameOverCanvas: {fileID: 1649952867}
   winnerImage: {fileID: 1183879828}
   player1WinSprite: {fileID: -7732749559274194128, guid: 379927c6b91c7994bb8762257f450696, type: 3}
   player2WinSprite: {fileID: 1344401003032330916, guid: b2b8efe70ae1f7549b40ff051af8827e, type: 3}
@@ -6705,6 +6704,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1747572038}
     - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: fxSlider
+      value: 
+      objectReference: {fileID: 4313877746417763689}
+    - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: leftFlag
       value: 
       objectReference: {fileID: 7394299305766398561}
@@ -7672,7 +7675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4365345254465132267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8229,6 +8232,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 8361313266364614253}
+    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: fxSlider
+      value: 
+      objectReference: {fileID: 8373830889602292114}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: leftFlag
       value: 
@@ -9599,7 +9606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &8452711535072661513
 CanvasRenderer:
   m_ObjectHideFlags: 0
