@@ -1,17 +1,38 @@
 using System.Collections.Generic;
+using Data;
 using UnityEngine;
 
 namespace Manager
 {
     public class SoundManager : MonoBehaviour
     {
-        public static SoundManager instance { get; private set; }
-    
-        public List<AudioSource> musicsEffects = new List<AudioSource>();
-    
+        private static SoundManager instance;
+        
         public AudioSource audioSource;
 
         [Range(0,1)] public float masterVolume = 1f;
+
+        [SerializeField] private SoundBankData soundBankData;
+
+        public SoundBankData SoundData => soundBankData;
+        
+        public static SoundManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = FindFirstObjectByType<SoundManager>();
+                    
+                    if (instance == null)
+                    {
+                        GameObject soundManager = new GameObject("SoundManager");
+                        instance = soundManager.AddComponent<SoundManager>();
+                    }
+                }
+                return instance;
+            }
+        }
         
         private void Awake()
         {
@@ -30,17 +51,9 @@ namespace Manager
         private void Start()
         {
             audioSource.volume = 1f;
+            InitialisationAudioObjectDestroyAtEnd(SoundData.MainSound, true, true, 1, "Main Music");
         }
         
-        
-        private void Update()
-        {
-            foreach (var music in musicsEffects)
-            {
-                if (music != null) 
-                    music.volume = masterVolume;
-            }
-        }
         
         public void PlayMusicOneShot(AudioClip _audioClip)
         {
