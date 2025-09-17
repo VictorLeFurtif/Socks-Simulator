@@ -29,6 +29,7 @@ namespace Manager
 
         [Header("Round Image")]
         [SerializeField] private Image[] Rounds;
+        [SerializeField] private Canvas canvasRound;
 
         public static event Action<PlayerPlacement> OnPlayerScored;
         public static event Action<PlayerPlacement> OnPlayerWon;
@@ -53,6 +54,8 @@ namespace Manager
         
         private void Start()
         {
+            StartCoroutine(ShowRound());
+
             if (leftPlayer != null && leftPlayerStartPos == Vector3.zero)
             {
                 leftPlayerStartPos = leftPlayer.transform.position;
@@ -93,7 +96,7 @@ namespace Manager
             }
             else
             {
-                StartCoroutine(ShowRound());
+                ResetRound();
             }
         }
         
@@ -106,6 +109,7 @@ namespace Manager
         
         private void ResetRound()
         {
+            StartCoroutine(ShowRound());    
             ResetPlayerPositions();
             OnRoundReset?.Invoke();
         }
@@ -127,11 +131,12 @@ namespace Manager
         
         private IEnumerator ShowRound()
         {
+            canvasRound.enabled = true;
             Rounds[currentRound].gameObject.SetActive(true);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSecondsRealtime(2);
             Rounds[currentRound].gameObject.SetActive(false);
+            canvasRound.enabled = false;
             currentRound++;
-            ResetRound();
         }
         
         
