@@ -108,10 +108,7 @@ namespace Attack
 
         public void OnAttackEnd()
         {
-            if (shoulNotDoEvent)
-                return;
-            
-            if (!wasCountered)
+            if (!wasCountered && !shoulNotDoEvent)
             {
                 enemyAttack.UpdateSlider();
             }
@@ -196,7 +193,7 @@ namespace Attack
             if (!isInArea && enemyAttack.rp.CurrentKoState == KoState.NotKo)
             {
                 shoulNotDoEvent = true;
-                StartCoroutine(ResetAttackState());
+                //StartCoroutine(ResetAttackState());
                 return;
             }
             shoulNotDoEvent = false;
