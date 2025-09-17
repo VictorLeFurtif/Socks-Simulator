@@ -80,6 +80,11 @@ namespace Manager
         
         public void AddScore(PlayerPlacement player)
         {
+            if (win)
+            {
+                return;
+            }
+            
             if (player == PlayerPlacement.Left)
             {
                 flagsP1[leftPlayerScore].gameObject.SetActive(true);
