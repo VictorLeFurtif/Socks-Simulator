@@ -1,0 +1,1820 @@
+fileFormatVersion: 2
+guid: 13dfbdc8d041c9148b2f1edee582f4d4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3161534989842715906
+    second: CLEANS_ORANGE_1_0
+  - first:
+      213: 6950911579659457265
+    second: CLEANS_ORANGE_1_1
+  - first:
+      213: -7645022317227857993
+    second: CLEANS_ORANGE_1_2
+  - first:
+      213: -4129868069636283154
+    second: CLEANS_ORANGE_1_3
+  - first:
+      213: 8171975757972013152
+    second: CLEANS_ORANGE_1_4
+  - first:
+      213: -1953806164480744419
+    second: CLEANS_ORANGE_1_5
+  - first:
+      213: 6913381105872829925
+    second: CLEANS_ORANGE_1_6
+  - first:
+      213: -5027724667276918904
+    second: CLEANS_ORANGE_1_7
+  - first:
+      213: -5167109762316628590
+    second: CLEANS_ORANGE_1_8
+  - first:
+      213: -2503259451298305440
+    second: CLEANS_ORANGE_1_9
+  - first:
+      213: 1633866754067838599
+    second: CLEANS_ORANGE_1_10
+  - first:
+      213: -8755494188508642308
+    second: CLEANS_ORANGE_1_11
+  - first:
+      213: -1895424970367074998
+    second: CLEANS_ORANGE_1_12
+  - first:
+      213: 4844298796472112889
+    second: CLEANS_ORANGE_1_13
+  - first:
+      213: 4839736773364288444
+    second: CLEANS_ORANGE_1_14
+  - first:
+      213: -1108725887873512206
+    second: CLEANS_ORANGE_1_15
+  - first:
+      213: 7608829982654416428
+    second: CLEANS_ORANGE_1_16
+  - first:
+      213: -3936433196861770229
+    second: CLEANS_ORANGE_1_17
+  - first:
+      213: 9118339238712946635
+    second: CLEANS_ORANGE_1_18
+  - first:
+      213: -3691732966075047116
+    second: CLEANS_ORANGE_1_19
+  - first:
+      213: 822947482910046774
+    second: CLEANS_ORANGE_1_20
+  - first:
+      213: 3458577717320194436
+    second: CLEANS_ORANGE_1_21
+  - first:
+      213: -3102025549183662875
+    second: CLEANS_ORANGE_1_22
+  - first:
+      213: 208716442595969688
+    second: CLEANS_ORANGE_1_23
+  - first:
+      213: 3912574464437933351
+    second: CLEANS_ORANGE_1_24
+  - first:
+      213: 3444186155658444566
+    second: CLEANS_ORANGE_1_25
+  - first:
+      213: 6958463187773156056
+    second: CLEANS_ORANGE_1_26
+  - first:
+      213: -1439409855911254353
+    second: CLEANS_ORANGE_1_27
+  - first:
+      213: 2284094869369781209
+    second: CLEANS_ORANGE_1_28
+  - first:
+      213: -7789388973581684620
+    second: CLEANS_ORANGE_1_29
+  - first:
+      213: -805559437869961796
+    second: CLEANS_ORANGE_1_30
+  - first:
+      213: -5504056521698984181
+    second: CLEANS_ORANGE_1_31
+  - first:
+      213: -6069822201593983695
+    second: CLEANS_ORANGE_1_32
+  - first:
+      213: -548983087950036425
+    second: CLEANS_ORANGE_1_33
+  - first:
+      213: -4754643127978891558
+    second: CLEANS_ORANGE_1_34
+  - first:
+      213: -9138980597544129262
+    second: CLEANS_ORANGE_1_35
+  - first:
+      213: 2109734469281968021
+    second: CLEANS_ORANGE_1_36
+  - first:
+      213: 237425906383359368
+    second: CLEANS_ORANGE_1_37
+  - first:
+      213: 7134796975750994079
+    second: CLEANS_ORANGE_1_38
+  - first:
+      213: -4183126616405239379
+    second: CLEANS_ORANGE_1_39
+  - first:
+      213: 7015571469274899605
+    second: CLEANS_ORANGE_1_40
+  - first:
+      213: 3019815324122931018
+    second: CLEANS_ORANGE_1_41
+  - first:
+      213: -9037194689625888683
+    second: CLEANS_ORANGE_1_42
+  - first:
+      213: -6758969029183052716
+    second: CLEANS_ORANGE_1_43
+  - first:
+      213: 7321269095418206146
+    second: CLEANS_ORANGE_1_44
+  - first:
+      213: -7913568864049508122
+    second: CLEANS_ORANGE_1_45
+  - first:
+      213: 4875120320243619789
+    second: CLEANS_ORANGE_1_46
+  - first:
+      213: -2942903323346717209
+    second: CLEANS_ORANGE_1_47
+  - first:
+      213: 44138705647181901
+    second: CLEANS_ORANGE_1_48
+  - first:
+      213: 1718523130406839742
+    second: CLEANS_ORANGE_1_49
+  - first:
+      213: -7242127203263964907
+    second: CLEANS_ORANGE_1_50
+  - first:
+      213: 8983866923375219323
+    second: CLEANS_ORANGE_1_51
+  - first:
+      213: -1391048657731345106
+    second: CLEANS_ORANGE_1_52
+  - first:
+      213: -775076966815056945
+    second: CLEANS_ORANGE_1_53
+  - first:
+      213: 5676226917587839461
+    second: CLEANS_ORANGE_1_54
+  - first:
+      213: -176309795106876874
+    second: CLEANS_ORANGE_1_55
+  - first:
+      213: 364883205797391033
+    second: CLEANS_ORANGE_1_56
+  - first:
+      213: 4053717160745095275
+    second: CLEANS_ORANGE_1_57
+  - first:
+      213: 81704912734876359
+    second: CLEANS_ORANGE_1_58
+  - first:
+      213: 7349712913029675440
+    second: CLEANS_ORANGE_1_59
+  - first:
+      213: -3741905308542080355
+    second: CLEANS_ORANGE_1_60
+  - first:
+      213: -1645522292835282654
+    second: CLEANS_ORANGE_1_61
+  - first:
+      213: -7223008697671837925
+    second: CLEANS_ORANGE_1_62
+  - first:
+      213: -1539011018644509256
+    second: CLEANS_ORANGE_1_63
+  - first:
+      213: -4042080227910424790
+    second: CLEANS_ORANGE_1_64
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 6522
+        width: 599
+        height: 695
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efae4716da8ff14d0800000000000000
+      internalID: -3161534989842715906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 6515
+        width: 435
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f250c21149967060800000000000000
+      internalID: 6950911579659457265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_2
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 6522
+        width: 612
+        height: 671
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b723b125bc67e590800000000000000
+      internalID: -7645022317227857993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_3
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 6515
+        width: 597
+        height: 635
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee4e9142fd2cfa6c0800000000000000
+      internalID: -4129868069636283154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_4
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 6522
+        width: 605
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0608607a7a0b86170800000000000000
+      internalID: 8171975757972013152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_5
+      rect:
+        serializedVersion: 2
+        x: 2861
+        y: 6515
+        width: 597
+        height: 635
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d14282625afa2e4e0800000000000000
+      internalID: -1953806164480744419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 5583
+        width: 451
+        height: 790
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed7274bc7341ff50800000000000000
+      internalID: 6913381105872829925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_7
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 5595
+        width: 520
+        height: 647
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f7d7a9d0fe93ab0800000000000000
+      internalID: -5027724667276918904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_8
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 5590
+        width: 524
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d0aa53c0dba48b0800000000000000
+      internalID: -5167109762316628590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_9
+      rect:
+        serializedVersion: 2
+        x: 2138
+        y: 5584
+        width: 569
+        height: 698
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06aa9b8bac2a24dd0800000000000000
+      internalID: -2503259451298305440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_10
+      rect:
+        serializedVersion: 2
+        x: 3459
+        y: 5663
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 786b88ef729aca610800000000000000
+      internalID: 1633866754067838599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_11
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 4686
+        width: 602
+        height: 697
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf302f49c6c3e7680800000000000000
+      internalID: -8755494188508642308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_12
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 4684
+        width: 578
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d7dd6280912b5e0800000000000000
+      internalID: -1895424970367074998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_13
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 4663
+        width: 490
+        height: 693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f69295d6186a3340800000000000000
+      internalID: 4844298796472112889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_14
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 4678
+        width: 678
+        height: 665
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb06ce04f23a2340800000000000000
+      internalID: 4839736773364288444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_15
+      rect:
+        serializedVersion: 2
+        x: 3403
+        y: 5327
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc0504eda30d90f0800000000000000
+      internalID: -1108725887873512206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_16
+      rect:
+        serializedVersion: 2
+        x: 3464
+        y: 5335
+        width: 68
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2645705e8ef79960800000000000000
+      internalID: 7608829982654416428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_17
+      rect:
+        serializedVersion: 2
+        x: 4229
+        y: 5319
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06bff21ddafe59c0800000000000000
+      internalID: -3936433196861770229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_18
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 5333
+        width: 59
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcfadf00a39da8e70800000000000000
+      internalID: 9118339238712946635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_19
+      rect:
+        serializedVersion: 2
+        x: 4872
+        y: 4689
+        width: 530
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4336f7f4d6454ccc0800000000000000
+      internalID: -3691732966075047116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_20
+      rect:
+        serializedVersion: 2
+        x: 2443
+        y: 4687
+        width: 719
+        height: 618
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63ab7a32062bb6b00800000000000000
+      internalID: 822947482910046774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_21
+      rect:
+        serializedVersion: 2
+        x: 4055
+        y: 4677
+        width: 694
+        height: 649
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48993fc0c165fff20800000000000000
+      internalID: 3458577717320194436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_22
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3711
+        width: 533
+        height: 717
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e4c8b0c23463f4d0800000000000000
+      internalID: -3102025549183662875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_23
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 3710
+        width: 523
+        height: 645
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a47bbaf7285e200800000000000000
+      internalID: 208716442595969688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_24
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 3710
+        width: 512
+        height: 645
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7255616eeb14c4630800000000000000
+      internalID: 3912574464437933351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_25
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 2745
+        width: 623
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ff65c7f053ccf20800000000000000
+      internalID: 3444186155658444566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_26
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 2742
+        width: 701
+        height: 696
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dae9d9d66d619060800000000000000
+      internalID: 6958463187773156056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_27
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 2796
+        width: 83
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa6a634cc50360ce0800000000000000
+      internalID: -1439409855911254353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_28
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 2729
+        width: 494
+        height: 726
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dbf31a9e2cb2bf10800000000000000
+      internalID: 2284094869369781209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_29
+      rect:
+        serializedVersion: 2
+        x: 2645
+        y: 2731
+        width: 447
+        height: 709
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 470b15c9ff786e390800000000000000
+      internalID: -7789388973581684620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_30
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1833
+        width: 626
+        height: 752
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbd2c4495f312d4f0800000000000000
+      internalID: -805559437869961796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_31
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 1875
+        width: 809
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0fb57851c9ad93b0800000000000000
+      internalID: -5504056521698984181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_32
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 1874
+        width: 820
+        height: 489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d0630fdd8a3cba0800000000000000
+      internalID: -6069822201593983695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_33
+      rect:
+        serializedVersion: 2
+        x: 2544
+        y: 1872
+        width: 832
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7328a074ace9168f0800000000000000
+      internalID: -548983087950036425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_34
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 957
+        width: 491
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad6e01b244d140eb0800000000000000
+      internalID: -4754643127978891558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_35
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 930
+        width: 613
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21de1322191db2180800000000000000
+      internalID: -9138980597544129262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_36
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1233
+        width: 199
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59fe2fb6258474d10800000000000000
+      internalID: 2109734469281968021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_37
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 930
+        width: 619
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d847a9a918b4300800000000000000
+      internalID: 237425906383359368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_38
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1210
+        width: 212
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f985b243c04e30360800000000000000
+      internalID: 7134796975750994079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_39
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 930
+        width: 619
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da91faa618c82f5c0800000000000000
+      internalID: -4183126616405239379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_40
+      rect:
+        serializedVersion: 2
+        x: 2766
+        y: 1224
+        width: 237
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 594ee7ac4115c5160800000000000000
+      internalID: 7015571469274899605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_41
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1077
+        width: 22
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4fd0a1a90a88e920800000000000000
+      internalID: 3019815324122931018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_42
+      rect:
+        serializedVersion: 2
+        x: 2283
+        y: 1077
+        width: 22
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5586dc69f4f659280800000000000000
+      internalID: -9037194689625888683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_43
+      rect:
+        serializedVersion: 2
+        x: 3049
+        y: 1077
+        width: 22
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4546daf7a715332a0800000000000000
+      internalID: -6758969029183052716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_44
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 275
+        width: 622
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c79279d37f5a9560800000000000000
+      internalID: 7321269095418206146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_45
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 196
+        width: 425
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e0dcb8cb0b5d2290800000000000000
+      internalID: -7913568864049508122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_46
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 581
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7d86d0a18e7a340800000000000000
+      internalID: 4875120320243619789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_47
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 574
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e53a930505b827d0800000000000000
+      internalID: -2942903323346717209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_48
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 534
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4022fe3befcc9000800000000000000
+      internalID: 44138705647181901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_49
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 537
+        width: 14
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb521369eab69d710800000000000000
+      internalID: 1718523130406839742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_50
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 507
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5191247ddabce7b90800000000000000
+      internalID: -7242127203263964907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_51
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 266
+        width: 294
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7259254e5b1dac70800000000000000
+      internalID: 8983866923375219323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_52
+      rect:
+        serializedVersion: 2
+        x: 2742
+        y: 301
+        width: 414
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e25a3aaad9002bce0800000000000000
+      internalID: -1391048657731345106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_53
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 424
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcbb66fea9f5e35f0800000000000000
+      internalID: -775076966815056945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_54
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 455
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e9655fbe4206ce40800000000000000
+      internalID: 5676226917587839461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_55
+      rect:
+        serializedVersion: 2
+        x: 3262
+        y: 303
+        width: 414
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6329b3cec2f9d8df0800000000000000
+      internalID: -176309795106876874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_56
+      rect:
+        serializedVersion: 2
+        x: 3735
+        y: 301
+        width: 413
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ba2f0aa753501500800000000000000
+      internalID: 364883205797391033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_57
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 394
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60dd1ab742b14830800000000000000
+      internalID: 4053717160745095275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_58
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 392
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c277fb6f26422100800000000000000
+      internalID: 81704912734876359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_59
+      rect:
+        serializedVersion: 2
+        x: 2426
+        y: 328
+        width: 114
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b93c3634fc6ff560800000000000000
+      internalID: 7349712913029675440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_60
+      rect:
+        serializedVersion: 2
+        x: 2384
+        y: 378
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9a633582f4121cc0800000000000000
+      internalID: -3741905308542080355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_61
+      rect:
+        serializedVersion: 2
+        x: 2415
+        y: 332
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2211199613ee929e0800000000000000
+      internalID: -1645522292835282654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_62
+      rect:
+        serializedVersion: 2
+        x: 3075
+        y: 278
+        width: 59
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1796bdcbd7b2cb90800000000000000
+      internalID: -7223008697671837925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_63
+      rect:
+        serializedVersion: 2
+        x: 3596
+        y: 285
+        width: 59
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd2840f1a554aae0800000000000000
+      internalID: -1539011018644509256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_ORANGE_1_64
+      rect:
+        serializedVersion: 2
+        x: 4069
+        y: 284
+        width: 58
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a27e4c5d275a7e7c0800000000000000
+      internalID: -4042080227910424790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CLEANS_ORANGE_1_0: -3161534989842715906
+      CLEANS_ORANGE_1_1: 6950911579659457265
+      CLEANS_ORANGE_1_10: 1633866754067838599
+      CLEANS_ORANGE_1_11: -8755494188508642308
+      CLEANS_ORANGE_1_12: -1895424970367074998
+      CLEANS_ORANGE_1_13: 4844298796472112889
+      CLEANS_ORANGE_1_14: 4839736773364288444
+      CLEANS_ORANGE_1_15: -1108725887873512206
+      CLEANS_ORANGE_1_16: 7608829982654416428
+      CLEANS_ORANGE_1_17: -3936433196861770229
+      CLEANS_ORANGE_1_18: 9118339238712946635
+      CLEANS_ORANGE_1_19: -3691732966075047116
+      CLEANS_ORANGE_1_2: -7645022317227857993
+      CLEANS_ORANGE_1_20: 822947482910046774
+      CLEANS_ORANGE_1_21: 3458577717320194436
+      CLEANS_ORANGE_1_22: -3102025549183662875
+      CLEANS_ORANGE_1_23: 208716442595969688
+      CLEANS_ORANGE_1_24: 3912574464437933351
+      CLEANS_ORANGE_1_25: 3444186155658444566
+      CLEANS_ORANGE_1_26: 6958463187773156056
+      CLEANS_ORANGE_1_27: -1439409855911254353
+      CLEANS_ORANGE_1_28: 2284094869369781209
+      CLEANS_ORANGE_1_29: -7789388973581684620
+      CLEANS_ORANGE_1_3: -4129868069636283154
+      CLEANS_ORANGE_1_30: -805559437869961796
+      CLEANS_ORANGE_1_31: -5504056521698984181
+      CLEANS_ORANGE_1_32: -6069822201593983695
+      CLEANS_ORANGE_1_33: -548983087950036425
+      CLEANS_ORANGE_1_34: -4754643127978891558
+      CLEANS_ORANGE_1_35: -9138980597544129262
+      CLEANS_ORANGE_1_36: 2109734469281968021
+      CLEANS_ORANGE_1_37: 237425906383359368
+      CLEANS_ORANGE_1_38: 7134796975750994079
+      CLEANS_ORANGE_1_39: -4183126616405239379
+      CLEANS_ORANGE_1_4: 8171975757972013152
+      CLEANS_ORANGE_1_40: 7015571469274899605
+      CLEANS_ORANGE_1_41: 3019815324122931018
+      CLEANS_ORANGE_1_42: -9037194689625888683
+      CLEANS_ORANGE_1_43: -6758969029183052716
+      CLEANS_ORANGE_1_44: 7321269095418206146
+      CLEANS_ORANGE_1_45: -7913568864049508122
+      CLEANS_ORANGE_1_46: 4875120320243619789
+      CLEANS_ORANGE_1_47: -2942903323346717209
+      CLEANS_ORANGE_1_48: 44138705647181901
+      CLEANS_ORANGE_1_49: 1718523130406839742
+      CLEANS_ORANGE_1_5: -1953806164480744419
+      CLEANS_ORANGE_1_50: -7242127203263964907
+      CLEANS_ORANGE_1_51: 8983866923375219323
+      CLEANS_ORANGE_1_52: -1391048657731345106
+      CLEANS_ORANGE_1_53: -775076966815056945
+      CLEANS_ORANGE_1_54: 5676226917587839461
+      CLEANS_ORANGE_1_55: -176309795106876874
+      CLEANS_ORANGE_1_56: 364883205797391033
+      CLEANS_ORANGE_1_57: 4053717160745095275
+      CLEANS_ORANGE_1_58: 81704912734876359
+      CLEANS_ORANGE_1_59: 7349712913029675440
+      CLEANS_ORANGE_1_6: 6913381105872829925
+      CLEANS_ORANGE_1_60: -3741905308542080355
+      CLEANS_ORANGE_1_61: -1645522292835282654
+      CLEANS_ORANGE_1_62: -7223008697671837925
+      CLEANS_ORANGE_1_63: -1539011018644509256
+      CLEANS_ORANGE_1_64: -4042080227910424790
+      CLEANS_ORANGE_1_7: -5027724667276918904
+      CLEANS_ORANGE_1_8: -5167109762316628590
+      CLEANS_ORANGE_1_9: -2503259451298305440
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

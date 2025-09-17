@@ -1,0 +1,1204 @@
+fileFormatVersion: 2
+guid: 9a4f1dd4653fdaa42bf8ea99e7b08af3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4624401885333088726
+    second: CLEANS_BLUE_1_0
+  - first:
+      213: -932474237275015506
+    second: CLEANS_BLUE_1_1
+  - first:
+      213: -4005453771102465848
+    second: CLEANS_BLUE_1_2
+  - first:
+      213: 1198976152416030025
+    second: CLEANS_BLUE_1_3
+  - first:
+      213: 7276136636304588964
+    second: CLEANS_BLUE_1_4
+  - first:
+      213: -3001267957451727676
+    second: CLEANS_BLUE_1_5
+  - first:
+      213: -139757684109030762
+    second: CLEANS_BLUE_1_6
+  - first:
+      213: -8843944043983272499
+    second: CLEANS_BLUE_1_7
+  - first:
+      213: 6095984683245097865
+    second: CLEANS_BLUE_1_8
+  - first:
+      213: -665042046382472746
+    second: CLEANS_BLUE_1_9
+  - first:
+      213: -6891813866451464626
+    second: CLEANS_BLUE_1_10
+  - first:
+      213: -6595972044024677706
+    second: CLEANS_BLUE_1_11
+  - first:
+      213: -2783021767332757225
+    second: CLEANS_BLUE_1_12
+  - first:
+      213: -8528811098673850910
+    second: CLEANS_BLUE_1_13
+  - first:
+      213: -8822114706256617601
+    second: CLEANS_BLUE_1_14
+  - first:
+      213: -6226477334506992856
+    second: CLEANS_BLUE_1_15
+  - first:
+      213: 7532226728082256308
+    second: CLEANS_BLUE_1_16
+  - first:
+      213: 3371106017490576543
+    second: CLEANS_BLUE_1_17
+  - first:
+      213: 3110617731719505899
+    second: CLEANS_BLUE_1_18
+  - first:
+      213: -4626184998012463139
+    second: CLEANS_BLUE_1_19
+  - first:
+      213: -1286435759721199442
+    second: CLEANS_BLUE_1_20
+  - first:
+      213: -6035364853869843404
+    second: CLEANS_BLUE_1_21
+  - first:
+      213: -9136559286101109519
+    second: CLEANS_BLUE_1_22
+  - first:
+      213: 6117054120718252816
+    second: CLEANS_BLUE_1_23
+  - first:
+      213: -4068060385098104212
+    second: CLEANS_BLUE_1_24
+  - first:
+      213: -3111206530759863437
+    second: CLEANS_BLUE_1_25
+  - first:
+      213: -4956407289030840493
+    second: CLEANS_BLUE_1_26
+  - first:
+      213: -2655686865118762254
+    second: CLEANS_BLUE_1_27
+  - first:
+      213: -7287321200184059964
+    second: CLEANS_BLUE_1_28
+  - first:
+      213: -581415929079087701
+    second: CLEANS_BLUE_1_29
+  - first:
+      213: -667492501482381271
+    second: CLEANS_BLUE_1_30
+  - first:
+      213: 3394511862230495168
+    second: CLEANS_BLUE_1_31
+  - first:
+      213: 7836854499317020207
+    second: CLEANS_BLUE_1_32
+  - first:
+      213: 6598464584748426456
+    second: CLEANS_BLUE_1_33
+  - first:
+      213: -5677274016159080717
+    second: CLEANS_BLUE_1_34
+  - first:
+      213: 8277710178952825254
+    second: CLEANS_BLUE_1_35
+  - first:
+      213: 4615135005636685522
+    second: CLEANS_BLUE_1_36
+  - first:
+      213: 3851148019280442349
+    second: CLEANS_BLUE_1_37
+  - first:
+      213: 2893061795981584732
+    second: CLEANS_BLUE_1_38
+  - first:
+      213: -3066437578325069291
+    second: CLEANS_BLUE_1_39
+  - first:
+      213: 2268272610205080259
+    second: CLEANS_BLUE_1_40
+  - first:
+      213: -3082579977531524666
+    second: CLEANS_BLUE_1_41
+  - first:
+      213: 3111962482935779350
+    second: CLEANS_BLUE_1_42
+  - first:
+      213: 6604897514462405393
+    second: CLEANS_BLUE_1_43
+  - first:
+      213: -7168793952001479957
+    second: CLEANS_BLUE_1_44
+  - first:
+      213: 604302823617771453
+    second: CLEANS_BLUE_1_45
+  - first:
+      213: 6041376003663461537
+    second: CLEANS_BLUE_1_46
+  - first:
+      213: -8273422307577601452
+    second: CLEANS_BLUE_1_47
+  - first:
+      213: -3963535017149020928
+    second: CLEANS_BLUE_1_48
+  - first:
+      213: -4088066355748391450
+    second: CLEANS_BLUE_1_49
+  - first:
+      213: 4729156162841937026
+    second: CLEANS_BLUE_1_50
+  - first:
+      213: 2288213050842679147
+    second: CLEANS_BLUE_1_51
+  - first:
+      213: 9166974323239182593
+    second: CLEANS_BLUE_1_52
+  - first:
+      213: -310497975934159248
+    second: CLEANS_BLUE_1_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_1
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 6617
+        width: 650
+        height: 635
+      alignment: 9
+      pivot: {x: 0.24575083, y: 0.061197404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea6f4052f9f2f03f0800000000000000
+      internalID: -932474237275015506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_2
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 6608
+        width: 631
+        height: 600
+      alignment: 9
+      pivot: {x: 0.28073075, y: 0.067627765}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c050395405c968c0800000000000000
+      internalID: -4005453771102465848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_3
+      rect:
+        serializedVersion: 2
+        x: 2587
+        y: 6601
+        width: 602
+        height: 607
+      alignment: 9
+      pivot: {x: 0.26059172, y: 0.059950802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d0cea457e93a010800000000000000
+      internalID: 1198976152416030025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_4
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 6608
+        width: 631
+        height: 600
+      alignment: 9
+      pivot: {x: 0.24723126, y: 0.035600588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a0042858b70af460800000000000000
+      internalID: 7276136636304588964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_5
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 5762
+        width: 651
+        height: 673
+      alignment: 9
+      pivot: {x: 0.2756599, y: 0.03172232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ccd350b1ba5956d0800000000000000
+      internalID: -3001267957451727676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_6
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 5753
+        width: 711
+        height: 689
+      alignment: 9
+      pivot: {x: 0.2864834, y: 0.034229293}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69acc04702b7f0ef0800000000000000
+      internalID: -139757684109030762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_7
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 5783
+        width: 675
+        height: 657
+      alignment: 9
+      pivot: {x: 0.2864833, y: 0.037867438}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc502fccfbff34580800000000000000
+      internalID: -8843944043983272499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_8
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 5726
+        width: 665
+        height: 677
+      alignment: 9
+      pivot: {x: 0.2688238, y: 0.040166}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 983db0185c9499450800000000000000
+      internalID: 6095984683245097865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_9
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 5733
+        width: 665
+        height: 664
+      alignment: 9
+      pivot: {x: 0.2832725, y: 0.06010345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d18ca848cb45c6f0800000000000000
+      internalID: -665042046382472746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_10
+      rect:
+        serializedVersion: 2
+        x: 4204
+        y: 5719
+        width: 602
+        height: 653
+      alignment: 9
+      pivot: {x: 0.30528122, y: 0.052693248}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e8c088dcb5b50a0800000000000000
+      internalID: -6891813866451464626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_11
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 4797
+        width: 634
+        height: 827
+      alignment: 9
+      pivot: {x: 0.42167822, y: 0.0086840885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ba70877f566674a0800000000000000
+      internalID: -6595972044024677706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_13
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 4789
+        width: 641
+        height: 771
+      alignment: 9
+      pivot: {x: 0.3220367, y: 0.014970718}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5d22b4e7393a980800000000000000
+      internalID: -8528811098673850910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_14
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 4785
+        width: 642
+        height: 775
+      alignment: 9
+      pivot: {x: 0.30140966, y: 0.019834599}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7f13dd8a6d819580800000000000000
+      internalID: -8822114706256617601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_15
+      rect:
+        serializedVersion: 2
+        x: 3411
+        y: 4773
+        width: 662
+        height: 766
+      alignment: 9
+      pivot: {x: 0.29376018, y: 0.015556794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b80b28adb1799a0800000000000000
+      internalID: -6226477334506992856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_16
+      rect:
+        serializedVersion: 2
+        x: 4175
+        y: 4800
+        width: 642
+        height: 683
+      alignment: 9
+      pivot: {x: 0.289153, y: 0.013067779}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1bb0f3d48d78860800000000000000
+      internalID: 7532226728082256308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_19
+      rect:
+        serializedVersion: 2
+        x: 4903
+        y: 4781
+        width: 703
+        height: 669
+      alignment: 9
+      pivot: {x: 0.2819272, y: 0.032430924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd7d930414d7ccfb0800000000000000
+      internalID: -4626184998012463139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_20
+      rect:
+        serializedVersion: 2
+        x: 1878
+        y: 4783
+        width: 647
+        height: 796
+      alignment: 9
+      pivot: {x: 0.29464716, y: 0.032923996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea8457b0e79a52ee0800000000000000
+      internalID: -1286435759721199442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_22
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 3871
+        width: 517
+        height: 680
+      alignment: 9
+      pivot: {x: 0.4034647, y: 0.021938907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f495a2acbb643180800000000000000
+      internalID: -9136559286101109519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_23
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 3864
+        width: 480
+        height: 608
+      alignment: 9
+      pivot: {x: 0.4803289, y: 0.020790502}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01b3041305424e450800000000000000
+      internalID: 6117054120718252816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_24
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 3888
+        width: 439
+        height: 604
+      alignment: 9
+      pivot: {x: 0.5614528, y: 0.026549889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62836d12a85b87c0800000000000000
+      internalID: -4068060385098104212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_25
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 2774
+        width: 621
+        height: 959
+      alignment: 9
+      pivot: {x: 0.42068306, y: 0.024435448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 373de27e426c2d4d0800000000000000
+      internalID: -3111206530759863437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_27
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 2789
+        width: 601
+        height: 892
+      alignment: 9
+      pivot: {x: 0.39723995, y: 0.015344458}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2faece9ddda152bd0800000000000000
+      internalID: -2655686865118762254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_28
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 2773
+        width: 679
+        height: 709
+      alignment: 9
+      pivot: {x: 0.33558002, y: 0.01756022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c71bd27afb3eda90800000000000000
+      internalID: -7287321200184059964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_29
+      rect:
+        serializedVersion: 2
+        x: 2589
+        y: 2779
+        width: 652
+        height: 675
+      alignment: 9
+      pivot: {x: 0.32148528, y: 0.014373915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: badbc700b456ee7f0800000000000000
+      internalID: -581415929079087701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_30
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1912
+        width: 710
+        height: 745
+      alignment: 9
+      pivot: {x: 0.3327222, y: 0.021742443}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920e7ee3b179cb6f0800000000000000
+      internalID: -667492501482381271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_31
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 1791
+        width: 1188
+        height: 893
+      alignment: 9
+      pivot: {x: 0.31272122, y: 0.15282944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf2916cd8abb1f20800000000000000
+      internalID: 3394511862230495168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_32
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 1818
+        width: 1203
+        height: 842
+      alignment: 9
+      pivot: {x: 0.29989702, y: 0.16212358}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f26763c45a912cc60800000000000000
+      internalID: 7836854499317020207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_33
+      rect:
+        serializedVersion: 2
+        x: 3829
+        y: 1815
+        width: 1239
+        height: 785
+      alignment: 9
+      pivot: {x: 0.32337382, y: 0.14688231}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4ece46494729b50800000000000000
+      internalID: 6598464584748426456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_34
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 908
+        width: 555
+        height: 870
+      alignment: 9
+      pivot: {x: 0.48613486, y: 0.011577387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe584e9c554631b0800000000000000
+      internalID: -5677274016159080717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_35
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 846
+        width: 837
+        height: 514
+      alignment: 9
+      pivot: {x: 0.9681367, y: 0.17298979}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a94e12fc8550e270800000000000000
+      internalID: 8277710178952825254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_36
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 791
+        width: 820
+        height: 604
+      alignment: 9
+      pivot: {x: 0.9671937, y: 0.22713768}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dee179e5d04c0040800000000000000
+      internalID: 4615135005636685522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_37
+      rect:
+        serializedVersion: 2
+        x: 3277
+        y: 794
+        width: 820
+        height: 600
+      alignment: 9
+      pivot: {x: 0.9725175, y: 0.23259501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3f8a228b6027530800000000000000
+      internalID: 3851148019280442349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_38
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 75
+        width: 624
+        height: 694
+      alignment: 9
+      pivot: {x: 0.9296793, y: 0.12393512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c596cb61068362820800000000000000
+      internalID: 2893061795981584732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_41
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 167
+        width: 890
+        height: 467
+      alignment: 9
+      pivot: {x: 0.9635065, y: 0.14826168}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c97087b7d97835d0800000000000000
+      internalID: -3082579977531524666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_44
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 155
+        width: 471
+        height: 469
+      alignment: 9
+      pivot: {x: 0.88671774, y: 0.08544564}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beaabfee1e3538c90800000000000000
+      internalID: -7168793952001479957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_47
+      rect:
+        serializedVersion: 2
+        x: 3293
+        y: 162
+        width: 519
+        height: 301
+      alignment: 9
+      pivot: {x: 0.51244926, y: 0.23524876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4526b08ee36ee2d80800000000000000
+      internalID: -8273422307577601452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_48
+      rect:
+        serializedVersion: 2
+        x: 3995
+        y: 162
+        width: 502
+        height: 318
+      alignment: 9
+      pivot: {x: 0.49141908, y: 0.23585467}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 005c200d6e1bef8c0800000000000000
+      internalID: -3963535017149020928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_49
+      rect:
+        serializedVersion: 2
+        x: 4707
+        y: 162
+        width: 495
+        height: 308
+      alignment: 9
+      pivot: {x: 0.48259547, y: 0.24126558}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e534671f454447c0800000000000000
+      internalID: -4088066355748391450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CLEANS_BLUE_1_51
+      rect:
+        serializedVersion: 2
+        x: 2971
+        y: 244
+        width: 160
+        height: 163
+      alignment: 9
+      pivot: {x: 0.8392212, y: 0.10359932}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6704e175ad51cf10800000000000000
+      internalID: 2288213050842679147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2eda09eb3ac6b6141a5af9b7ff73e66d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CLEANS_BLUE_1_0: -4624401885333088726
+      CLEANS_BLUE_1_1: -932474237275015506
+      CLEANS_BLUE_1_10: -6891813866451464626
+      CLEANS_BLUE_1_11: -6595972044024677706
+      CLEANS_BLUE_1_12: -2783021767332757225
+      CLEANS_BLUE_1_13: -8528811098673850910
+      CLEANS_BLUE_1_14: -8822114706256617601
+      CLEANS_BLUE_1_15: -6226477334506992856
+      CLEANS_BLUE_1_16: 7532226728082256308
+      CLEANS_BLUE_1_17: 3371106017490576543
+      CLEANS_BLUE_1_18: 3110617731719505899
+      CLEANS_BLUE_1_19: -4626184998012463139
+      CLEANS_BLUE_1_2: -4005453771102465848
+      CLEANS_BLUE_1_20: -1286435759721199442
+      CLEANS_BLUE_1_21: -6035364853869843404
+      CLEANS_BLUE_1_22: -9136559286101109519
+      CLEANS_BLUE_1_23: 6117054120718252816
+      CLEANS_BLUE_1_24: -4068060385098104212
+      CLEANS_BLUE_1_25: -3111206530759863437
+      CLEANS_BLUE_1_26: -4956407289030840493
+      CLEANS_BLUE_1_27: -2655686865118762254
+      CLEANS_BLUE_1_28: -7287321200184059964
+      CLEANS_BLUE_1_29: -581415929079087701
+      CLEANS_BLUE_1_3: 1198976152416030025
+      CLEANS_BLUE_1_30: -667492501482381271
+      CLEANS_BLUE_1_31: 3394511862230495168
+      CLEANS_BLUE_1_32: 7836854499317020207
+      CLEANS_BLUE_1_33: 6598464584748426456
+      CLEANS_BLUE_1_34: -5677274016159080717
+      CLEANS_BLUE_1_35: 8277710178952825254
+      CLEANS_BLUE_1_36: 4615135005636685522
+      CLEANS_BLUE_1_37: 3851148019280442349
+      CLEANS_BLUE_1_38: 2893061795981584732
+      CLEANS_BLUE_1_39: -3066437578325069291
+      CLEANS_BLUE_1_4: 7276136636304588964
+      CLEANS_BLUE_1_40: 2268272610205080259
+      CLEANS_BLUE_1_41: -3082579977531524666
+      CLEANS_BLUE_1_42: 3111962482935779350
+      CLEANS_BLUE_1_43: 6604897514462405393
+      CLEANS_BLUE_1_44: -7168793952001479957
+      CLEANS_BLUE_1_45: 604302823617771453
+      CLEANS_BLUE_1_46: 6041376003663461537
+      CLEANS_BLUE_1_47: -8273422307577601452
+      CLEANS_BLUE_1_48: -3963535017149020928
+      CLEANS_BLUE_1_49: -4088066355748391450
+      CLEANS_BLUE_1_5: -3001267957451727676
+      CLEANS_BLUE_1_50: 4729156162841937026
+      CLEANS_BLUE_1_51: 2288213050842679147
+      CLEANS_BLUE_1_52: 9166974323239182593
+      CLEANS_BLUE_1_53: -310497975934159248
+      CLEANS_BLUE_1_6: -139757684109030762
+      CLEANS_BLUE_1_7: -8843944043983272499
+      CLEANS_BLUE_1_8: 6095984683245097865
+      CLEANS_BLUE_1_9: -665042046382472746
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
