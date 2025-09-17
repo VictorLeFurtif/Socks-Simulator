@@ -15,7 +15,7 @@ namespace Manager
         [Header("Players References")]
         [SerializeField] private PlayerController leftPlayer;
         [SerializeField] private PlayerController rightPlayer;
-        
+
         [Header("Reset Positions")]
         [SerializeField] private Vector3 leftPlayerStartPos;
         [SerializeField] private Vector3 rightPlayerStartPos;
@@ -42,6 +42,9 @@ namespace Manager
         private DataHolderManager leftData;
         private DataHolderManager rightData;
         private int currentRound = 0;
+
+        public PlayerPlacement winPlayer;
+        public bool win;
 
         public static PlayerScoreManager _instance;
         private void Awake()
@@ -92,19 +95,21 @@ namespace Manager
             
             if (leftPlayerScore >= scoreToWin)
             {
-                PlayerWins(PlayerPlacement.Left);
+                winPlayer = PlayerPlacement.Left;
+                win = true;
             }
             else if (rightPlayerScore >= scoreToWin)
             {
-                PlayerWins(PlayerPlacement.Right);
+                winPlayer = PlayerPlacement.Right;
+                win = true;
             }
             else
             {
                 ResetRound();
             }
         }
-        
-        private void PlayerWins(PlayerPlacement winner)
+
+        public void PlayerWins(PlayerPlacement winner)
         {
             OnPlayerWon?.Invoke(winner);
             GameManager.Instance?.GameOver();
