@@ -218,18 +218,25 @@ namespace Attack
         {
             if (shoulNotDoEvent)
                 yield break;
+        
             string lName = "_WaveDistanceFromCenter";
             shaderObj.transform.position = enemyAttack.gameObject.transform.position;
             SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.ShockWave);
-            while (shaderMat.material.GetFloat(lName) < 1)
+    
+            float currentValue = shaderMat.material.GetFloat(lName);
+            float targetValue = 1f;
+            float speed = 2f;
+    
+            while (currentValue < targetValue)
             {
-                shaderMat.material.SetFloat(lName, shaderMat.material.GetFloat(lName) + 0.005f);
+                currentValue += speed * Time.deltaTime; 
+                currentValue = Mathf.Clamp(currentValue, -0.1f, targetValue);
+        
+                shaderMat.material.SetFloat(lName, currentValue);
                 yield return null;
             }
-            if (!(shaderMat.material.GetFloat(lName) < 1))
-            {
-                shaderMat.material.SetFloat(lName, -0.1f);
-            }
+    
+            shaderMat.material.SetFloat(lName, -0.1f);
         }
 
         private void ResetElement()
