@@ -9121,6 +9121,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4407022384616132565}
     - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: dragKey
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: fxSlider
       value: 
       objectReference: {fileID: 4313877746417763689}
@@ -9132,6 +9136,10 @@ PrefabInstance:
       propertyPath: rightFlag
       value: 
       objectReference: {fileID: 1399875439706973124}
+    - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: releaseKey
+      value: 52
+      objectReference: {fileID: 0}
     - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: stunSlider
       value: 
@@ -10470,6 +10478,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1747572031}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: dragKey
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: fxSlider
       value: 
       objectReference: {fileID: 8373830889602292114}
@@ -10481,6 +10493,10 @@ PrefabInstance:
       propertyPath: rightFlag
       value: 
       objectReference: {fileID: 1399875439706973124}
+    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: releaseKey
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: stunSlider
       value: 
