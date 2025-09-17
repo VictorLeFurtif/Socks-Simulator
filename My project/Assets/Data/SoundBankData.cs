@@ -10,6 +10,7 @@ namespace Data
         [SerializeField] private AudioClip tongueAttack;
         [SerializeField] private AudioClip assCounter;
         [SerializeField] private AudioClip noseCounter;
+        [SerializeField] private AudioClip takeDamage;
         
         [Header("Movement Sounds")]
         [SerializeField] private AudioClip movement;
@@ -26,6 +27,7 @@ namespace Data
         [SerializeField] private AudioClip roundStart;
         [SerializeField] private AudioClip win;
         [SerializeField] private AudioClip mainSound;
+        [SerializeField] private AudioClip shockWave;
 
         [Header("Round")] [SerializeField] private AudioClip[] tabRound = new AudioClip[3];
 
@@ -40,9 +42,12 @@ namespace Data
         public AudioClip Player2 => player2;
         public AudioClip FlagGain => flagGain;
         public AudioClip RoundStart => roundStart;
+        public AudioClip ShockWave => shockWave;
         public AudioClip[] Round => tabRound;
         public AudioClip Stun => stun;
         public AudioClip Win => win;
+        public AudioClip TakeDamage => takeDamage;
+        
         public AudioClip MainSound => mainSound;
     }
 }

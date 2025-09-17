@@ -16,6 +16,7 @@ MonoBehaviour:
   tongueAttack: {fileID: 8300000, guid: 84f694d0eb77498499843a5c0bfcb634, type: 3}
   assCounter: {fileID: 8300000, guid: 34a913e98f84111479f32706e353cf65, type: 3}
   noseCounter: {fileID: 8300000, guid: 97434063935f55544a350279c9dc201e, type: 3}
+  takeDamage: {fileID: 8300000, guid: 013ea15da8bfddc43a1e36879fb90286, type: 3}
   movement: {fileID: 8300000, guid: 58e29af4c5c1e5e48b515bfc1a818baa, type: 3}
   movement2: {fileID: 8300000, guid: 1c55191acac160746914ac573759ab51, type: 3}
   player1: {fileID: 8300000, guid: 437f4384ab68aa84d9f03cb0b78c38ec, type: 3}
@@ -26,6 +27,7 @@ MonoBehaviour:
   roundStart: {fileID: 8300000, guid: fbe81ebce43e9cb428c2f8641dec3d35, type: 3}
   win: {fileID: 8300000, guid: 03aaeda7853d1df46a1c52c2280a3683, type: 3}
   mainSound: {fileID: 8300000, guid: 59f15438fe2667f4a8032ee3d446278e, type: 3}
+  shockWave: {fileID: 8300000, guid: f71ef0974bf4c1c4796d1026c9e290a0, type: 3}
   tabRound:
   - {fileID: 8300000, guid: 98507fe768483334f85d7391fd6625a9, type: 3}
   - {fileID: 8300000, guid: 2161894a2ee9085498087295b729556a, type: 3}

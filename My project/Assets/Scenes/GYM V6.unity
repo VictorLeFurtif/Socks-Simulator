@@ -6614,7 +6614,7 @@ MonoBehaviour:
   winnerImage: {fileID: 1183879828}
   player1WinSprite: {fileID: -7732749559274194128, guid: 379927c6b91c7994bb8762257f450696, type: 3}
   player2WinSprite: {fileID: 1344401003032330916, guid: b2b8efe70ae1f7549b40ff051af8827e, type: 3}
-  autoReturnDelay: 5
+  autoReturnDelay: 7
 --- !u!114 &1649952865
 MonoBehaviour:
   m_ObjectHideFlags: 0
