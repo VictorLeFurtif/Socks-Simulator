@@ -244,10 +244,11 @@ namespace Controller
                 
             }
 
-            if (won && GameManager.Instance?.CurrentState != GameState.GameOver )
+            if (won && GameManager.Instance?.CurrentState != GameState.GameOver && !PlayerScoreManager._instance.win)
             {
                 enemy.CurrentPlayerState = PlayerState.Dead;
-                enemy.animator.SetTrigger("Dead");
+                enemy.animator.SetTrigger("Dead"); // enemy is dying
+                StatePlayerWhenWinning();
                 HandleScoring();
             }
         }
@@ -256,8 +257,14 @@ namespace Controller
         {
             PlayerScoreManager._instance.AddScore(currentPlayerPlacement);
         }
-        
-        
+
+        private void StatePlayerWhenWinning()
+        {
+            commonData.playerDataCommon.RopeData.dragging = false;
+            lineRenderer.enabled = false;
+            animator.SetBool("Dragging", false);
+            animator.Play("Idle");
+        }
         
         private bool IsPlayerCloseToFlag(float epsilon, Transform flag)
         {
