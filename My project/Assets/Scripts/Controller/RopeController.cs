@@ -178,6 +178,7 @@ namespace Controller
             stunSlider.value = commonData.playerDataCommon.RopeData.maxStunValue[0]; //reset slider
             koIndex = 0;
             StunValue = 0;
+            CurrentPlayerState = PlayerState.Idle;
         }
         
         #region RopeController Methods For Attacker
