@@ -3447,8 +3447,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1145967551
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -220715162672680241, guid: 7d505a0a99b4dd34c865913f1dd5c1b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6481,8 +6481,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1145967551
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -220715162672680241, guid: 7d505a0a99b4dd34c865913f1dd5c1b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7898,7 +7898,7 @@ PrefabInstance:
     - target: {fileID: 613484177901962035, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 9aebe3b97f73b9447abc03136da3ee21, type: 2}
+      objectReference: {fileID: 9100000, guid: 3182330957f5bf4479376678fb913100, type: 2}
     - target: {fileID: 890187087741012119, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_GravityScale
       value: 2
@@ -9444,6 +9444,10 @@ PrefabInstance:
       propertyPath: animatorPlayer
       value: 
       objectReference: {fileID: 8361313266364614253}
+    - target: {fileID: 2938798854383453031, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4459e187ae4afca4b9ffcd56f50aa617, type: 2}
     - target: {fileID: 3896351449628562610, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.64
@@ -9511,7 +9515,7 @@ PrefabInstance:
     - target: {fileID: 5919270100428847713, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 089537d564eb27f4ca3ca71bc6ce946f, type: 2}
+      objectReference: {fileID: 9100000, guid: db4d3f2e4f3c92445940c20b00140903, type: 2}
     - target: {fileID: 6069565374010837269, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_Size.x
       value: 6.545766

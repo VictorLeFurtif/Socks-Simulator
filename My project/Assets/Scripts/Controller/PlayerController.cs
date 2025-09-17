@@ -17,6 +17,7 @@ namespace Controller
         private float radius;
         private InputSystem_Actions inputSystem;
         private float camWidth;
+        public static bool blockMovement;
 
         public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
@@ -100,17 +101,20 @@ namespace Controller
             CheckBorderCollision();
             Vector2 allowedMovement = GetAllowedMovement(moveDirection);
 
-            if(ropeController.CurrentKoState == KoState.Ko) 
+            if (ropeController.CurrentKoState == KoState.Ko)
             {
                 allowedMovement = Vector2.zero;
                 rb.linearVelocity = Vector2.zero;
             }
 
-            rb.AddForce(allowedMovement * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
-            rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, commonData.playerDataCommon.PlayerControllerData.clampSpeed);
+            if (!blockMovement)
+            {
+                rb.AddForce(allowedMovement * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
+                rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, commonData.playerDataCommon.PlayerControllerData.clampSpeed);
+            }
 
             animatorPlayer.SetFloat("velocity", Mathf.Abs(rb.linearVelocityX));
-            
+
         }
 
         /*
@@ -249,11 +253,11 @@ namespace Controller
             Vector2 direction = (targetPosition - startPosition).normalized;
             float distance = Vector2.Distance(startPosition, targetPosition);
 
-            float colliderRadius = playerCollider.bounds.size.x / 2f; 
+            float colliderRadius = playerCollider.bounds.size.x / 2f;
 
             while (elapsedTime < duration)
             {
-               
+
 
                 elapsedTime += Time.fixedDeltaTime;
                 float t = elapsedTime / duration;
@@ -280,7 +284,7 @@ namespace Controller
                 rb.MovePosition(nextPosition);
                 yield return new WaitForFixedUpdate();
             }
-            rb.linearVelocity= Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
             if (ropeController.CurrentKoState == KoState.Ko)
             {
                 rb.bodyType = RigidbodyType2D.Kinematic;

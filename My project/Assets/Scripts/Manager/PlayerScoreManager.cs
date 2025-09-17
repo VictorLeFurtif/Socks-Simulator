@@ -34,6 +34,7 @@ namespace Manager
         [Header("Decor canvas")]
         [SerializeField] private GameObject[] decor;
 
+
         public static event Action<PlayerPlacement> OnPlayerScored;
         public static event Action<PlayerPlacement> OnPlayerWon;
         public static event Action OnRoundReset;
@@ -134,6 +135,8 @@ namespace Manager
         
         private IEnumerator ShowRound()
         {
+            PlayerController.blockMovement = true;
+
             canvasRound.enabled = true;
             Rounds[currentRound].gameObject.SetActive(true);
             yield return new WaitForSecondsRealtime(2);
@@ -148,6 +151,7 @@ namespace Manager
                 decor[currentRound - 1].SetActive(false);
 
             currentRound++;
+            PlayerController.blockMovement = false;
         }
         
         
