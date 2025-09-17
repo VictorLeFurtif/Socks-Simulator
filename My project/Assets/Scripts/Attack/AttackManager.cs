@@ -83,7 +83,7 @@ namespace Attack
                 animator.SetTrigger("IsCounter");
                 enemyAttack.animator.SetBool("AttackedBad", true);
             }
-            else if (!isAttacking)
+            else if (!isAttacking && enemyAttack.rp.CurrentKoState != KoState.Ko)
                 animator.SetTrigger("IsCounter"); 
         }
 
@@ -121,6 +121,7 @@ namespace Attack
 
         private IEnumerator ResetAttackState()
         {
+            rb.bodyType = RigidbodyType2D.Dynamic;
 
             yield return new WaitForSeconds(commonData.playerDataCommon.AttackManagerData.attackCooldown);
 
@@ -132,7 +133,6 @@ namespace Attack
             wasCountered = false;
             shoulNotDoEvent = true;
             shouldNotCounter = true;
-            rb.bodyType = RigidbodyType2D.Dynamic;
 
         }
 
