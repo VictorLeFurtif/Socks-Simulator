@@ -31,6 +31,9 @@ namespace Manager
         [SerializeField] private Image[] Rounds;
         [SerializeField] private Canvas canvasRound;
 
+        [Header("Decor canvas")]
+        [SerializeField] private GameObject[] decor;
+
         public static event Action<PlayerPlacement> OnPlayerScored;
         public static event Action<PlayerPlacement> OnPlayerWon;
         public static event Action OnRoundReset;
@@ -136,6 +139,14 @@ namespace Manager
             yield return new WaitForSecondsRealtime(2);
             Rounds[currentRound].gameObject.SetActive(false);
             canvasRound.enabled = false;
+            if(currentRound >= decor.Length)
+                decor[decor.Length - 1].SetActive(true);
+            else
+                decor[currentRound].SetActive(true);
+
+            if (currentRound > 0 && !(currentRound >= decor.Length))
+                decor[currentRound - 1].SetActive(false);
+
             currentRound++;
         }
         
