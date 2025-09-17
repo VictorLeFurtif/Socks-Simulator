@@ -67,9 +67,9 @@ namespace Controller
 
         [Header("Input Keys (New Input System)")]
         [SerializeField, Tooltip("Key to spam for breaking free when stunned")]
-        private Key releaseKey = Key.Space;
+        private Key releaseKey = Key.E;
         [SerializeField, Tooltip("Key to initiate rope drag")]
-        private Key dragKey = Key.E;
+        private Key dragKey = Key.F;
         
 
         [SerializeField, Tooltip("Left or Right player position")]
@@ -179,6 +179,8 @@ namespace Controller
             koIndex = 0;
             StunValue = 0;
             CurrentPlayerState = PlayerState.Idle;
+            animator.ResetTrigger("Dead");
+            animator.Play("Idle");
         }
         
         #region RopeController Methods For Attacker
