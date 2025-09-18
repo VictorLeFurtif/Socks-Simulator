@@ -55,6 +55,9 @@ namespace Attack
         private void Update()
         {
             CheckDistance();
+
+            //if (!isAttacking && !dontRepeatCounter)
+            //    rb.bodyType = RigidbodyType2D.Dynamic;
         }
 
         public void DetectPlayer()
@@ -71,10 +74,9 @@ namespace Attack
 
         public void PerformCounter()
         {
-                rb.bodyType = RigidbodyType2D.Kinematic;
-
             if (enemyAttack.canCounter && !wasCountered && !isAttacking && !dontRepeatCounter && enemyAttack.rp.CurrentKoState != KoState.Ko)
             {
+                playerController.blockMovement = true;
                 dontRepeatCounter = true;
                 isAttacking = true;
                 shouldNotCounter = false;
@@ -86,6 +88,7 @@ namespace Attack
             }
             else if (!isAttacking && enemyAttack.rp.CurrentKoState != KoState.Ko)
             {
+                playerController.blockMovement = true;
                 animator.SetTrigger("IsCounter");
             } 
             
@@ -131,8 +134,9 @@ namespace Attack
             StartCoroutine(ResetAttackState());
         }
 
-        private IEnumerator ResetAttackState()
+        public IEnumerator ResetAttackState()
         {
+            Debug.Log("reset" + rp.currentPlayerPlacement);
             rb.bodyType = RigidbodyType2D.Dynamic;
             animator.Play("Idle");
 
@@ -171,6 +175,8 @@ namespace Attack
         public void OnCounterEnd()
         {
             StartCoroutine(ResetAttackState());
+            playerController.blockMovement = false;
+
 
             if (!shouldNotCounter)
             {

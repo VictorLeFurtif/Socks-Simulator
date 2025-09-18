@@ -17,7 +17,7 @@ namespace Controller
         private float radius;
         private InputSystem_Actions inputSystem;
         private float camWidth;
-        public static bool blockMovement;
+        public bool blockMovement;
 
         public Rigidbody2D rb; // spageti but need
         [SerializeField] private ForceMode2D forceType;
@@ -113,6 +113,10 @@ namespace Controller
             {
                 rb.AddForce(allowedMovement * commonData.playerDataCommon.PlayerControllerData.speed, forceType);
                 rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, commonData.playerDataCommon.PlayerControllerData.clampSpeed);
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
             }
 
             animatorPlayer.SetFloat("velocity", Mathf.Abs(rb.linearVelocityX));
@@ -228,6 +232,7 @@ namespace Controller
             if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko)
                 return;
 
+            Debug.Log("here");
             attackManager.DetectPlayer();
         }
 
@@ -241,7 +246,7 @@ namespace Controller
         private void StunBackward(int pDirection)
         {
             Vector2 targetPosition;
-
+            ;
             if (ropeController.currentPlayerPlacement == PlayerPlacement.Left)
             {
                 targetPosition = new Vector2(transform.position.x - commonData.playerDataCommon.PlayerControllerData.distancePush, transform.position.y);
