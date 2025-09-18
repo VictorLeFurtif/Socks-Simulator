@@ -4516,15 +4516,15 @@ RectTransform:
   m_GameObject: {fileID: 1183879826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1649952863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1005, y: 572}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1183879828
 MonoBehaviour:
@@ -4546,7 +4546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3996507215190653608, guid: 0b99df1ba31559440ba2fe74deca2c49, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6612,8 +6612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.GameOverUI
   winnerImage: {fileID: 1183879828}
-  player1WinSprite: {fileID: -7732749559274194128, guid: 379927c6b91c7994bb8762257f450696, type: 3}
-  player2WinSprite: {fileID: 1344401003032330916, guid: b2b8efe70ae1f7549b40ff051af8827e, type: 3}
+  player1WinSprite: {fileID: -897981267752933314, guid: e6551fd5703531c41b183692350c8a20, type: 3}
+  player2WinSprite: {fileID: 2152261147291449869, guid: 8702c453569ad744d9386682b7cda268, type: 3}
   autoReturnDelay: 7
 --- !u!114 &1649952865
 MonoBehaviour:

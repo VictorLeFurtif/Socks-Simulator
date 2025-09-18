@@ -188,7 +188,7 @@ namespace Manager
                     SoundManager.Instance.FadeInMainMusic();
                     break;
                 case 2:
-                    SoundManager.Instance.FadeInMainMusic(); //TODO CHANGE WHEN NEW MUSIC
+                    SoundManager.Instance.FadeInLastRound(); 
                     break;
             }
         }

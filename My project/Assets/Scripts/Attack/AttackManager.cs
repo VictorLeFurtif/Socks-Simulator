@@ -78,7 +78,7 @@ namespace Attack
                 shouldNotCounter = false;
                 wasCountered = true;
                 canCounter = false;
-
+                
                 enemyAttack.InterruptAttack();
                 animator.SetTrigger("IsCounter");
             }
@@ -86,6 +86,11 @@ namespace Attack
             {
                 animator.SetTrigger("IsCounter");
             } 
+            
+        }
+
+        public void PlayCounterMusic()
+        {
             SoundManager.Instance.PlayMusicOneShot(rp.currentPlayerPlacement == PlayerPlacement.Left
                 ? SoundManager.Instance.SoundData.NoseCounter
                 : SoundManager.Instance.SoundData.AssCounter);
