@@ -32,7 +32,6 @@ namespace Controller
 
         private float stunValue;
 
-        [SerializeField] private Slider goldenSlider;
         [SerializeField] private GameObject fxSlider;
 
         public float StunValue
@@ -394,19 +393,23 @@ namespace Controller
 
           #endregion
 
-          #region Coroutine
+          #region Rework trust
+
+          [SerializeField] private Image fxPLaceGolderBackground;
+          [SerializeField] private Sprite fxGolden;
+          [SerializeField] private Sprite fxColor;
           
           private IEnumerator SliderTransitionForKo()
           {
-              goldenSlider.gameObject.SetActive(true);
-              yield return goldenSlider.transform.DOShakeRotation(1f, new Vector3(0, 0, 45f)).WaitForCompletion();
-              goldenSlider.gameObject.SetActive(false);
-              ToggleSlidersStun(true);
-              yield return new WaitForSeconds(1f);
               StunValue = commonData.playerDataCommon.RopeData.maxStunValue[koIndex];
+              isShaking = true;
+              ToggleSlidersStun(true);
+              yield return stunSlider.transform.DOShakeRotation(1f, new Vector3(0, 0, 45f)).WaitForCompletion();
+              isShaking = false;
           }
 
           #endregion
+          
     }
 
     
