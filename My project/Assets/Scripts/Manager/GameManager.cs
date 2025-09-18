@@ -64,11 +64,14 @@ namespace Manager
             InitializeGameState();
         }
 
+        private bool gameLaunched = false; 
+
         private void Update()
         {
-            if (currentState == GameState.Menu && Input.anyKeyDown)
+            if (currentState == GameState.Menu && Input.anyKeyDown && !gameLaunched)
             {
                 StartGame();
+                gameLaunched = true;
             }
         }
 
@@ -115,6 +118,7 @@ namespace Manager
         {
             LoadMenuScene();
             Time.timeScale = 1;
+            gameLaunched = false;
         }
 
         #endregion

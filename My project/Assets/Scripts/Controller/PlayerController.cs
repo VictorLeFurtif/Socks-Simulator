@@ -189,8 +189,8 @@ namespace Controller
         private void GetMousePosX(InputAction.CallbackContext context)
         {
             Vector2 lTemp = context.ReadValue<Vector2>();
-            if (lTemp.x > 5f || lTemp.x < -5f)
-                moveDirection = new Vector2(lTemp.x, 0f);
+            if (lTemp.x > 1f || lTemp.x < -1f)
+                moveDirection = -new Vector2(lTemp.x, 0f);
         }
 
         private void GetMousePosY(InputAction.CallbackContext context)

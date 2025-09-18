@@ -15,21 +15,21 @@ MonoBehaviour:
   <RopeData>k__BackingField:
     minDistanceToGrab: 5
     maxStunValue:
-    - 3.09
-    - 5.58
+    - 3
+    - 5
     - 10
     stunValueToTakeOut: 0.2
-    flagDistance: 10
+    flagDistance: 9.5
     currentKoState: 1
     currentPlayerState: 0
-    epsilon: 0.19
+    epsilon: 0.2
     dragging: 0
-    tensionStrength: 2
+    tensionStrength: 9.04
   <PlayerControllerData>k__BackingField:
-    speed: 0.8
-    clampSpeed: 17.43
-    distancePush: 5
+    speed: 1.02
+    clampSpeed: 10.55
+    distancePush: 6.01
     heightFactor: 0.8
   <AttackManagerData>k__BackingField:
-    attackCooldown: 2
-    looseSlider: 5
+    attackCooldown: 0.3
+    looseSlider: 4
