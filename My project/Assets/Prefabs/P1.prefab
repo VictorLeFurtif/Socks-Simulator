@@ -336,7 +336,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 361dd432d5e206a449887213c5cc45fd, type: 2}
+  - {fileID: 2100000, guid: ccc7da7b2f7a875488462b4f4e620e2c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -436,10 +436,9 @@ MonoBehaviour:
   enemy: {fileID: 0}
   Ass: {fileID: 1790154767660667836}
   Head: {fileID: 3896351449628562610}
-  goldenSlider: {fileID: 0}
   fxSlider: {fileID: 0}
-  releaseKey: 19
-  dragKey: 20
+  releaseKey: 20
+  dragKey: 19
   currentPlayerPlacement: 0
   lineRenderer: {fileID: 2938798854383453031}
   stunSlider: {fileID: 0}
@@ -448,6 +447,9 @@ MonoBehaviour:
   leftFlag: {fileID: 0}
   rightFlag: {fileID: 0}
   yPositionFlags: 2.42
+  fxPLaceGolderBackground: {fileID: 0}
+  fxGolden: {fileID: 604575472783605016, guid: b42c1021fbb659d4ab6bcc1061956ed3, type: 3}
+  fxColor: {fileID: 3527211012933272901, guid: 8ffe63ff50023d0438038a716d2005cb, type: 3}
 --- !u!114 &2934980116777928790
 MonoBehaviour:
   m_ObjectHideFlags: 0

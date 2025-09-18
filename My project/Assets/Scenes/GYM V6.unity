@@ -8839,18 +8839,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4407022384616132565}
     - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
-      propertyPath: dragKey
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
-      propertyPath: fxColor
-      value: 
-      objectReference: {fileID: 1351055294039020593, guid: d50a2c92de5e85346b14a778e0aacd35, type: 3}
-    - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
-      propertyPath: fxGolden
-      value: 
-      objectReference: {fileID: 604575472783605016, guid: b42c1021fbb659d4ab6bcc1061956ed3, type: 3}
-    - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: fxSlider
       value: 
       objectReference: {fileID: 4313877746417763689}
@@ -8863,17 +8851,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1399875439706973124}
     - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
-      propertyPath: releaseKey
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: stunSlider
       value: 
       objectReference: {fileID: 3686569743647467695}
-    - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
-      propertyPath: goldenSlider
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: fxPLaceGolderBackground
       value: 
@@ -8897,6 +8877,10 @@ PrefabInstance:
     - target: {fileID: 8019689466870172520, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: m_Name
       value: P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552940993353977716, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
+      propertyPath: m_Parameters.textureScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9781,6 +9765,10 @@ PrefabInstance:
       propertyPath: playerScoreManager
       value: 
       objectReference: {fileID: 844327746}
+    - target: {fileID: 2938798854383453031, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
+      propertyPath: m_Parameters.textureScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4633832220740660274, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.91
@@ -9846,18 +9834,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1747572031}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
-      propertyPath: dragKey
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
-      propertyPath: fxColor
-      value: 
-      objectReference: {fileID: 3527211012933272901, guid: 8ffe63ff50023d0438038a716d2005cb, type: 3}
-    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
-      propertyPath: fxGolden
-      value: 
-      objectReference: {fileID: 604575472783605016, guid: b42c1021fbb659d4ab6bcc1061956ed3, type: 3}
-    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: fxSlider
       value: 
       objectReference: {fileID: 8373830889602292114}
@@ -9870,17 +9846,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1399875439706973124}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
-      propertyPath: releaseKey
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: stunSlider
       value: 
       objectReference: {fileID: 4691666716181854809}
-    - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
-      propertyPath: goldenSlider
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8945322065795292882, guid: f6141dee644acb44bb010f9f248fa619, type: 3}
       propertyPath: fxPLaceGolderBackground
       value: 

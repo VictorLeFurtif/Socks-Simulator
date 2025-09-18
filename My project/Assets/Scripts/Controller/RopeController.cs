@@ -314,7 +314,7 @@ namespace Controller
         {
             if (Keyboard.current[releaseKey].wasPressedThisFrame && 
                 commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && 
-                StunValue > 0)
+                StunValue > 0 && CurrentPlayerState != PlayerState.Dead)
             {
                 StunValue -= commonData.playerDataCommon.RopeData.stunValueToTakeOut;
         
@@ -342,7 +342,7 @@ namespace Controller
 
         private void TimerStun()
         {
-            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && StunValue > 0)
+            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && StunValue > 0 && CurrentPlayerState != PlayerState.Dead)
             {
                 StunValue -= Time.deltaTime;
             }

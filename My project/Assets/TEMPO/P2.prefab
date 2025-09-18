@@ -354,10 +354,9 @@ MonoBehaviour:
   enemy: {fileID: 0}
   Ass: {fileID: 1839981755820350026}
   Head: {fileID: 7810198359311002763}
-  goldenSlider: {fileID: 0}
   fxSlider: {fileID: 0}
-  releaseKey: 2
-  dragKey: 52
+  releaseKey: 52
+  dragKey: 2
   currentPlayerPlacement: 1
   lineRenderer: {fileID: 8552940993353977716}
   stunSlider: {fileID: 0}
@@ -366,6 +365,9 @@ MonoBehaviour:
   leftFlag: {fileID: 0}
   rightFlag: {fileID: 0}
   yPositionFlags: 2.42
+  fxPLaceGolderBackground: {fileID: 0}
+  fxGolden: {fileID: 604575472783605016, guid: b42c1021fbb659d4ab6bcc1061956ed3, type: 3}
+  fxColor: {fileID: 1351055294039020593, guid: d50a2c92de5e85346b14a778e0aacd35, type: 3}
 --- !u!114 &3809542287267580230
 MonoBehaviour:
   m_ObjectHideFlags: 0
