@@ -401,10 +401,14 @@ namespace Controller
           
           private IEnumerator SliderTransitionForKo()
           {
+              fxPLaceGolderBackground.sprite = fxGolden;
+              fxSlider.SetActive(true);
               StunValue = commonData.playerDataCommon.RopeData.maxStunValue[koIndex];
               isShaking = true;
               ToggleSlidersStun(true);
               yield return stunSlider.transform.DOShakeRotation(1f, new Vector3(0, 0, 45f)).WaitForCompletion();
+              fxSlider.SetActive(false);
+              fxPLaceGolderBackground.sprite = fxColor;
               isShaking = false;
           }
 
