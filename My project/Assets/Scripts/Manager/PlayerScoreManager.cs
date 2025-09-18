@@ -150,7 +150,8 @@ namespace Manager
         private IEnumerator ShowRound()
         {
             CheckForMusicFadeOut();
-            PlayerController.blockMovement = true;
+            leftPlayer.blockMovement = true;
+            rightPlayer.blockMovement = true;
             SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.Round[currentRound]);
             canvasRound.enabled = true;
             Rounds[currentRound].gameObject.SetActive(true);
@@ -167,7 +168,8 @@ namespace Manager
                 decor[currentRound - 1].SetActive(false);
 
             currentRound++;
-            PlayerController.blockMovement = false;
+            leftPlayer.blockMovement = false;
+            rightPlayer.blockMovement = false;
         }
 
         private void CheckForMusicFadeOut()

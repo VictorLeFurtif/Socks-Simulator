@@ -38,24 +38,24 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -8528811098673850910, guid: 9a4f1dd4653fdaa42bf8ea99e7b08af3, type: 3}
-    - time: 0.14285715
+    - time: 0.125
       value: {fileID: -8822114706256617601, guid: 9a4f1dd4653fdaa42bf8ea99e7b08af3, type: 3}
-    - time: 0.2857143
+    - time: 0.25
       value: {fileID: -1286435759721199442, guid: 9a4f1dd4653fdaa42bf8ea99e7b08af3, type: 3}
-    - time: 0.42857143
+    - time: 0.375
       value: {fileID: -6595972044024677706, guid: 9a4f1dd4653fdaa42bf8ea99e7b08af3, type: 3}
-    - time: 0.5714286
+    - time: 0.5
       value: {fileID: -6226477334506992856, guid: 9a4f1dd4653fdaa42bf8ea99e7b08af3, type: 3}
-    - time: 0.71428573
+    - time: 0.625
       value: {fileID: 7532226728082256308, guid: 9a4f1dd4653fdaa42bf8ea99e7b08af3, type: 3}
-    - time: 0.85714287
+    - time: 0.75
       value: {fileID: -4626184998012463139, guid: 9a4f1dd4653fdaa42bf8ea99e7b08af3, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 7
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -93,7 +93,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 0.875
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -176,35 +176,35 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.14285715
+  - time: 0.125
     functionName: SetCounterPossible
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.42857143
-    functionName: SetCounterPossible
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.42857143
+  - time: 0.375
     functionName: CheckShouldInterrupt
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.42857143
+  - time: 0.375
     functionName: ShockWave
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.85714287
+  - time: 0.5
+    functionName: SetCounterPossible
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.75
     functionName: OnAttackEnd
     data: 
     objectReferenceParameter: {fileID: 0}

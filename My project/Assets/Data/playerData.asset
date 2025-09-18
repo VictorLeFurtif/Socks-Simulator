@@ -24,12 +24,12 @@ MonoBehaviour:
     currentPlayerState: 0
     epsilon: 0.19
     dragging: 0
-    tensionStrength: 2
+    tensionStrength: 4.5
   <PlayerControllerData>k__BackingField:
-    speed: 0.8
+    speed: 1.16
     clampSpeed: 17.43
     distancePush: 5
     heightFactor: 0.8
   <AttackManagerData>k__BackingField:
-    attackCooldown: 2
+    attackCooldown: 0.4
     looseSlider: 5
