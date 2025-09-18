@@ -19,6 +19,7 @@ namespace Manager
         public SoundBankData SoundData => soundBankData;
 
         private AudioSource mainMusic;
+        private AudioSource finalRoundmusic;
         
         public static SoundManager Instance
         {
@@ -55,7 +56,11 @@ namespace Manager
         private void Start()
         {
             audioSource.volume = 1f;
-            mainMusic = InitialisationAudioObjectDestroyAtEnd(SoundData.MainSound, true, true, 1f, "Main Music").GetComponent<AudioSource>();
+            mainMusic = InitialisationAudioObjectDestroyAtEnd(SoundData.MainSound, true, 
+                true, 0.7f, "Main Music").GetComponent<AudioSource>();
+            finalRoundmusic = InitialisationAudioObjectDestroyAtEnd(SoundData.FinalRound, 
+                true, true, 1f, "Final Music").GetComponent<AudioSource>();
+            finalRoundmusic.Pause();
         }
         
         
@@ -106,11 +111,45 @@ namespace Manager
 
         private void FadeOutMusic(AudioSource music)
         {
-            StartCoroutine(AudioFadeOut.FadeOut(music,1));
+            StartCoroutine(AudioFadeOut.FadeOut(music,1,0));
         }
         private void FadeInMusic(AudioSource music)
         {
-            StartCoroutine(AudioFadeOut.FadeIn(music,1));
+            StartCoroutine(AudioFadeOut.FadeIn(music,1,0.7f));
+        }
+
+        public void FadeInLastRound()
+        {
+            if (finalRoundmusic.isPlaying)
+            {
+                finalRoundmusic.Stop();
+            }
+    
+            finalRoundmusic.time = 0;
+            finalRoundmusic.Play();
+            finalRoundmusic.volume = 0f; 
+    
+            StartCoroutine(AudioFadeOut.FadeIn(finalRoundmusic, 1));
+        }
+
+        private void FadeInResetMain()
+        {
+            if (mainMusic.isPlaying)
+            {
+                mainMusic.Stop();
+            }
+    
+            mainMusic.time = 0;
+            mainMusic.Play();
+            mainMusic.volume = 0f; 
+    
+            FadeInMainMusic();
+        }
+        
+        public void FadeOutLastRound()
+        {
+            StartCoroutine(AudioFadeOut.FadeOut(finalRoundmusic, 1));
+            FadeInResetMain();
         }
 
         public void FadeOutMainMusic() => FadeOutMusic(mainMusic);

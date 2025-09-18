@@ -73,6 +73,7 @@ namespace UI
         {
             yield return new WaitForSecondsRealtime(autoReturnDelay);
             GameManager.Instance?.ReturnToMenu();
+            SoundManager.Instance.FadeOutLastRound();
         }
         
     }
