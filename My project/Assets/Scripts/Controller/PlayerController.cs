@@ -33,6 +33,8 @@ namespace Controller
         private DataHolderManager commonData;
 
         [SerializeField] private CancelPushing antiPushZone;
+        
+        private float nextFootstepTime = 0f;
 
         private void OnEnable()
         {
@@ -114,6 +116,8 @@ namespace Controller
             }
 
             animatorPlayer.SetFloat("velocity", Mathf.Abs(rb.linearVelocityX));
+            
+            //HandleFootsteps();
 
         }
 
@@ -296,5 +300,26 @@ namespace Controller
                 rb.bodyType = RigidbodyType2D.Kinematic;
             }
         }
+
+        #region Sound
+
+        private void HandleFootsteps()
+        {
+            float currentSpeed = Mathf.Abs(rb.linearVelocity.x);
+    
+            if (currentSpeed > 0.5f && Time.time > nextFootstepTime) 
+            {
+                AudioClip footstepSound = playerNum == PlayerPlacement.Left 
+                    ? SoundManager.Instance.SoundData.Movement 
+                    : SoundManager.Instance.SoundData.Movement2;
+            
+                SoundManager.Instance?.PlayMusicOneShot(footstepSound);
+        
+                float footstepDelay = Mathf.Lerp(0.5f, 0.25f, currentSpeed / 10f);
+                nextFootstepTime = Time.time + footstepDelay;
+            }
+        }
+
+        #endregion
     }
 }

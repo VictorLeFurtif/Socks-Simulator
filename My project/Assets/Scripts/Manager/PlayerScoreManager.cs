@@ -149,6 +149,7 @@ namespace Manager
         [SerializeField] private float timeForRoundPause = 5f;
         private IEnumerator ShowRound()
         {
+            CheckForMusicFadeOut();
             PlayerController.blockMovement = true;
             SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.Round[currentRound]);
             canvasRound.enabled = true;
@@ -156,6 +157,7 @@ namespace Manager
             yield return new WaitForSecondsRealtime(timeForRoundPause);
             Rounds[currentRound].gameObject.SetActive(false);
             canvasRound.enabled = false;
+            CheckForMusicFadeIn();
             if(currentRound >= decor.Length)
                 decor[decor.Length - 1].SetActive(true);
             else
@@ -167,7 +169,29 @@ namespace Manager
             currentRound++;
             PlayerController.blockMovement = false;
         }
+
+        private void CheckForMusicFadeOut()
+        {
+            switch (currentRound)
+            {
+                case 2:
+                    SoundManager.Instance.FadeOutMainMusic();
+                    break;
+            }
+        }
         
+        private void CheckForMusicFadeIn()
+        {
+            switch (currentRound)
+            {
+                case 1:
+                    SoundManager.Instance.FadeInMainMusic();
+                    break;
+                case 2:
+                    SoundManager.Instance.FadeInLastRound(); 
+                    break;
+            }
+        }
         
         public void ResetGame()
         {
