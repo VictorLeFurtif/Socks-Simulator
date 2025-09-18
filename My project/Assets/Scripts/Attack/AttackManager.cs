@@ -71,6 +71,8 @@ namespace Attack
 
         public void PerformCounter()
         {
+                rb.bodyType = RigidbodyType2D.Kinematic;
+
             if (enemyAttack.canCounter && !wasCountered && !isAttacking && !dontRepeatCounter && enemyAttack.rp.CurrentKoState != KoState.Ko)
             {
                 dontRepeatCounter = true;
@@ -162,10 +164,11 @@ namespace Attack
 
         public void OnCounterEnd()
         {
+            StartCoroutine(ResetAttackState());
+
             if (!shouldNotCounter)
             {
                 enemyAttack.UpdateSlider();
-                StartCoroutine(ResetAttackState());
                 animator.SetTrigger("CounteredBad");
             }
         }
