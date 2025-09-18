@@ -15,7 +15,7 @@ namespace Manager
         [Header("Players References")]
         [SerializeField] private PlayerController leftPlayer;
         [SerializeField] private PlayerController rightPlayer;
-        
+
         [Header("Reset Positions")]
         [SerializeField] private Vector3 leftPlayerStartPos;
         [SerializeField] private Vector3 rightPlayerStartPos;
@@ -42,6 +42,9 @@ namespace Manager
         private DataHolderManager leftData;
         private DataHolderManager rightData;
         private int currentRound = 0;
+
+        public PlayerPlacement winPlayer;
+        public bool win;
 
         public static PlayerScoreManager _instance;
         private void Awake()
@@ -77,6 +80,11 @@ namespace Manager
         
         public void AddScore(PlayerPlacement player)
         {
+            if (win)
+            {
+                return;
+            }
+            
             if (player == PlayerPlacement.Left)
             {
                 flagsP1[leftPlayerScore].gameObject.SetActive(true);
@@ -92,19 +100,23 @@ namespace Manager
             
             if (leftPlayerScore >= scoreToWin)
             {
-                PlayerWins(PlayerPlacement.Left);
+                SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.Dead);
+                winPlayer = PlayerPlacement.Left;
+                win = true;
             }
             else if (rightPlayerScore >= scoreToWin)
             {
-                PlayerWins(PlayerPlacement.Right);
+                SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.Dead);
+                winPlayer = PlayerPlacement.Right;
+                win = true;
             }
             else
             {
                 ResetRound();
             }
         }
-        
-        private void PlayerWins(PlayerPlacement winner)
+
+        public void PlayerWins(PlayerPlacement winner)
         {
             OnPlayerWon?.Invoke(winner);
             GameManager.Instance?.GameOver();
@@ -132,14 +144,16 @@ namespace Manager
                 rightPlayer.rb.linearVelocity = Vector2.zero;
             }
         }
-        
+
+
+        [SerializeField] private float timeForRoundPause = 5f;
         private IEnumerator ShowRound()
         {
             PlayerController.blockMovement = true;
-
+            SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.Round[currentRound]);
             canvasRound.enabled = true;
             Rounds[currentRound].gameObject.SetActive(true);
-            yield return new WaitForSecondsRealtime(2);
+            yield return new WaitForSecondsRealtime(timeForRoundPause);
             Rounds[currentRound].gameObject.SetActive(false);
             canvasRound.enabled = false;
             if(currentRound >= decor.Length)

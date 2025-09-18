@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1159449393235214263}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.415, y: -0.483, z: 0}
+  m_LocalPosition: {x: 0.48, y: 1.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 3308180160957130841}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.224, y: 0.673, z: 0}
+  m_LocalPosition: {x: -1.63, y: 4.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96,10 +96,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8019689466870172520}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10, y: -1.2910904, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.56, y: 0.56, z: 0.56}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1839981755820350026}
   - {fileID: 7810198359311002763}
@@ -153,7 +153,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: -2933984740619117708, guid: 5b3d966983cf5b4469bf31743293d195, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -198,8 +198,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.34253234, y: 3.029868}
+  m_Size: {x: 5.914312, y: 6.509562}
   m_Direction: 0
 --- !u!50 &890187087741012119
 Rigidbody2D:
@@ -216,7 +216,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 5
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: ac31f4075bd8d00408dd13590b0234ce, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -254,7 +254,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 361dd432d5e206a449887213c5cc45fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -287,7 +287,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.18253899
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -330,8 +330,8 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
-    textureScale: {x: 1, y: 1}
+    textureMode: 1
+    textureScale: {x: 5, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
@@ -350,9 +350,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57651bdd5134d7847b61b3a8ab14695c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Controller.RopeController
+  animator: {fileID: 613484177901962035}
   enemy: {fileID: 0}
   Ass: {fileID: 1839981755820350026}
   Head: {fileID: 7810198359311002763}
+  goldenSlider: {fileID: 0}
+  fxSlider: {fileID: 0}
   releaseKey: 2
   dragKey: 52
   currentPlayerPlacement: 1
@@ -362,6 +365,7 @@ MonoBehaviour:
   attackManager: {fileID: 7196199175114784169}
   leftFlag: {fileID: 0}
   rightFlag: {fileID: 0}
+  yPositionFlags: 2.42
 --- !u!114 &3809542287267580230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +386,8 @@ MonoBehaviour:
   ennemy: {fileID: 0}
   ropeController: {fileID: 4979980253582568547}
   playerCollider: {fileID: 3912392541613030389}
+  animatorPlayer: {fileID: 613484177901962035}
+  playerScoreManager: {fileID: 0}
   antiPushZone: {fileID: 7432633482539953115}
 --- !u!114 &7196199175114784169
 MonoBehaviour:
@@ -397,15 +403,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackManager
   isAttacking: 0
   canCounter: 0
-  spriteRenderer: {fileID: 8680851792924190362}
   animator: {fileID: 613484177901962035}
   playerController: {fileID: 3809542287267580230}
-  ennemyAttack: {fileID: 0}
+  enemyAttack: {fileID: 0}
   playerSlider: {fileID: 0}
   rp: {fileID: 4979980253582568547}
   shaderObj: {fileID: 0}
   shaderMat: {fileID: 0}
   rb: {fileID: 890187087741012119}
+  distanceToAttack: 6.99
 --- !u!95 &613484177901962035
 Animator:
   serializedVersion: 7
@@ -416,7 +422,7 @@ Animator:
   m_GameObject: {fileID: 8019689466870172520}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9aebe3b97f73b9447abc03136da3ee21, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3182330957f5bf4479376678fb913100, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -462,17 +468,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.005030632, y: 0.052307606}
+  m_Offset: {x: -1.2422258, y: 3.4200888}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    pivot: {x: 0.6517788, y: 0.016463716}
+    oldSize: {x: 4.83, y: 6.49}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.016864, y: 0.97477233}
+  m_Size: {x: 6.6600647, y: 0.8228426}
   m_EdgeRadius: 0
 --- !u!114 &3321047141098280685
 MonoBehaviour:
@@ -500,6 +506,7 @@ MonoBehaviour:
       tensionStrength: 0
     PlayerControllerData:
       speed: 0.1
+      clampSpeed: 0.1
       distancePush: 0.1
       heightFactor: 0.1
     AttackManagerData:
@@ -584,6 +591,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.011452675, y: 0}
-  m_Size: {x: 1.3474989, y: 2.278984}
+  m_Offset: {x: -0.73302346, y: 3.1352866}
+  m_Size: {x: 5.9595404, y: 6.432943}
   m_Direction: 0

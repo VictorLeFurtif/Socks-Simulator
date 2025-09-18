@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439c9cdccdfa31d40839075707271a51, type: 3}
+  m_Name: dataSound
+  m_EditorClassIdentifier: Assembly-CSharp::Data.SoundBankData
+  eyeAttack: {fileID: 8300000, guid: fe4f1a779e16f484081d1aae20b0710d, type: 3}
+  tongueAttack: {fileID: 8300000, guid: 84f694d0eb77498499843a5c0bfcb634, type: 3}
+  assCounter: {fileID: 8300000, guid: 34a913e98f84111479f32706e353cf65, type: 3}
+  noseCounter: {fileID: 8300000, guid: 97434063935f55544a350279c9dc201e, type: 3}
+  takeDamage: {fileID: 8300000, guid: 013ea15da8bfddc43a1e36879fb90286, type: 3}
+  movement: {fileID: 8300000, guid: 58e29af4c5c1e5e48b515bfc1a818baa, type: 3}
+  movement2: {fileID: 8300000, guid: 1c55191acac160746914ac573759ab51, type: 3}
+  player1: {fileID: 8300000, guid: 437f4384ab68aa84d9f03cb0b78c38ec, type: 3}
+  player2: {fileID: 8300000, guid: 1fbd06d5d88bf2e4baf071bc05aae6da, type: 3}
+  dead: {fileID: 8300000, guid: cc71e9d1167901e47a8b68b58b1ee25f, type: 3}
+  stun: {fileID: 8300000, guid: 15a4d5ea729034442ac65d2fbe97046a, type: 3}
+  flagGain: {fileID: 8300000, guid: 577fd6bea4288b74e88fcd54a96b572d, type: 3}
+  roundStart: {fileID: 8300000, guid: fbe81ebce43e9cb428c2f8641dec3d35, type: 3}
+  win: {fileID: 8300000, guid: 03aaeda7853d1df46a1c52c2280a3683, type: 3}
+  mainSound: {fileID: 8300000, guid: 59f15438fe2667f4a8032ee3d446278e, type: 3}
+  shockWave: {fileID: 8300000, guid: f71ef0974bf4c1c4796d1026c9e290a0, type: 3}
+  tabRound:
+  - {fileID: 8300000, guid: 98507fe768483334f85d7391fd6625a9, type: 3}
+  - {fileID: 8300000, guid: 2161894a2ee9085498087295b729556a, type: 3}
+  - {fileID: 8300000, guid: 90c7b1ceeda1d8241a52f3f8b025979f, type: 3}

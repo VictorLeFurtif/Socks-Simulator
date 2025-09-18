@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1661089422113695093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.415, y: -0.483, z: 0}
+  m_LocalPosition: {x: -1.12, y: 1.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 3968691133468430677}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.224, y: 0.673, z: 0}
+  m_LocalPosition: {x: 1.64, y: 3.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129,8 +129,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.017637014, y: 0.017637253}
-  m_Size: {x: 1.2407632, y: 2.3342705}
+  m_Offset: {x: 1.2526112, y: 2.8487294}
+  m_Size: {x: 6.545766, y: 6.545766}
   m_Direction: 0
 --- !u!114 &4685600101366120787
 MonoBehaviour:
@@ -180,7 +180,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.864248, y: -1.2910904, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.56, y: 0.56, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1790154767660667836}
@@ -213,7 +213,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -235,12 +235,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: -949880676405164698, guid: d3b24dd9ab0d2e541afb5f889ea5e3c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 5.95, y: 5.55}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -280,8 +280,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.66387504, y: 2.9123714}
+  m_Size: {x: 6.271596, y: 6.3071404}
   m_Direction: 0
 --- !u!50 &4027281279179962070
 Rigidbody2D:
@@ -298,7 +298,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 5
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: ac31f4075bd8d00408dd13590b0234ce, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -336,7 +336,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 361dd432d5e206a449887213c5cc45fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -412,8 +412,8 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
-    textureScale: {x: 1, y: 1}
+    textureMode: 1
+    textureScale: {x: 5, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
@@ -432,9 +432,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57651bdd5134d7847b61b3a8ab14695c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Controller.RopeController
+  animator: {fileID: 5919270100428847713}
   enemy: {fileID: 0}
   Ass: {fileID: 1790154767660667836}
   Head: {fileID: 3896351449628562610}
+  goldenSlider: {fileID: 0}
+  fxSlider: {fileID: 0}
   releaseKey: 19
   dragKey: 20
   currentPlayerPlacement: 0
@@ -444,6 +447,7 @@ MonoBehaviour:
   attackManager: {fileID: 7981356175789211043}
   leftFlag: {fileID: 0}
   rightFlag: {fileID: 0}
+  yPositionFlags: 2.42
 --- !u!114 &2934980116777928790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,6 +468,8 @@ MonoBehaviour:
   ennemy: {fileID: 0}
   ropeController: {fileID: 8945322065795292882}
   playerCollider: {fileID: 8770536755587737485}
+  animatorPlayer: {fileID: 5919270100428847713}
+  playerScoreManager: {fileID: 0}
   antiPushZone: {fileID: 4685600101366120787}
 --- !u!114 &7981356175789211043
 MonoBehaviour:
@@ -479,15 +485,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackManager
   isAttacking: 0
   canCounter: 0
-  spriteRenderer: {fileID: 43132188880953478}
   animator: {fileID: 5919270100428847713}
   playerController: {fileID: 2934980116777928790}
-  ennemyAttack: {fileID: 0}
+  enemyAttack: {fileID: 0}
   playerSlider: {fileID: 0}
   rp: {fileID: 8945322065795292882}
   shaderObj: {fileID: 0}
   shaderMat: {fileID: 0}
   rb: {fileID: 4027281279179962070}
+  distanceToAttack: 6.99
 --- !u!95 &5919270100428847713
 Animator:
   serializedVersion: 7
@@ -498,7 +504,7 @@ Animator:
   m_GameObject: {fileID: 8723019058609988545}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9aebe3b97f73b9447abc03136da3ee21, type: 2}
+  m_Controller: {fileID: 9100000, guid: db4d3f2e4f3c92445940c20b00140903, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -544,17 +550,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0050303936, y: 0.052307606}
+  m_Offset: {x: 1.67362, y: 2.9899464}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
-    newSize: {x: 1, y: 2}
+    pivot: {x: 0.26499733, y: 0.015336175}
+    oldSize: {x: 5.95, y: 5.55}
+    newSize: {x: 5.95, y: 5.55}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.9788046, y: 0.97477233}
+  m_Size: {x: 7.374165, y: 1.2172432}
   m_EdgeRadius: 0
 --- !u!114 &4911529832730433248
 MonoBehaviour:
@@ -582,6 +588,7 @@ MonoBehaviour:
       tensionStrength: 0
     PlayerControllerData:
       speed: 0.1
+      clampSpeed: 0.1
       distancePush: 0.1
       heightFactor: 0.1
     AttackManagerData:

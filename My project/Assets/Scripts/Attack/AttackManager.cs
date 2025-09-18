@@ -81,10 +81,14 @@ namespace Attack
 
                 enemyAttack.InterruptAttack();
                 animator.SetTrigger("IsCounter");
-                enemyAttack.animator.SetBool("AttackedBad", true);
             }
             else if (!isAttacking && enemyAttack.rp.CurrentKoState != KoState.Ko)
-                animator.SetTrigger("IsCounter"); 
+            {
+                animator.SetTrigger("IsCounter");
+            } 
+            SoundManager.Instance.PlayMusicOneShot(rp.currentPlayerPlacement == PlayerPlacement.Left
+                ? SoundManager.Instance.SoundData.NoseCounter
+                : SoundManager.Instance.SoundData.AssCounter);
         }
 
         private void CheckDistance()
@@ -104,14 +108,15 @@ namespace Attack
             rb.bodyType = RigidbodyType2D.Kinematic;
             rb.linearVelocity = Vector3.zero;
             animator.SetTrigger("IsAttacking");
+            
+            SoundManager.Instance.PlayMusicOneShot(rp.currentPlayerPlacement == PlayerPlacement.Left
+                ? SoundManager.Instance.SoundData.TongueAttack
+                : SoundManager.Instance.SoundData.EyeAttack);
         }
 
         public void OnAttackEnd()
         {
-            if (shoulNotDoEvent)
-                return;
-            
-            if (!wasCountered)
+            if (!wasCountered && !shoulNotDoEvent)
             {
                 enemyAttack.UpdateSlider();
             }
@@ -173,6 +178,7 @@ namespace Attack
             {
                 UiHelper.UpdateSlider(this, playerSlider, playerSlider.value + commonData.playerDataCommon.AttackManagerData.looseSlider);
                 animator.SetTrigger("TakingDamage");
+                SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.TakeDamage);
             }
             else
                 StartCoroutine(UpdateSliderIfKo());
@@ -196,7 +202,7 @@ namespace Attack
             if (!isInArea && enemyAttack.rp.CurrentKoState == KoState.NotKo)
             {
                 shoulNotDoEvent = true;
-                StartCoroutine(ResetAttackState());
+                //StartCoroutine(ResetAttackState());
                 return;
             }
             shoulNotDoEvent = false;
@@ -212,17 +218,25 @@ namespace Attack
         {
             if (shoulNotDoEvent)
                 yield break;
+        
             string lName = "_WaveDistanceFromCenter";
             shaderObj.transform.position = enemyAttack.gameObject.transform.position;
-            while (shaderMat.material.GetFloat(lName) < 1)
+            SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.ShockWave);
+    
+            float currentValue = shaderMat.material.GetFloat(lName);
+            float targetValue = 1f;
+            float speed = 2f;
+    
+            while (currentValue < targetValue)
             {
-                shaderMat.material.SetFloat(lName, shaderMat.material.GetFloat(lName) + 0.015f);
+                currentValue += speed * Time.deltaTime; 
+                currentValue = Mathf.Clamp(currentValue, -0.1f, targetValue);
+        
+                shaderMat.material.SetFloat(lName, currentValue);
                 yield return null;
             }
-            if (!(shaderMat.material.GetFloat(lName) < 1))
-            {
-                shaderMat.material.SetFloat(lName, -0.1f);
-            }
+    
+            shaderMat.material.SetFloat(lName, -0.1f);
         }
 
         private void ResetElement()
