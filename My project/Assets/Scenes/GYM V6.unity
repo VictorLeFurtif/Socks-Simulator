@@ -8845,7 +8845,7 @@ PrefabInstance:
     - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: fxColor
       value: 
-      objectReference: {fileID: 3527211012933272901, guid: 8ffe63ff50023d0438038a716d2005cb, type: 3}
+      objectReference: {fileID: 1351055294039020593, guid: d50a2c92de5e85346b14a778e0aacd35, type: 3}
     - target: {fileID: 4979980253582568547, guid: 64d8a70ef8024a84ca42d0867efa4a65, type: 3}
       propertyPath: fxGolden
       value: 
