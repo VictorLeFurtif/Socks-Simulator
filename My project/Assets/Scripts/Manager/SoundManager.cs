@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using Data;
 using UnityEngine;
+using Utilitary;
 
 namespace Manager
 {
@@ -15,6 +17,8 @@ namespace Manager
         [SerializeField] private SoundBankData soundBankData;
 
         public SoundBankData SoundData => soundBankData;
+
+        private AudioSource mainMusic;
         
         public static SoundManager Instance
         {
@@ -51,7 +55,7 @@ namespace Manager
         private void Start()
         {
             audioSource.volume = 1f;
-            InitialisationAudioObjectDestroyAtEnd(SoundData.MainSound, true, true, 0.7f, "Main Music");
+            mainMusic = InitialisationAudioObjectDestroyAtEnd(SoundData.MainSound, true, true, 1f, "Main Music").GetComponent<AudioSource>();
         }
         
         
@@ -63,6 +67,13 @@ namespace Manager
                 return;
             }
             audioSource.PlayOneShot(_audioClip);
+        }
+
+        public IEnumerator SayWinner(AudioClip winner)
+        {
+            PlayMusicOneShot(winner);
+            yield return new WaitForSecondsRealtime(winner.length);
+            PlayMusicOneShot(SoundData.Win);
         }
         
         
@@ -92,5 +103,17 @@ namespace Manager
             
             return emptyObject;
         }
+
+        private void FadeOutMusic(AudioSource music)
+        {
+            StartCoroutine(AudioFadeOut.FadeOut(music,1));
+        }
+        private void FadeInMusic(AudioSource music)
+        {
+            StartCoroutine(AudioFadeOut.FadeIn(music,1));
+        }
+
+        public void FadeOutMainMusic() => FadeOutMusic(mainMusic);
+        public void FadeInMainMusic() => FadeInMusic(mainMusic);
     }
 }

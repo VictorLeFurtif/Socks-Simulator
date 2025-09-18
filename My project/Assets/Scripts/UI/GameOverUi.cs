@@ -53,7 +53,12 @@ namespace UI
             
             int winner = psm.GetLeftPlayerScore() > psm.GetRightPlayerScore() ? 1 : 2;
             winnerImage.sprite = winner == 1 ? player1WinSprite : player2WinSprite;
-            
+
+            var sayWinner = StartCoroutine(SoundManager.Instance.SayWinner(winner == 1
+                ? SoundManager.Instance.SoundData.Player1
+                : SoundManager.Instance.SoundData.Player2));
+
+
             gameOverCanvas.enabled = true;
             StartCoroutine(AutoReturnToMenu());
         }

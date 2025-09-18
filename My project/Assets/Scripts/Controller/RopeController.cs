@@ -32,7 +32,6 @@ namespace Controller
 
         private float stunValue;
 
-        [SerializeField] private Slider goldenSlider;
         [SerializeField] private GameObject fxSlider;
 
         public float StunValue
@@ -315,7 +314,7 @@ namespace Controller
         {
             if (Keyboard.current[releaseKey].wasPressedThisFrame && 
                 commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && 
-                StunValue > 0)
+                StunValue > 0 && CurrentPlayerState != PlayerState.Dead)
             {
                 StunValue -= commonData.playerDataCommon.RopeData.stunValueToTakeOut;
         
@@ -343,7 +342,7 @@ namespace Controller
 
         private void TimerStun()
         {
-            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && StunValue > 0)
+            if (commonData.playerDataCommon.RopeData.currentKoState == KoState.Ko && StunValue > 0 && CurrentPlayerState != PlayerState.Dead)
             {
                 StunValue -= Time.deltaTime;
             }
@@ -394,19 +393,27 @@ namespace Controller
 
           #endregion
 
-          #region Coroutine
+          #region Rework trust
+
+          [SerializeField] private Image fxPLaceGolderBackground;
+          [SerializeField] private Sprite fxGolden;
+          [SerializeField] private Sprite fxColor;
           
           private IEnumerator SliderTransitionForKo()
           {
-              goldenSlider.gameObject.SetActive(true);
-              yield return goldenSlider.transform.DOShakeRotation(1f, new Vector3(0, 0, 45f)).WaitForCompletion();
-              goldenSlider.gameObject.SetActive(false);
-              ToggleSlidersStun(true);
-              yield return new WaitForSeconds(1f);
+              fxPLaceGolderBackground.sprite = fxGolden;
+              fxSlider.SetActive(true);
               StunValue = commonData.playerDataCommon.RopeData.maxStunValue[koIndex];
+              isShaking = true;
+              ToggleSlidersStun(true);
+              yield return stunSlider.transform.DOShakeRotation(1f, new Vector3(0, 0, 45f)).WaitForCompletion();
+              fxSlider.SetActive(false);
+              fxPLaceGolderBackground.sprite = fxColor;
+              isShaking = false;
           }
 
           #endregion
+          
     }
 
     
