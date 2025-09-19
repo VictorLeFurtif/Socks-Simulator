@@ -153,9 +153,12 @@ namespace Manager
             leftPlayer.blockMovement = true;
             rightPlayer.blockMovement = true;
             SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.Round[currentRound]);
+            
             canvasRound.enabled = true;
             Rounds[currentRound].gameObject.SetActive(true);
             yield return new WaitForSecondsRealtime(timeForRoundPause);
+
+            SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.RoundStart);
             Rounds[currentRound].gameObject.SetActive(false);
             canvasRound.enabled = false;
             CheckForMusicFadeIn();
@@ -170,6 +173,16 @@ namespace Manager
             currentRound++;
             leftPlayer.blockMovement = false;
             rightPlayer.blockMovement = false;
+        }
+
+        IEnumerator PlaySoundsSequence()
+        {
+            AudioClip currentClip = SoundManager.Instance.SoundData.Round[currentRound];
+            float clipDuration = currentClip.length;
+
+            yield return new WaitForSeconds(clipDuration);
+
+            SoundManager.Instance.PlayMusicOneShot(SoundManager.Instance.SoundData.RoundStart);
         }
 
         private void CheckForMusicFadeOut()
