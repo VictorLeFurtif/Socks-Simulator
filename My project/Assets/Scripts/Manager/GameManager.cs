@@ -69,7 +69,7 @@ namespace Manager
 
         private void Update()
         {
-            if (currentState == GameState.Menu && (Keyboard.current[Key.F].wasPressedThisFrame || Keyboard.current[Key.LeftShift].wasPressedThisFrame) && !gameLaunched)
+            if (currentState == GameState.Menu && (Keyboard.current[Key.F].wasPressedThisFrame || Keyboard.current[Key.RightShift].wasPressedThisFrame) && !gameLaunched)
             {
                 StartGame();
                 gameLaunched = true;
