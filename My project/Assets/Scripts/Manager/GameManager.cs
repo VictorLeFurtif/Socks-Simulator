@@ -16,6 +16,7 @@ namespace Manager
     public class GameManager : MonoBehaviour
     {
         private static GameManager _instance;
+        private float elapsedTime = 0;
         
         [Header("Game State")]
         [SerializeField] private GameState currentState = GameState.Menu;
@@ -74,6 +75,17 @@ namespace Manager
                 StartGame();
                 gameLaunched = true;
             }
+
+            AutoReturn();
+        }
+
+        private void AutoReturn()
+        {
+            elapsedTime += Time.fixedDeltaTime;
+            if(elapsedTime >= 20)
+                LoadMenuScene();
+            if (Input.anyKey)
+                elapsedTime = 0;
         }
 
         private void InitializeGameState()
