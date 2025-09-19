@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace Manager
@@ -68,7 +69,7 @@ namespace Manager
 
         private void Update()
         {
-            if (currentState == GameState.Menu && Input.anyKeyDown && !gameLaunched)
+            if (currentState == GameState.Menu && (Keyboard.current[Key.F].wasPressedThisFrame || Keyboard.current[Key.LeftShift].wasPressedThisFrame) && !gameLaunched)
             {
                 StartGame();
                 gameLaunched = true;
