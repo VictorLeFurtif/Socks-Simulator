@@ -200,7 +200,7 @@ namespace Controller
         private void GetMousePosY(InputAction.CallbackContext context)
         {
             Vector2 lTemp = context.ReadValue<Vector2>();
-            if (lTemp.y > 1f || lTemp.y < -1f)
+            if (lTemp.y > 5f || lTemp.y < -5f)
                 moveDirection = new Vector2(lTemp.y, 0f);
         }
 

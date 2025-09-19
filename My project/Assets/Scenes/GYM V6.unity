@@ -4163,7 +4163,7 @@ MonoBehaviour:
   - {fileID: 462309743}
   winPlayer: 0
   win: 0
-  timeForRoundPause: 5
+  timeForRoundPause: 3
 --- !u!4 &844327747
 Transform:
   m_ObjectHideFlags: 0

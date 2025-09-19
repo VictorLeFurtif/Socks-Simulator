@@ -13,7 +13,7 @@ namespace Data
         [Range(0.1f, 20f), Tooltip("Speed cant go over")] public float clampSpeed;
 
         [Header("Push Distance")]
-        [Range(0.1f,5f), Tooltip("Distance when hit ")] public float distancePush;
+        [Range(0.1f,10f), Tooltip("Distance when hit ")] public float distancePush;
         
         [Header("Push Height")]
         [Range(0.1f,5f), Tooltip("Distance when hit in Y ")] public float heightFactor;

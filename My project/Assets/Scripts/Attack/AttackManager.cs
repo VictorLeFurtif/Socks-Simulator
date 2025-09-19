@@ -168,6 +168,7 @@ namespace Attack
                 animator.ResetTrigger("IsAttacking");
                 StartCoroutine(ResetAttackState());
             }
+            StartCoroutine(ResetAttackState());
         }
 
 

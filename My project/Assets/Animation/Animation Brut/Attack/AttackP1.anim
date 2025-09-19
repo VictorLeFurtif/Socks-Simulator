@@ -24,15 +24,13 @@ AnimationClip:
       value: {fileID: 7546673444880650053, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
     - time: 0.14285715
       value: {fileID: 3246148930231798481, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
-    - time: 0.42857143
+    - time: 0.2857143
       value: {fileID: -470868541131618559, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
-    - time: 0.71428573
+    - time: 0.42857143
       value: {fileID: 8113284904341149348, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
-    - time: 1
+    - time: 0.5714286
       value: {fileID: -8427123027140708481, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
-    - time: 1.1428572
-      value: {fileID: 3129589653252084567, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
-    - time: 1.2857143
+    - time: 0.71428573
       value: {fileID: -2296630112393662643, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
     attribute: m_Sprite
     path: 
@@ -61,14 +59,13 @@ AnimationClip:
     - {fileID: -470868541131618559, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
     - {fileID: 8113284904341149348, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
     - {fileID: -8427123027140708481, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
-    - {fileID: 3129589653252084567, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
     - {fileID: -2296630112393662643, guid: 1edc043f681573f4f940a43ef1e24c4e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.4285715
+    m_StopTime: 0.85714287
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -95,7 +92,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.71428573
+  - time: 0.42857143
+    functionName: SetCounterPossible
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.42857143
     functionName: CheckShouldInterrupt
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -103,20 +107,13 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.71428573
-    functionName: SetCounterPossible
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.85714287
     functionName: ShockWave
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.2857143
+  - time: 0.71428573
     functionName: OnAttackEnd
     data: 
     objectReferenceParameter: {fileID: 0}
