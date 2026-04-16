@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/34c65e13-6c9e-4556-beb7-dc01c876903f" alt="HD2D Project Banner" width="100%" style="border-radius: 8px; box-shadow: 0px 4px 10px rgba(0,0,0,0.3);">
+
+
 <h1 align="center">SUPER SMASH SOCKS</h1>
 
 <p align="center">
