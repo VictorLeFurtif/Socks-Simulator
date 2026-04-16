@@ -4,6 +4,7 @@
   <img src="https://img.shields.io/badge/TYPE-CONTROLEUR_ALTERNATIF-orange?style=flat-square">
   <img src="https://img.shields.io/badge/MOTEUR-UNITY-white?style=flat-square">
   <img src="https://img.shields.io/badge/GENRE-VERSUS_FIGHT-blue?style=flat-square">
+  <img src="https://img.shields.io/badge/2nd Year-green?style=flat-square">
 </p>
 
 ---
